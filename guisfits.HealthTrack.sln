@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack", "guisfits.HealthTrack\guisfits.HealthTrack.csproj", "{8ACA8B72-653F-4D42-A20B-AE83A677E3E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Tests", "guisfits.HealthTrack.Tests\guisfits.HealthTrack.Tests.csproj", "{6BF1FD42-B047-404E-B7A4-8945E4702DB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ACA8B72-653F-4D42-A20B-AE83A677E3E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ACA8B72-653F-4D42-A20B-AE83A677E3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ACA8B72-653F-4D42-A20B-AE83A677E3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ACA8B72-653F-4D42-A20B-AE83A677E3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BF1FD42-B047-404E-B7A4-8945E4702DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BF1FD42-B047-404E-B7A4-8945E4702DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BF1FD42-B047-404E-B7A4-8945E4702DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BF1FD42-B047-404E-B7A4-8945E4702DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
