@@ -48,7 +48,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ModelsTest\AlimentoTest.cs" />
+    <Compile Include="ModelsTest\ExercicioFisicoTest.cs" />
+    <Compile Include="ModelsTest\IMCTest.cs" />
+    <Compile Include="ModelsTest\PesoTest.cs" />
+    <Compile Include="ModelsTest\PressaoArterialTest.cs" />
+    <Compile Include="ModelsTest\UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
