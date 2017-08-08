@@ -1,0 +1,52 @@
+.logo {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+body{
+    background-color: #e5e5e5;
+    background-image: url("../img/fundo.png");
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+.form-cadastro{
+    padding-top: 2em;
+    margin-bottom: 5em;
+}
+
+.links-login{
+    margin-top: 2em;
+}
+
+table{
+    width: 200px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+.perfil-label{
+    font-size: 5vmin;
+    font-size: 2vmax;
+}
+
+.profile-photo{
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+}

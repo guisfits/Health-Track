@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html lang="pt-br">
+    <head>
+        <title>Cadastro - Health Track</title>    
+        <meta charset="utf-8">
+        <meta name="description" content="Cadastro - Health Track">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="css/mainsheet.css">
+        <script src="lib/jquery-3.2.1.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.js"></script>
+        <script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="js/validation.js"></script>
+        <script src="js/effects.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            
+            <img src="img/logo.png" id="logotipo" width="230" height="170" class="logo img-responsive center-block" alt="Logo Health Track">
+
+            <form class="form-horizontal form-cadastro" id="cadastroForm" method="POST" role="form" action="Dashboard.html">
+                <fieldset>
+                    <legend>Cadastre-se</legend>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Email</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="email" name="emailCadastro" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Senha</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="password" id="senhaCadastro" name="senhaCadastro" required minlength="6">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Confirmar senha</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="password" name="confirmacaoCadastro" required minlength="6"   >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Nome</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="nomeCadastro" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Sobrenome</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="sobrenomeCadastro" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Nascimento</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="date" name="nascimentoCadastro" required min="1900-01-01">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Altura (cm)</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="number" name="alturaCadastro" required min="50" max="250">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Sexo</label>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sexoCadastro" value="M" required>Masculino
+                                    </label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sexoCadastro" value="F" required>Feminino
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div class="btn-group-justified">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <div class="btn-group" role="group">
+                                <input class="btn btn-default" type="reset" value="Cancelar">
+                                <input class="btn btn-primary" type="submit" value="Cadastrar">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div> <!--container-->
+    </body>
+</html>

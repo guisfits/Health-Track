@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Exercícios - Health Track</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="css/mainsheet.css" >
+        <script src="lib/jquery-3.2.1.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.js"></script>
+        <script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="js/validation.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+            
+                <div class="navbar-hearder">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="Dashboard.html" class="navbar-brand">Health Track</a>
+                </div>
+            
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                        <li><a href="Pesos.html"><i class="fa fa-balance-scale"></i> Pesos</a></li>
+                        <li class="active"><a href="#exercicios"><i class="fa fa-bicycle"></i> Exercícios</a></li>
+                        <li><a href="Alimentacao.html"><i class="fa fa-cutlery"></i> Alimentação</a></li>
+                        <li><a href="Pressao.html"><i class="fa fa-heartbeat"></i> Pressão Arterial</a></li>
+                    </ul> 
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="DadosUsuario.html"><i class="fa fa-user-circle" aria-hidden="true"></i> Alterar dados</a></li>
+                        <li><a href="Login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="panel panel-default row">
+                
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cadastre um novo exercício</h3>
+                </div>
+                
+                <div class="panel-body">
+                    <form class="form" role="form" id="exercicioForm">
+                        
+                        <div class="form-group">
+                            <label class="control-label" for="data">Data</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                <input class="form-control" type="date" name="data" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="horario" class="control-label">Horário</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                <input type="time" class="form-control" name="horario" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo" class="control-label">Tipo</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-bicycle" aria-hidden="true"></i></span>
+                                <select name="tipo" class="form-control" required>
+                                    <option value="musculacao">Musculação</option>
+                                    <option value="caminhada">Caminhada</option>
+                                    <option value="corrida">Corrida</option>
+                                    <option value="pedalada">Pedalada</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="calorias" class="control-label">Calorias</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-arrow-circle-down"></i></span>
+                                <input type="number" class="form-control" name="calorias" placeholder="" required min="1">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descricao" class="control-label">Descrição</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="descricao" minlength="2" maxlength="50">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="form-control btn btn-success" value="Adicionar">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="row col-md-8 col-md-offset-2">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <tr>
+                                <th>Data</th>
+                                <th class="hidden-xs hidden-sm">Horario</th>
+                                <th>Tipo</th>
+                                <th>Calorias</th>
+                                <th class="hidden-xs">Descrição</th>
+                            </tr>
+                        </tr>
+                    </thead>
+                   <tbody>
+                       <tr>
+                            <td>04/06/2017</td>
+                            <td class="hidden-xs hidden-sm">17h00</td>
+                            <td>Musculação</td>
+                            <td>200</td>
+                            <td class="hidden-xs">Inferior</td>
+                            <td><button><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                            <td><button><i class="fa fa-pencil"></i></button></td>
+                        </tr>
+                   </tbody>
+                </table>
+            </div>
+
+        </div> <!--container-->
+
+    </body>
+</html>

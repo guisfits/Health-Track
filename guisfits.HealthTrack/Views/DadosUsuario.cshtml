@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Alterar dados - Health Track</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="css/mainsheet.css">
+        <script src="lib/jquery-3.2.1.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.js"></script>
+        <script src="lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="js/validation.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-hearder">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="Dashboard.html" class="navbar-brand">Health Track</a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="Dashboard.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                        <li><a href="Pesos.html"><i class="fa fa-balance-scale"></i> Pesos</a></li>
+                        <li><a href="Exercicios.html"><i class="fa fa-bicycle"></i> Exercícios</a></li>
+                        <li><a href="Alimentacao.html"><i class="fa fa-cutlery"></i> Alimentação</a></li>
+                        <li><a href="Pressao.html"><i class="fa fa-heartbeat"></i> Pressão Arterial</a></li>
+                    </ul> 
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="DadosUsuario.html"><i class="fa fa-user-circle" aria-hidden="true"></i> Alterar dados</a></li>
+                        <li><a href="Login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row jumbotron">
+                <div class="col-md-4">
+                    <div class="container">
+                        <img alt="Foto do usuário" src="img/exemplo.jpg" class="img-circle img-responsive center-block profile-photo" width="230" height="230">
+                    </div>
+                    <div class="row center-block">
+                        <input type="file" class="btn btn-primary" name="alterarFoto" style="margin-bottom: 10px;">
+                        <button class="btn btn-primary" style="margin-bottom: 20px;">Alterar foto</button>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="panel panel-primary" >
+                        
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Altere seus dados cadastrais</h3>
+                        </div>
+                        
+                        <div class="panel-body">
+                            <div class="col-md-10 col-md-offset-1">
+                                <form class="form" role="form" id="usuarioForm">
+                                    <div class="form-group">
+                                        <label for="nome" class="control-label">Nome</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" name="nome">
+                                        </div>                                
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sobrenome" class="control-label">Sobrenome</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" name="sobrenome">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="nascimento" class="control-label">Nascimento</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                            <input type="date" class="form-control" name="nascimento" min="1900-01-01">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="altura" class="control-label">Altura</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
+                                            <input type="number" class="form-control" name="altura">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="sexo" class="control-label">Sexo</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon radio-inline"><i class="fa fa-venus-mars" aria-hidden="true"></i></span>
+                                            <input type="radio" name="sexo" value="M">Masculino
+                                            <input type="radio" name="sexo" value="F">Feminino
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" style="padding-top: 15px;">
+                                        <div class="btn-group">
+                                            <input type="reset" class="btn btn-default" value="Cancelar">
+                                            <input type="submit" class="btn btn-primary" value="Salvar alterações">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Alterar sua senha</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-10 col-md-offset-1">
+                                <form class="form" id="alterarsenhaForm">
+                                    <div class="form group">
+                                        <label for="senhaAtual" class="control-label">Senha atual</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="senhaAtual" required minlength="6">
+                                        </div>
+                                    </div>
+
+                                    <div class="form group">
+                                        <label for="novaSenha" class="control-label">Nova senha</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="novaSenha" id="novaSenha" required minlength="6">
+                                        </div>
+                                    </div>
+
+                                    <div class="form group">
+                                        <label for="confirmarSenha" class="control-label">Confirmar senha</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="confirmarSenha" required minlength="6">
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group" style="padding-top: 20px;">
+                                        <div class="btn-group">
+                                            <input type="reset" class="btn btn-default" value="Cancelar">
+                                            <input type="submit" class="btn btn-primary" value="Alterar senha">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
