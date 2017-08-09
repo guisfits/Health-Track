@@ -5,9 +5,8 @@ namespace guisfits.HealthTrack.Domain.Models
 {
     public enum TipoSexo { Masculino, Feminino }
 
-    public class Usuario
+    public class Usuario : Entity
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public TipoSexo Sexo { get; set; }

@@ -2,7 +2,7 @@
 
 namespace guisfits.HealthTrack.Domain.Models
 {
-    public class PressaoArterial
+    public class PressaoArterial : Entity
     {
         public DateTime DataHora { get; set; }
         public double Sistolica { get; set; } // o maior valor

@@ -48,13 +48,10 @@ namespace guisfits.HealthTrack.Domain.Models
             _altura = Altura;
         }
 
-        public DateTime DataHora { get; set; }
-
         public IMC(double Peso, double Altura)
         {
             _peso = Peso;
             _altura = Altura;
-            DataHora = DateTime.Now;
         }
     }
 }

@@ -2,8 +2,7 @@
 
 namespace guisfits.HealthTrack.Domain.Models
 {
-    //Struct pois Peso se comportará como ValueType
-    public struct Peso : IEquatable<Peso>
+    public class Peso : Entity, IEquatable<Peso>
     {
         public DateTime DataHora { get; set; }
 

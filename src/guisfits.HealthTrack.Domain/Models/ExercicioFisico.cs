@@ -4,7 +4,7 @@ namespace guisfits.HealthTrack.Domain.Models
 {
     public enum TipoExercicio { Caminhada, Corrida, Pedalada, Musculacao }
 
-    public class ExercicioFisico
+    public class ExercicioFisico : Entity
     {
         public TipoExercicio Tipo { get; set; }
         public string Descricao { get; set; }
