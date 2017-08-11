@@ -6,6 +6,9 @@ namespace guisfits.HealthTrack.Domain.Models
     {
         public DateTime DataHora { get; set; }
 
+        //Para o Lazy loading do EntityFramework
+        public virtual Usuario Usuario { get; set; }
+
         private double _valorKg;
         public double ValorKg
         {

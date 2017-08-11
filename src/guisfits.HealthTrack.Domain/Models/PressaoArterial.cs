@@ -8,6 +8,9 @@ namespace guisfits.HealthTrack.Domain.Models
         public double Sistolica { get; set; } // o maior valor
         public double Diastolica { get; set; } // o menor valor
 
+        //Para o Lazy loading do EntityFramework
+        public virtual Usuario Usuario { get; set; }
+
         public string Status
         {
             get

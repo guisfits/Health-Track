@@ -24,7 +24,9 @@ namespace guisfits.HealthTrack.Presentation
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      //"~/Content/bootstrap.css",
+                      "~/Content/bootswatch-paper.css",
+                      "~/Content/font-awesome.css",
                       "~/Content/site.css"));
         }
     }

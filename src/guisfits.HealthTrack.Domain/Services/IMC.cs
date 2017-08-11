@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace guisfits.HealthTrack.Domain.Models
+namespace guisfits.HealthTrack.Domain.Services
 {
     public class IMC
     {

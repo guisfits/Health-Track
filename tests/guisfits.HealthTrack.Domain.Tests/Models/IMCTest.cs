@@ -1,4 +1,4 @@
-﻿using guisfits.HealthTrack.Domain.Models;
+﻿using guisfits.HealthTrack.Domain.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace guisfits.HealthTrack.Domain.Tests.Models

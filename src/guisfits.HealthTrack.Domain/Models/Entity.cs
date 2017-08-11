@@ -4,7 +4,7 @@ namespace guisfits.HealthTrack.Domain.Models
 {
     public abstract class Entity
     {
-        protected Guid Id { get; set; }
+        public Guid Id { get; set; }
 
         protected Entity()
         {

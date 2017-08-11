@@ -1,4 +1,5 @@
-﻿using System;
+﻿using guisfits.HealthTrack.Domain.Services;
+using System;
 using System.Collections.Generic;
 
 namespace guisfits.HealthTrack.Domain.Models
@@ -13,10 +14,10 @@ namespace guisfits.HealthTrack.Domain.Models
         public double AlturaMetros { get; set; }
         public DateTime Nascimento { get; set; }
 
-        public List<Peso> PesosKg { get; set; }
-        public List<Alimento> Alimentos { get; set; }
-        public List<ExercicioFisico> ExerciciosFisicos { get; set; }
-        public List<PressaoArterial> PressoesArteriais { get; set; }
+        public virtual List<Peso> PesosKg { get; set; }
+        public virtual ICollection<Alimento> Alimentos { get; set; }
+        public virtual ICollection<ExercicioFisico> ExerciciosFisicos { get; set; }
+        public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
 
         public Usuario(string Nome, string Sobrenome, TipoSexo Sexo, double AlturaMetros, DateTime Nascimento, double PesoKg)
         {
@@ -44,7 +45,7 @@ namespace guisfits.HealthTrack.Domain.Models
             if (PesosKg.Count > 0)
             {
                 var indexPeso = PesosKg.Count;
-                var peso = PesosKg[indexPeso - 1];
+                var peso = this.PesosKg[indexPeso - 1];
                 var imc = new IMC(peso.ValorKg, this.AlturaMetros);
                 return imc;
             }
