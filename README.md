@@ -16,7 +16,7 @@ O Health Track é um projeto web criado para o curso de TDS da FIAP. A FIAP segu
 
 * HTML5
 * CSS
-* Bootstrap
+* Bootstrap (Bootswatch-paper)
 * Font-awesome
 * JavaScript
 * jQuery
