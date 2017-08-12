@@ -51,5 +51,11 @@ namespace guisfits.HealthTrack.Domain.Models
             }
             return null;
         }
+
+        protected override bool EhValido()
+        {
+            //tem que validar!!!
+            return true;
+        }
     }
 }

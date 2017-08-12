@@ -10,5 +10,7 @@ namespace guisfits.HealthTrack.Domain.Models
         {
             Id = Guid.NewGuid();
         }
+
+        protected abstract bool EhValido();
     }
 }

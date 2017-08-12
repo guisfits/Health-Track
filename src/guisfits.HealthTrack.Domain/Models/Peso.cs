@@ -5,6 +5,7 @@ namespace guisfits.HealthTrack.Domain.Models
     public class Peso : Entity, IEquatable<Peso>
     {
         public DateTime DataHora { get; set; }
+        public Guid UsuarioId { get; set; }
 
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
@@ -44,6 +45,12 @@ namespace guisfits.HealthTrack.Domain.Models
         public override string ToString()
         {
             return $"{this._valorKg} kg";
+        }
+
+        protected override bool EhValido()
+        {
+            //tem que validar!!!
+            return true;
         }
 
         #region Implementação de operadores/metodos de Igualdade
