@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\HealthTrackContext.cs" />
+    <Compile Include="EntityConfig\AlimentoConfig.cs" />
+    <Compile Include="EntityConfig\ExercicioFisicoConfig.cs" />
+    <Compile Include="EntityConfig\PesoConfig.cs" />
+    <Compile Include="EntityConfig\PressaoArterialConfig.cs" />
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

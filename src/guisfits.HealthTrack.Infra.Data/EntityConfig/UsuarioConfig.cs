@@ -9,6 +9,24 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
         {
             HasKey(p => p.Id);
 
+            Property(p => p.Nome)
+                .IsRequired()
+                .HasMaxLength(30);
+
+            Property(p => p.Sobrenome)
+                .IsRequired()
+                .HasMaxLength(200);
+
+            Property(p => p.Sexo)
+                .IsRequired();
+
+            Property(p => p.AlturaMetros)
+                .IsRequired();
+
+            Property(p => p.Nascimento)
+                .IsRequired();
+
+            ToTable("Usuarios");
         }
     }
 }

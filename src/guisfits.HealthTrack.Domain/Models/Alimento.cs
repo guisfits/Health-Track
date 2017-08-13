@@ -10,13 +10,12 @@ namespace guisfits.HealthTrack.Domain.Models
         public string Descricao { get; set; }
         public double Calorias { get; set; }
         public DateTime DataHora { get; set; }
-
         public Guid UsuarioId { get; set; }
 
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
-        public Alimento(TipoAlimento tipo, string descricao, double calorias, DateTime dataHora)
+        public Alimento(TipoAlimento tipo, double calorias, DateTime dataHora, string descricao = "")
         
         {
             this.Tipo = tipo;

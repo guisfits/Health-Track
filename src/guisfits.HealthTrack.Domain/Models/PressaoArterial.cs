@@ -7,24 +7,42 @@ namespace guisfits.HealthTrack.Domain.Models
         public DateTime DataHora { get; set; }
         public double Sistolica { get; set; } // o maior valor
         public double Diastolica { get; set; } // o menor valor
-
         public Guid UsuarioId { get; set; }
 
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
+        private string _status;
         public string Status
         {
             get
             {
                 if ((Sistolica <= 140 && Diastolica <= 90) && (Sistolica >= 120 && Diastolica >= 80))
-                    return "Normal";
+                {
+                    this._status = "Normal";
+                    return _status;
+                }
                 else if (Sistolica < 120 && Diastolica < 80)
-                    return "Abaixo do normal";
+                {
+                    this._status = "Abaixo do normal";
+                    return _status;
+
+                }
                 else if (Sistolica > 140 && Diastolica > 90)
-                    return "Elevada";
+                {
+                    this._status = "Elevada";
+                    return _status;
+                }
                 else
-                    return "ERRO";
+                {
+                    this._status = "ERRO";
+                    return _status;
+                }
+            }
+            protected set
+            {
+                if(value != null)
+                    this._status = value;
             }
         }
 

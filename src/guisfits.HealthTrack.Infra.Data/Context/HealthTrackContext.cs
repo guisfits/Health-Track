@@ -1,4 +1,5 @@
 ﻿using guisfits.HealthTrack.Domain.Models;
+using guisfits.HealthTrack.Infra.Data.EntityConfig;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -28,7 +29,13 @@ namespace guisfits.HealthTrack.Infra.Data.Context
                 .Configure(p => p.HasColumnType("varchar"));
 
             modelBuilder.Properties<string>()
-                .Configure(p => p.HasMaxLength(150));
+                .Configure(p => p.HasMaxLength(100));
+
+            modelBuilder.Configurations.Add(new UsuarioConfig());
+            modelBuilder.Configurations.Add(new AlimentoConfig());
+            modelBuilder.Configurations.Add(new ExercicioFisicoConfig());
+            modelBuilder.Configurations.Add(new PressaoArterialConfig());
+            modelBuilder.Configurations.Add(new PesoConfig());
 
             base.OnModelCreating(modelBuilder);
         }

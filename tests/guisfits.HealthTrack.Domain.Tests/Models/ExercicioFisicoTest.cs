@@ -10,7 +10,15 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
         [TestMethod]
         public void ExercicioFisicoObjetoTest()
         {
-            var ef = new ExercicioFisico(TipoExercicio.Musculacao, "Série A", 200, DateTime.Now);
+            var ef = new ExercicioFisico(TipoExercicio.Musculacao, 200, DateTime.Now);
+
+            Assert.IsNotNull(ef);
+        }
+
+        [TestMethod]
+        public void ExercicioFisicoObjetoTestWithDescricao()
+        {
+            var ef = new ExercicioFisico(TipoExercicio.Musculacao, 200, DateTime.Now, "Série A");
 
             Assert.IsNotNull(ef);
         }
