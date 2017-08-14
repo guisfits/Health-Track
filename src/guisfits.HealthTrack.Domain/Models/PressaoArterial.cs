@@ -41,7 +41,7 @@ namespace guisfits.HealthTrack.Domain.Models
             }
             protected set
             {
-                if(value != null)
+                if (value != null)
                     this._status = value;
             }
         }

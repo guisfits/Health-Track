@@ -10,35 +10,64 @@ namespace guisfits.HealthTrack.Domain.Models
     {
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
+        public string Email { get; set; }
         public TipoSexo Sexo { get; set; }
         public double AlturaMetros { get; set; }
         public DateTime Nascimento { get; set; }
         public bool Excluido { get; private set; } = false;
+        private double _pesoAtual;
+        public double PesoAtual
+        {
+            get
+            {
+                if (PesosKg.Count > 0)
+                {
+                    var indexPeso = PesosKg.Count;
+                    this._pesoAtual = this.PesosKg[indexPeso - 1].ValorKg;
+                }
+                else
+                {
+                    this._pesoAtual = 0;
+                }
+                return this._pesoAtual;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    _pesoAtual = value;
+                    PesosKg.Add(new Peso(_pesoAtual));
+                }
+            }
+        }
 
-        public virtual List<Peso> PesosKg { get; set; }
+        public virtual IList<Peso> PesosKg { get; set; }
         public virtual ICollection<Alimento> Alimentos { get; set; }
         public virtual ICollection<ExercicioFisico> ExerciciosFisicos { get; set; }
         public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
 
-        public Usuario(string Nome, string Sobrenome, TipoSexo Sexo, double AlturaMetros, DateTime Nascimento, double PesoKg)
+        public Usuario(string Nome, string Sobrenome, string Email, TipoSexo Sexo, double AlturaMetros, DateTime Nascimento, double PesoKg)
         {
             this.Nome = Nome;
             this.Sobrenome = Sobrenome;
+            this.Email = Email;
             this.Sexo = Sexo;
             this.AlturaMetros = AlturaMetros;
             this.Nascimento = Nascimento;
 
-            PesosKg = new List<Peso>();
-            PesosKg.Add(new Peso(PesoKg));
-
             Alimentos = new List<Alimento>();
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();
+            PesosKg = new List<Peso>();
+            PesosKg.Add(new Peso(PesoKg));
         }
 
         public Usuario()
         {
-            
+            Alimentos = new List<Alimento>();
+            ExerciciosFisicos = new List<ExercicioFisico>();
+            PressoesArteriais = new List<PressaoArterial>();
+            PesosKg = new List<Peso>();
         }
 
         public string NomeCompleto()
@@ -48,20 +77,16 @@ namespace guisfits.HealthTrack.Domain.Models
 
         public IMC getIMC()
         {
-            if (PesosKg.Count > 0)
-            {
-                var indexPeso = PesosKg.Count;
-                var peso = this.PesosKg[indexPeso - 1];
-                var imc = new IMC(peso.ValorKg, this.AlturaMetros);
-                return imc;
-            }
-            return null;
+            return new IMC(this._pesoAtual, this.AlturaMetros);
         }
 
         protected override bool EhValido()
         {
-            //tem que validar!!!
-            return true;
+            //fazer uma melhor avaliação
+            if (Excluido == true)
+                return false;
+            else
+                return true;
         }
 
         public void Excluir()

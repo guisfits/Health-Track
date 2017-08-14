@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{9707AED8-A991-4A46-8E3A-A26ABEDC4154}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{23116319-DB44-4210-991C-2E2826FE57BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Infra.Data", "src\guisfits.HealthTrack.Infra.Data\guisfits.HealthTrack.Infra.Data.csproj", "{4AF456AF-6987-47DB-B0E9-F07BFF049536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Application", "src\guisfits.HealthTrack.Application\guisfits.HealthTrack.Application.csproj", "{78C6A8FB-8EA2-4788-B600-0AC726758D23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +59,6 @@ Global
 		{9DD32D55-DA79-490C-92C2-01C2C055987C} = {7C384078-8408-4609-A7DC-75E8E623F49B}
 		{250E1A75-2121-4100-BB6D-1CD83EAE4F63} = {9707AED8-A991-4A46-8E3A-A26ABEDC4154}
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536} = {7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}
+		{78C6A8FB-8EA2-4788-B600-0AC726758D23} = {23116319-DB44-4210-991C-2E2826FE57BA}
 	EndGlobalSection
 EndGlobal

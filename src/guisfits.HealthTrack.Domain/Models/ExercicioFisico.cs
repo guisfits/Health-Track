@@ -11,7 +11,6 @@ namespace guisfits.HealthTrack.Domain.Models
         public double Calorias { get; set; }
         public DateTime DataHora { get; set; }
         public Guid UsuarioId { get; set; }
-
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
