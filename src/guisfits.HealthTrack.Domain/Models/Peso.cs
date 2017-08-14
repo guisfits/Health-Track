@@ -42,6 +42,11 @@ namespace guisfits.HealthTrack.Domain.Models
             this.DataHora = DateTime.Now;
         }
 
+        public Peso()
+        {
+
+        }
+
         public override string ToString()
         {
             return $"{this._valorKg} kg";

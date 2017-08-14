@@ -59,6 +59,11 @@ namespace guisfits.HealthTrack.Domain.Models
             this.Diastolica = diastolica;
         }
 
+        public PressaoArterial()
+        {
+
+        }
+
         protected override bool EhValido()
         {
             //tem que validar!!!

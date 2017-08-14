@@ -23,6 +23,11 @@ namespace guisfits.HealthTrack.Domain.Models
             this.DataHora = dataHora;
         }
 
+        public ExercicioFisico()
+        {
+
+        }
+
         protected override bool EhValido()
         {
             //tem que validar!!!

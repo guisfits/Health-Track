@@ -13,6 +13,7 @@ namespace guisfits.HealthTrack.Domain.Models
         public TipoSexo Sexo { get; set; }
         public double AlturaMetros { get; set; }
         public DateTime Nascimento { get; set; }
+        public bool Excluido { get; private set; } = false;
 
         public virtual List<Peso> PesosKg { get; set; }
         public virtual ICollection<Alimento> Alimentos { get; set; }
@@ -33,6 +34,11 @@ namespace guisfits.HealthTrack.Domain.Models
             Alimentos = new List<Alimento>();
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();
+        }
+
+        public Usuario()
+        {
+            
         }
 
         public string NomeCompleto()
@@ -56,6 +62,11 @@ namespace guisfits.HealthTrack.Domain.Models
         {
             //tem que validar!!!
             return true;
+        }
+
+        public void Excluir()
+        {
+            Excluido = true;
         }
     }
 }

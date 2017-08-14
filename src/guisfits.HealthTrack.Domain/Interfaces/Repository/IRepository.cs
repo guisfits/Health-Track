@@ -12,8 +12,8 @@ namespace guisfits.HealthTrack.Domain.Interfaces.Repository
         IEnumerable<TEntity> ObterTodos();
         IEnumerable<TEntity> ObterPaginado(int s, int t);
         IEnumerable<TEntity> Buscar(Expression<Func<TEntity, bool>> predicate);
-        void Remover(Guid id);
         TEntity Atualizar(TEntity obj);
+        void Remover(Guid id);
         int SaveChanges();
     }
 }
