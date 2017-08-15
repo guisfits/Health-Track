@@ -33,7 +33,7 @@ namespace guisfits.HealthTrack.Domain.Models
                 if (value > 0)
                 {
                     _pesoAtual = value;
-                    PesosKg.Add(new Peso(_pesoAtual));
+                    this.PesosKg.Add(new Peso(_pesoAtual));
                 }
             }
         }

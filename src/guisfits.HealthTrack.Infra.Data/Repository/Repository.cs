@@ -38,17 +38,17 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             return obj;
         }
 
-        public IEnumerable<TEntity> ObterPaginado(int s, int t)
+        public virtual IEnumerable<TEntity> ObterPaginado(int s, int t)
         {
             return DbSet.Skip(s).Take(t).ToList();
         }
 
-        public TEntity ObterPorId(Guid id)
+        public virtual TEntity ObterPorId(Guid id)
         {
             return DbSet.Find(id);
         }
 
-        public IEnumerable<TEntity> ObterTodos()
+        public virtual IEnumerable<TEntity> ObterTodos()
         {
             return DbSet.ToList();
         }

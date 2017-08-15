@@ -10,9 +10,9 @@ namespace guisfits.HealthTrack.Infra.Data.Context
         public HealthTrackContext()
             :base("DefaultConnection")
         {
-            Configuration.ProxyCreationEnabled = false;
-            Configuration.AutoDetectChangesEnabled = false;
-            Configuration.LazyLoadingEnabled = false;
+            //Configuration.ProxyCreationEnabled = false;
+            //Configuration.AutoDetectChangesEnabled = false;
+            //Configuration.LazyLoadingEnabled = false;
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
@@ -23,8 +23,8 @@ namespace guisfits.HealthTrack.Infra.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            //modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Properties<string>()
