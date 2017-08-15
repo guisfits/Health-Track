@@ -42,7 +42,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,AlturaMetros,Nascimento,PesoAtual,Excluido")] UsuarioViewModel usuarioViewModel)
+        public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,AlturaMetros,Nascimento,PesoAtual")] UsuarioViewModel usuarioViewModel)
         {
             if (ModelState.IsValid)
             {

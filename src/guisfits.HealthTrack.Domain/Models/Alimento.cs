@@ -16,7 +16,6 @@ namespace guisfits.HealthTrack.Domain.Models
         public virtual Usuario Usuario { get; set; }
 
         public Alimento(TipoAlimento tipo, double calorias, DateTime dataHora, string descricao = "")
-        
         {
             this.Tipo = tipo;
             this.Descricao = descricao;

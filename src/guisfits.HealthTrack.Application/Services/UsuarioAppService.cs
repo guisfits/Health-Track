@@ -27,9 +27,10 @@ namespace guisfits.HealthTrack.Application.Services
 
         public UsuarioViewModel Atualizar(UsuarioViewModel obj)
         {
-            var usuario = Mapper.Map<Usuario>(obj);
-            usuario.PesoAtual = obj.PesoAtual;
-            usuarioRepository.Atualizar(usuario);
+            //var usuario = Mapper.Map<Usuario>(obj);
+            //usuario.PesoAtual = obj.PesoAtual;
+            //usuarioRepository.Atualizar(usuario);
+            usuarioRepository.Atualizar(Mapper.Map<Usuario>(obj));
             return obj;
         }
 
@@ -40,7 +41,8 @@ namespace guisfits.HealthTrack.Application.Services
 
         public UsuarioViewModel ObterPorId(Guid id)
         {
-            return Mapper.Map<UsuarioViewModel>(usuarioRepository.ObterPorId(id));
+            var usuario = Mapper.Map<UsuarioViewModel>(usuarioRepository.ObterPorId(id));
+            return usuario;
         }
 
         public IEnumerable<UsuarioViewModel> ObterTodos()

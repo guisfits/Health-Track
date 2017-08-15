@@ -6,8 +6,6 @@ namespace guisfits.HealthTrack.Domain.Models
     {
         public DateTime DataHora { get; set; }
         public Guid UsuarioId { get; set; }
-
-        //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
         private double _valorKg;
@@ -23,12 +21,8 @@ namespace guisfits.HealthTrack.Domain.Models
         }
 
         public Peso(double PesoKg, DateTime DataHora)
+            : this(PesoKg)
         {
-            if (PesoKg > 0)
-                this._valorKg = PesoKg;
-            else
-                throw new Exception();
-
             this.DataHora = DataHora;
         }
 

@@ -1,8 +1,6 @@
 ﻿using guisfits.HealthTrack.Domain.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Linq;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
@@ -38,7 +36,7 @@ namespace guisfits.HealthTrack.Domain.Models
             }
         }
 
-        public virtual List<Peso> PesosKg { get; set; }
+        public virtual IList<Peso> PesosKg { get; set; }
         public virtual ICollection<Alimento> Alimentos { get; set; }
         public virtual ICollection<ExercicioFisico> ExerciciosFisicos { get; set; }
         public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
