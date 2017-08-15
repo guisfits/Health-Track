@@ -55,8 +55,8 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public virtual void Remover(Guid id)
         {
-            var entity = new TEntity() { Id = id };
-            DbSet.Remove(entity);
+            TEntity obj = ObterPorId(id);
+            DbSet.Remove(obj);
             SaveChanges();
         }
 

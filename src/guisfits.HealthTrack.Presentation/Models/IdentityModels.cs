@@ -23,6 +23,9 @@ namespace guisfits.HealthTrack.Presentation.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.AutoDetectChangesEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
 
         public static ApplicationDbContext Create()

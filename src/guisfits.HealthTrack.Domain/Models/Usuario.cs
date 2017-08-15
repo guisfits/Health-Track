@@ -1,6 +1,8 @@
 ﻿using guisfits.HealthTrack.Domain.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Linq;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
@@ -14,21 +16,16 @@ namespace guisfits.HealthTrack.Domain.Models
         public TipoSexo Sexo { get; set; }
         public double AlturaMetros { get; set; }
         public DateTime Nascimento { get; set; }
-        public bool Excluido { get; private set; } = false;
         private double _pesoAtual;
         public double PesoAtual
         {
             get
             {
                 if (PesosKg.Count > 0)
-                {
-                    var indexPeso = PesosKg.Count;
-                    this._pesoAtual = this.PesosKg[indexPeso - 1].ValorKg;
-                }
+                    this._pesoAtual = this.PesosKg[PesosKg.Count - 1].ValorKg;
                 else
-                {
                     this._pesoAtual = 0;
-                }
+
                 return this._pesoAtual;
             }
             set
@@ -41,7 +38,7 @@ namespace guisfits.HealthTrack.Domain.Models
             }
         }
 
-        public virtual IList<Peso> PesosKg { get; set; }
+        public virtual List<Peso> PesosKg { get; set; }
         public virtual ICollection<Alimento> Alimentos { get; set; }
         public virtual ICollection<ExercicioFisico> ExerciciosFisicos { get; set; }
         public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
@@ -83,15 +80,8 @@ namespace guisfits.HealthTrack.Domain.Models
         protected override bool EhValido()
         {
             //fazer uma melhor avaliação
-            if (Excluido == true)
-                return false;
-            else
-                return true;
-        }
-
-        public void Excluir()
-        {
-            Excluido = true;
+                
+            return true;
         }
     }
 }
