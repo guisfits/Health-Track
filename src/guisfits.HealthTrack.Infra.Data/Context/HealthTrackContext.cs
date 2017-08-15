@@ -10,10 +10,12 @@ namespace guisfits.HealthTrack.Infra.Data.Context
         public HealthTrackContext()
             :base("DefaultConnection")
         {
-
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.AutoDetectChangesEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Peso> Pesos { get; set; }
         public DbSet<ExercicioFisico> ExerciciosFisicos { get; set; }
         public DbSet<Alimento> Alimentos { get; set; }

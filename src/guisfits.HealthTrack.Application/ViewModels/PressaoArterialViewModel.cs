@@ -7,16 +7,8 @@ using System.Threading.Tasks;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
-    public class PressaoArterialViewModel
+    public class PressaoArterialViewModel : EntityViewModel
     {
-        [Key]
-        public Guid Id { get; set; }
-
-        public PressaoArterialViewModel()
-        {
-            Id = Guid.NewGuid();
-        }
-
         [Required(ErrorMessage = "")]
         public double Sistolica { get; set; }
 

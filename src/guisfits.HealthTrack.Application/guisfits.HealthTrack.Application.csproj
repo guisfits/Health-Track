@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>guisfits.HealthTrack.Application</RootNamespace>
     <AssemblyName>guisfits.HealthTrack.Application</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,19 +49,23 @@
     <Compile Include="AutoMapper\MappingProfile.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\UsuarioAppService.cs" />
     <Compile Include="ViewModels\AlimentoViewModel.cs" />
+    <Compile Include="ViewModels\EntityViewModel.cs" />
     <Compile Include="ViewModels\ExercicioFisicoViewModel.cs" />
     <Compile Include="ViewModels\PesoViewModel.cs" />
     <Compile Include="ViewModels\PressaoArterialViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\guisfits.HealthTrack.Domain\guisfits.HealthTrack.Domain.csproj">
       <Project>{28bb965c-3280-43a7-921f-63c906f8d748}</Project>
       <Name>guisfits.HealthTrack.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\guisfits.HealthTrack.Infra.Data\guisfits.HealthTrack.Infra.Data.csproj">
+      <Project>{4af456af-6987-47db-b0e9-f07bff049536}</Project>
+      <Name>guisfits.HealthTrack.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

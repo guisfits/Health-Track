@@ -6,14 +6,10 @@ using System.ComponentModel;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
-    public class UsuarioViewModel
+    public class UsuarioViewModel : EntityViewModel
     {
-        [Key]
-        public Guid Id { get; set; }
-
         public UsuarioViewModel()
         {
-            Id = Guid.NewGuid();
             Alimentos = new List<Alimento>();
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();

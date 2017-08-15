@@ -5,16 +5,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
-    public class ExercicioFisicoViewModel
+    public class ExercicioFisicoViewModel : EntityViewModel
     {
-        [Key]
-        public Guid Id { get; set; }
-
-        public ExercicioFisicoViewModel()
-        {
-            Id = Guid.NewGuid();
-        }
-
         [Required(ErrorMessage = "O campo Tipo de Exercício é requerido")]
         [DisplayName("Tipo de Exercício")]
         public TipoExercicio Tipo { get; set; }

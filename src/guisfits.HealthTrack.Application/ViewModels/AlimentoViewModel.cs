@@ -5,16 +5,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
-    public class AlimentoViewModel
+    public class AlimentoViewModel : EntityViewModel
     {
-        [Key]
-        public Guid Id { get; set; }
-
-        public AlimentoViewModel()
-        {
-            Id = Guid.NewGuid();
-        }
-
         [Required(ErrorMessage = "O campo Tipo de Alimento é requerido")]
         [DisplayName("Tipo de Alimento")]
         public TipoAlimento Tipo { get; set; }

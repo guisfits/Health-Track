@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace guisfits.HealthTrack.Infra.Data.Repository
 {
@@ -64,7 +65,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             return Db.SaveChanges();
         }
 
-        public IEnumerable<TEntity> Buscar(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
+        public IEnumerable<TEntity> Buscar(Expression<Func<TEntity, bool>> predicate)
         {
             return DbSet.Where(predicate);
         }

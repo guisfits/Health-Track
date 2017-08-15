@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{9707AED8-A991-4A46-8E3A-A26ABEDC4154}"
 EndProject
@@ -15,13 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Domain.Tests", "tests\guisfits.HealthTrack.Domain.Tests\guisfits.HealthTrack.Domain.Tests.csproj", "{9DD32D55-DA79-490C-92C2-01C2C055987C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Presentation", "src\guisfits.HealthTrack.Presentation\guisfits.HealthTrack.Presentation.csproj", "{250E1A75-2121-4100-BB6D-1CD83EAE4F63}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{23116319-DB44-4210-991C-2E2826FE57BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Infra.Data", "src\guisfits.HealthTrack.Infra.Data\guisfits.HealthTrack.Infra.Data.csproj", "{4AF456AF-6987-47DB-B0E9-F07BFF049536}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Application", "src\guisfits.HealthTrack.Application\guisfits.HealthTrack.Application.csproj", "{78C6A8FB-8EA2-4788-B600-0AC726758D23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Presentation", "src\guisfits.HealthTrack.Presentation\guisfits.HealthTrack.Presentation.csproj", "{250E1A75-2121-4100-BB6D-1CD83EAE4F63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,6 @@ Global
 		{9DD32D55-DA79-490C-92C2-01C2C055987C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD32D55-DA79-490C-92C2-01C2C055987C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DD32D55-DA79-490C-92C2-01C2C055987C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,6 +45,10 @@ Global
 		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78C6A8FB-8EA2-4788-B600-0AC726758D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,8 +57,11 @@ Global
 		{7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC} = {7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}
 		{28BB965C-3280-43A7-921F-63C906F8D748} = {7C384078-8408-4609-A7DC-75E8E623F49B}
 		{9DD32D55-DA79-490C-92C2-01C2C055987C} = {7C384078-8408-4609-A7DC-75E8E623F49B}
-		{250E1A75-2121-4100-BB6D-1CD83EAE4F63} = {9707AED8-A991-4A46-8E3A-A26ABEDC4154}
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536} = {7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}
 		{78C6A8FB-8EA2-4788-B600-0AC726758D23} = {23116319-DB44-4210-991C-2E2826FE57BA}
+		{250E1A75-2121-4100-BB6D-1CD83EAE4F63} = {9707AED8-A991-4A46-8E3A-A26ABEDC4154}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74FDFCB8-BB44-4259-A73B-AD44E4F08E35}
 	EndGlobalSection
 EndGlobal

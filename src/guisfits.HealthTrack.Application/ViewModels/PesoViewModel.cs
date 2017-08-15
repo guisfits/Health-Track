@@ -4,16 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
-    public class PesoViewModel
+    public class PesoViewModel : EntityViewModel
     {
-        [Key]
-        public Guid Id { get; set; }
-
-        public PesoViewModel()
-        {
-            Id = Guid.NewGuid();
-        }
-
         [Required(ErrorMessage = "O campo Pesagem (kg) é requerido")]
         [DisplayName("Pesagem {kg}")]
         public double ValorKg { get; set; }
