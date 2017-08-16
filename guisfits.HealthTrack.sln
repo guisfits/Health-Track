@@ -5,23 +5,29 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{9707AED8-A991-4A46-8E3A-A26ABEDC4154}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{7C384078-8408-4609-A7DC-75E8E623F49B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{7C384078-8408-4609-A7DC-75E8E623F49B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Domain", "src\guisfits.HealthTrack.Domain\guisfits.HealthTrack.Domain.csproj", "{28BB965C-3280-43A7-921F-63C906F8D748}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Domain.Tests", "tests\guisfits.HealthTrack.Domain.Tests\guisfits.HealthTrack.Domain.Tests.csproj", "{9DD32D55-DA79-490C-92C2-01C2C055987C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{23116319-DB44-4210-991C-2E2826FE57BA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{23116319-DB44-4210-991C-2E2826FE57BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Infra.Data", "src\guisfits.HealthTrack.Infra.Data\guisfits.HealthTrack.Infra.Data.csproj", "{4AF456AF-6987-47DB-B0E9-F07BFF049536}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Application", "src\guisfits.HealthTrack.Application\guisfits.HealthTrack.Application.csproj", "{78C6A8FB-8EA2-4788-B600-0AC726758D23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Presentation", "src\guisfits.HealthTrack.Presentation\guisfits.HealthTrack.Presentation.csproj", "{250E1A75-2121-4100-BB6D-1CD83EAE4F63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Service", "2 - Service", "{B1793061-8F7F-4806-B584-DB0D29A48487}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{CF3354AD-AF97-47C7-91FE-B6860B6E4487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.CrossCutting.MvcFilters", "src\guisfits.HealthTrack.CrossCutting.MvcFilters\guisfits.HealthTrack.CrossCutting.MvcFilters.csproj", "{EE25C9E9-68DB-428A-9D53-A32A89620395}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +55,10 @@ Global
 		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{250E1A75-2121-4100-BB6D-1CD83EAE4F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE25C9E9-68DB-428A-9D53-A32A89620395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE25C9E9-68DB-428A-9D53-A32A89620395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE25C9E9-68DB-428A-9D53-A32A89620395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE25C9E9-68DB-428A-9D53-A32A89620395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +70,8 @@ Global
 		{4AF456AF-6987-47DB-B0E9-F07BFF049536} = {7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}
 		{78C6A8FB-8EA2-4788-B600-0AC726758D23} = {23116319-DB44-4210-991C-2E2826FE57BA}
 		{250E1A75-2121-4100-BB6D-1CD83EAE4F63} = {9707AED8-A991-4A46-8E3A-A26ABEDC4154}
+		{CF3354AD-AF97-47C7-91FE-B6860B6E4487} = {7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}
+		{EE25C9E9-68DB-428A-9D53-A32A89620395} = {CF3354AD-AF97-47C7-91FE-B6860B6E4487}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74FDFCB8-BB44-4259-A73B-AD44E4F08E35}
