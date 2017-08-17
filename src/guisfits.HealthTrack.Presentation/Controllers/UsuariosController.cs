@@ -4,23 +4,32 @@ using System.Web.Mvc;
 using guisfits.HealthTrack.Application.ViewModels;
 using guisfits.HealthTrack.Application.Interfaces;
 using guisfits.HealthTrack.Application.Services;
+using guisfits.HealthTrack.CrossCutting.MvcFilters;
 
 namespace guisfits.HealthTrack.Presentation.Controllers
 {
+    [RoutePrefix("perfil")]
+    [Authorize]
     public class UsuariosController : Controller
     {
         private IUsuarioAppService usuarioAppService;
 
+        
         public UsuariosController()
         {
             usuarioAppService = new UsuarioAppService();
         }
 
+        [Route("listar-todos-clientes")]
+        [AllowAnonymous]
+        [ClaimsAuthorize("Clientes", "VI")]
         public ActionResult Index()
         {
             return View(usuarioAppService.ObterTodos());
         }
 
+        [Route("sobre-cliente")]
+        [ClaimsAuthorize("Clientes", "DE")]
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -35,11 +44,15 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(usuarioViewModel);
         }
 
+        [Route("criar-novo-cliente")]
+        [ClaimsAuthorize("Clientes", "CE")]
         public ActionResult Create()
         {
             return View();
         }
 
+        [Route("criar-novo-cliente")]
+        [ClaimsAuthorize("Clientes", "CE")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,AlturaMetros,Nascimento,PesoAtual")] UsuarioViewModel usuarioViewModel)
@@ -54,6 +67,8 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(usuarioViewModel);
         }
 
+        [Route("{id:guid}/alterar-cliente")]
+        [ClaimsAuthorize("Clientes", "ED")]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -68,6 +83,8 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(usuarioViewModel);
         }
 
+        [Route("{id:guid}/alterar-cliente")]
+        [ClaimsAuthorize("Clientes", "ED")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UsuarioViewModel usuarioViewModel)
@@ -80,6 +97,8 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(usuarioViewModel);
         }
 
+        [Route("{id:guid}/excluir-cliente")]
+        [ClaimsAuthorize("Clientes", "EX")]
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -94,6 +113,8 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(usuarioViewModel);
         }
 
+        [Route("{id:guid}/excluir-cliente")]
+        [ClaimsAuthorize("Clientes", "EX")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid? id)
