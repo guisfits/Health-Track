@@ -10,7 +10,13 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
         [TestMethod]
         public void AlimentacaoObjetoTest()
         {
-            var alimentacao = new Alimento(TipoAlimento.CafeDaManha, 100, DateTime.Now, "File de frango");
+            var alimentacao = new Alimento()
+            {
+                Tipo = TipoAlimento.CafeDaManha,
+                Calorias = 100,
+                DataHora = DateTime.Now,
+                Descricao = "File de frango"
+            };
             Assert.IsNotNull(alimentacao);
         }
     }

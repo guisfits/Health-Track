@@ -14,22 +14,9 @@ namespace guisfits.HealthTrack.Domain.Models
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
-        public ExercicioFisico(TipoExercicio tipo, double calorias, DateTime dataHora, string descricao = "")
-        {
-            this.Tipo = tipo;
-            this.Descricao = descricao;
-            this.Calorias = calorias;
-            this.DataHora = dataHora;
-        }
-
-        public ExercicioFisico()
-        {
-
-        }
-
         protected override bool EhValido()
         {
-            //tem que validar!!!
+            //Esperando pelas classes de validação
             return true;
         }
     }

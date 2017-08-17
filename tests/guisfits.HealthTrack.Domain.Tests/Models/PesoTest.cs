@@ -21,8 +21,7 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
         [TestMethod]
         public void setValorKgTest()
         {
-            var peso = new Peso(85, DateTime.Now);
-            peso.ValorKg = 80;
+            var peso = new Peso(85, DateTime.Now) {ValorKg = 80};
 
             Assert.AreEqual(80, peso.ValorKg);
         }
