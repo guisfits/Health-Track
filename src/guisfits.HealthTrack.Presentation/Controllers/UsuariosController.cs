@@ -22,14 +22,14 @@ namespace guisfits.HealthTrack.Presentation.Controllers
 
         [Route("listar-todos-clientes")]
         [AllowAnonymous]
-        [ClaimsAuthorize("Clientes", "VI")]
+        [ClaimsAuthorize("Usuarios", "VI")]
         public ActionResult Index()
         {
             return View(usuarioAppService.ObterTodos());
         }
 
         [Route("sobre-cliente")]
-        [ClaimsAuthorize("Clientes", "DE")]
+        [ClaimsAuthorize("Usuarios", "DE")]
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         }
 
         [Route("criar-novo-cliente")]
-        [ClaimsAuthorize("Clientes", "CE")]
+        [ClaimsAuthorize("Usuarios", "CE")]
         public ActionResult Create()
         {
             return View();
         }
 
         [Route("criar-novo-cliente")]
-        [ClaimsAuthorize("Clientes", "CE")]
+        [ClaimsAuthorize("Usuarios", "CE")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,AlturaMetros,Nascimento,PesoAtual")] UsuarioViewModel usuarioViewModel)
@@ -68,7 +68,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         }
 
         [Route("{id:guid}/alterar-cliente")]
-        [ClaimsAuthorize("Clientes", "ED")]
+        [ClaimsAuthorize("Usuarios", "ED")]
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -84,7 +84,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         }
 
         [Route("{id:guid}/alterar-cliente")]
-        [ClaimsAuthorize("Clientes", "ED")]
+        [ClaimsAuthorize("Usuarios", "ED")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UsuarioViewModel usuarioViewModel)
@@ -98,7 +98,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         }
 
         [Route("{id:guid}/excluir-cliente")]
-        [ClaimsAuthorize("Clientes", "EX")]
+        [ClaimsAuthorize("Usuarios", "EX")]
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -114,7 +114,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         }
 
         [Route("{id:guid}/excluir-cliente")]
-        [ClaimsAuthorize("Clientes", "EX")]
+        [ClaimsAuthorize("Usuarios", "EX")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid? id)
