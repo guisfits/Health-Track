@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="guisfits.HealthTrack.Domain.Models.Alimento">
+    <Position X="1.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAABAAAAACAgAAAAAIAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>Models\Alimento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="guisfits.HealthTrack.Domain.Models.Entity">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="guisfits.HealthTrack.Domain.Models.ExercicioFisico">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAABAAAAACAgAAAAAIAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>Models\ExercicioFisico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="guisfits.HealthTrack.Domain.Models.Peso">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAEgCAgAAAAAIAAAIAAAAAEEAAAAiA=</HashCode>
+      <FileName>Models\Peso.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="guisfits.HealthTrack.Domain.Models.PressaoArterial">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAAAAEAAAAAAAAACAgAAAAAIAAAAAAAAgEAAAAAAA=</HashCode>
+      <FileName>Models\PressaoArterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="guisfits.HealthTrack.Domain.Models.Usuario">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAAAAAQgBAgAAAAIAAAAAAAAAACAIkAAhA=</HashCode>
+      <FileName>Models\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="guisfits.HealthTrack.Domain.Models.TipoAlimento">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAABAAAAAAAAgAAABgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Alimento.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="guisfits.HealthTrack.Domain.Models.TipoExercicio">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAACAAAAAAAAEAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ExercicioFisico.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="guisfits.HealthTrack.Domain.Models.TipoSexo">
+    <Position X="9.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

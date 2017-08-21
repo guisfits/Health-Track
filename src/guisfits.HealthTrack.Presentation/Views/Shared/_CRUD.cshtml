@@ -1,0 +1,10 @@
+﻿@using guisfits.HealthTrack.Presentation.Helpers
+@using Mvc.RazorTools.FontAwesome
+@model guisfits.HealthTrack.Application.ViewModels.EntityViewModel
+@{
+<div class="btn-group" role="group" aria-label="Basic example">
+    <a type="button" class="btn btn-default btn-sm" href="@Url.Action("Details", new {id = Model.Id})" @Html.Raw(this.IfClaimShow("Usuarios", "DE"))> @Html.FontAwesome(FontAwesomeIconSet.Search)</a>C
+    <a type="button" class="btn btn-warning btn-sm" href="@Url.Action("Edit", new {id = Model.Id})" @Html.Raw(this.IfClaimShow("Usuarios", "ED"))> @Html.FontAwesome(FontAwesomeIconSet.Pencil)</a>
+    <a type="button" class="btn btn-danger btn-sm"  href="@Url.Action("Delete", new { id = Model.Id })" @Html.Raw(this.IfClaimShow("Usuarios", "EX"))> @Html.FontAwesome(FontAwesomeIconSet.Trash)</a>
+</div>
+}
