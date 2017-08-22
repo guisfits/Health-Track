@@ -13,5 +13,10 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         {
             return View();
         }
+
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
     }
 }

@@ -228,11 +228,21 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\logo.png" />
+    <Content Include="images\alimentos.jpg" />
+    <Content Include="images\banner1.svg" />
+    <Content Include="images\banner2.svg" />
+    <Content Include="images\banner3.svg" />
+    <Content Include="images\banner4.svg" />
+    <Content Include="images\exemplo.jpg" />
+    <Content Include="images\exercicio.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\peso.jpg" />
+    <Content Include="images\pressao.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="bower.json" />
     <Content Include=".bowerrc" />
@@ -708,6 +718,8 @@
     <Content Include="wwwroot\lib\font-awesome\scss\_screen-reader.scss" />
     <Content Include="wwwroot\lib\font-awesome\scss\_stacked.scss" />
     <Content Include="wwwroot\lib\font-awesome\scss\_variables.scss" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Shared\_Logo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

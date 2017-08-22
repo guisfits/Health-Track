@@ -1,11 +1,9 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace guisfits.HealthTrack.Presentation
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -14,22 +12,22 @@ namespace guisfits.HealthTrack.Presentation
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/Site").Include(
                 "~/Scripts/effects.js"));
 
+            //CSS
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/wwwroot/lib/font-awesome/css/font-awesome.css",
-                      "~/C:\dev\guisfits.HealthTrack\src\guisfitswwwroot\lib\bootswatch\cerulean\bootstrap.css"
-                      "~/Content/Site.css"));
+                "~/wwwroot/lib/font-awesome/css/font-awesome.css",
+                "~/wwwroot/lib/bootswatch/paper/bootstrap.css",
+                //"~/Content/carousel.css",
+                "~/Content/Site.css"));
                        
         }
     }
