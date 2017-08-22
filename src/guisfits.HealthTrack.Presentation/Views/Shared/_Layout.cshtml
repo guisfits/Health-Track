@@ -1,5 +1,4 @@
-﻿@using Mvc.RazorTools.FontAwesome
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -23,19 +22,15 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Usuarios")">@Html.FontAwesome(FontAwesomeIconSet.Users) Usuários</a></li>
-                    <li><a href="@Url.Action("About", "Home")">@Html.FontAwesome(FontAwesomeIconSet.InfoCircle) Sobre</a></li>
+                    <li><a href="@Url.Action("Index", "Usuarios")">Usuários</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
+
     <div class="container body-content">
         @RenderBody()
-        <footer class="navbar-default navbar-fixed-bottom">
-            <hr />
-            <p class="row text-center">&copy; @DateTime.Now.Year - Health Track</p>
-        </footer>
     </div>  
 
     @Scripts.Render("~/bundles/jquery")

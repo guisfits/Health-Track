@@ -25,3 +25,12 @@ textarea {
 
 
 /* Implementadas por Guilherme Camargo */
+
+.footer {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    line-height: 40px; /* Vertically center the text there */
+}

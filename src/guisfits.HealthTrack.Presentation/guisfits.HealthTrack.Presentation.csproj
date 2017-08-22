@@ -54,9 +54,6 @@
     <Reference Include="Mvc.RazorTools, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Mvc.RazorTools.Base.1.0.5\lib\net45\Mvc.RazorTools.dll</HintPath>
     </Reference>
-    <Reference Include="Mvc.RazorTools.FontAwesome, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Mvc.RazorTools.FontAwesome.4.3.0.0\lib\net45\Mvc.RazorTools.FontAwesome.dll</HintPath>
-    </Reference>
     <Reference Include="SimpleInjector, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SimpleInjector.4.0.8\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
@@ -208,7 +205,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
-    <Compile Include="App_Start\Razor Tools\FontAwesome.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -229,10 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\bootswatch-paper.css" />
-    <Content Include="Content\bootswatch-paper.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

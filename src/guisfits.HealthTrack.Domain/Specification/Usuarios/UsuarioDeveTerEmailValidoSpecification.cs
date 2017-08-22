@@ -1,5 +1,6 @@
 ﻿using DomainValidation.Interfaces.Specification;
 using guisfits.HealthTrack.Domain.Models;
+using guisfits.HealthTrack.Domain.ValueObjects;
 
 namespace guisfits.HealthTrack.Domain.Specification.Usuarios
 {
@@ -7,7 +8,7 @@ namespace guisfits.HealthTrack.Domain.Specification.Usuarios
     {
         public bool IsSatisfiedBy(Usuario entity)
         {
-            return true;
+            return Email.Validar(entity.Email);
         }
     }
 }

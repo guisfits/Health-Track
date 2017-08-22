@@ -27,10 +27,8 @@ namespace guisfits.HealthTrack.Presentation
                 "~/Scripts/effects.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      //"~/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
-                      "~/Content/bootswatch-paper.css",
                       "~/wwwroot/lib/font-awesome/css/font-awesome.css",
-                      "~/Content/font-awesome.css",
+                      "~/C:\dev\guisfits.HealthTrack\src\guisfitswwwroot\lib\bootswatch\cerulean\bootstrap.css"
                       "~/Content/Site.css"));
                        
         }

@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNet.Identity
-@using Mvc.RazorTools.FontAwesome
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -7,9 +6,8 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Ola " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
+        <li>@Html.ActionLink("Ola " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+        <li><a href="@Url.Action("About", "Home")">Sobre</a></li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
     </ul>
     }
@@ -17,7 +15,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Cadastrar", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li><a href="@Url.Action("About", "Home")">Sobre</a></li>
         <li>@Html.ActionLink("Entrar", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }
