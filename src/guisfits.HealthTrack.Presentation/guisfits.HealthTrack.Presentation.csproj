@@ -57,6 +57,15 @@
     <Reference Include="Mvc.RazorTools.FontAwesome, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Mvc.RazorTools.FontAwesome.4.3.0.0\lib\net45\Mvc.RazorTools.FontAwesome.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.0.8\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.Web.4.0.8\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.Web.Mvc.4.0.8\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -109,6 +118,9 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
@@ -198,6 +210,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\Razor Tools\FontAwesome.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -674,6 +687,10 @@
     <ProjectReference Include="..\guisfits.HealthTrack.Application\guisfits.HealthTrack.Application.csproj">
       <Project>{78c6a8fb-8ea2-4788-b600-0ac726758d23}</Project>
       <Name>guisfits.HealthTrack.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\guisfits.HealthTrack.CrossCutting.IoC\guisfits.HealthTrack.CrossCutting.IoC.csproj">
+      <Project>{d8bdaf51-0c3f-4c8b-88c6-3b38710742c1}</Project>
+      <Name>guisfits.HealthTrack.CrossCutting.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\guisfits.HealthTrack.CrossCutting.MvcFilters\guisfits.HealthTrack.CrossCutting.MvcFilters.csproj">
       <Project>{ee25c9e9-68db-428a-9d53-a32a89620395}</Project>

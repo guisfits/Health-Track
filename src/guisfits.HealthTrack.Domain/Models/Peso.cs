@@ -11,7 +11,7 @@ namespace guisfits.HealthTrack.Domain.Models
         private double _valorKg;
         public double ValorKg
         {
-            get { return _valorKg; }
+            get => _valorKg;
             set
             {   if (value > 0)
                     _valorKg = value;
@@ -26,10 +26,10 @@ namespace guisfits.HealthTrack.Domain.Models
             this.DataHora = DataHora;
         }
 
-        public Peso(double PesoKg)
+        public Peso(double pesoKg)
         {
-            if (PesoKg > 0)
-                this._valorKg = PesoKg;
+            if (pesoKg > 0)
+                this._valorKg = pesoKg;
             else
                 throw new Exception();
 

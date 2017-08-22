@@ -35,11 +35,6 @@ namespace guisfits.HealthTrack.Presentation
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser> store)
-            : base(store)
-        {
-        }
-
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
@@ -86,7 +81,14 @@ namespace guisfits.HealthTrack.Presentation
             }
             return manager;
         }
+
+        public ApplicationUserManager(IUserStore<ApplicationUser> store)
+            : base(store)
+        {
+        }
     }
+
+   
 
     // Configure the application sign-in manager which is used in this application.
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>

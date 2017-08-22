@@ -14,25 +14,21 @@ namespace guisfits.HealthTrack.Domain.Models
         public TipoSexo Sexo { get; set; }
         public double AlturaMetros { get; set; }
         public DateTime Nascimento { get; set; }
+
         private double _pesoAtual;
         public double PesoAtual
         {
             get
             {
-                if (PesosKg.Count > 0)
-                    this._pesoAtual = this.PesosKg[PesosKg.Count - 1].ValorKg;
-                else
-                    this._pesoAtual = 0;
-
-                return this._pesoAtual;
+                _pesoAtual = PesosKg.Count > 0 ? PesosKg[PesosKg.Count - 1].ValorKg : 0;
+                return _pesoAtual;
             }
             set
             {
-                if (value > 0)
-                {
-                    _pesoAtual = value;
-                    this.PesosKg.Add(new Peso(_pesoAtual));
-                }
+                if (!(value > 0)) return;
+
+                _pesoAtual = value;
+                PesosKg.Add(new Peso(_pesoAtual));
             }
         }
 
@@ -40,22 +36,6 @@ namespace guisfits.HealthTrack.Domain.Models
         public virtual ICollection<Alimento> Alimentos { get; set; }
         public virtual ICollection<ExercicioFisico> ExerciciosFisicos { get; set; }
         public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
-
-        public Usuario(string Nome, string Sobrenome, string Email, TipoSexo Sexo, double AlturaMetros, DateTime Nascimento, double PesoKg)
-        {
-            this.Nome = Nome;
-            this.Sobrenome = Sobrenome;
-            this.Email = Email;
-            this.Sexo = Sexo;
-            this.AlturaMetros = AlturaMetros;
-            this.Nascimento = Nascimento;
-
-            Alimentos = new List<Alimento>();
-            ExerciciosFisicos = new List<ExercicioFisico>();
-            PressoesArteriais = new List<PressaoArterial>();
-            PesosKg = new List<Peso>();
-            PesosKg.Add(new Peso(PesoKg));
-        }
 
         public Usuario()
         {
@@ -70,7 +50,7 @@ namespace guisfits.HealthTrack.Domain.Models
             return $"{Nome} {Sobrenome}";
         }
 
-        public IMC getIMC()
+        public IMC GetImc()
         {
             return new IMC(this._pesoAtual, this.AlturaMetros);
         }

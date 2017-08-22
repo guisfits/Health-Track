@@ -3,7 +3,6 @@ using System.Net;
 using System.Web.Mvc;
 using guisfits.HealthTrack.Application.ViewModels;
 using guisfits.HealthTrack.Application.Interfaces;
-using guisfits.HealthTrack.Application.Services;
 using guisfits.HealthTrack.CrossCutting.MvcFilters;
 
 namespace guisfits.HealthTrack.Presentation.Controllers
@@ -12,12 +11,11 @@ namespace guisfits.HealthTrack.Presentation.Controllers
     [Authorize]
     public class UsuariosController : Controller
     {
-        private IUsuarioAppService usuarioAppService;
+        private readonly IUsuarioAppService _usuarioAppService;
 
-        
-        public UsuariosController()
+        public UsuariosController(IUsuarioAppService usuarioAppService)
         {
-            usuarioAppService = new UsuarioAppService();
+            this._usuarioAppService = usuarioAppService;
         }
 
         [Route("listar-todos-clientes")]
@@ -25,7 +23,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         [ClaimsAuthorize("Usuarios", "VI")]
         public ActionResult Index()
         {
-            return View(usuarioAppService.ObterTodos());
+            return View(_usuarioAppService.ObterTodos());
         }
 
         [Route("sobre-cliente")]
@@ -36,7 +34,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UsuarioViewModel usuarioViewModel = usuarioAppService.ObterPorId(id.Value);
+            UsuarioViewModel usuarioViewModel = _usuarioAppService.ObterPorId(id.Value);
             if (usuarioViewModel == null)
             {
                 return HttpNotFound();
@@ -60,7 +58,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             if (ModelState.IsValid)
             {
                 usuarioViewModel.Id = Guid.NewGuid();
-                usuarioAppService.Adicionar(usuarioViewModel);
+                _usuarioAppService.Adicionar(usuarioViewModel);
                 return RedirectToAction("Index");
             }
 
@@ -75,7 +73,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UsuarioViewModel usuarioViewModel = usuarioAppService.ObterPorId(id.Value);
+            UsuarioViewModel usuarioViewModel = _usuarioAppService.ObterPorId(id.Value);
             if (usuarioViewModel == null)
             {
                 return HttpNotFound();
@@ -91,7 +89,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
-                usuarioAppService.Atualizar(usuarioViewModel);
+                _usuarioAppService.Atualizar(usuarioViewModel);
                 return RedirectToAction("Index");
             }
             return View(usuarioViewModel);
@@ -105,7 +103,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UsuarioViewModel usuarioViewModel = usuarioAppService.ObterPorId(id.Value);
+            UsuarioViewModel usuarioViewModel = _usuarioAppService.ObterPorId(id.Value);
             if (usuarioViewModel == null)
             {
                 return HttpNotFound();
@@ -119,8 +117,8 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid? id)
         {
-            UsuarioViewModel usuarioViewModel = usuarioAppService.ObterPorId(id.Value);
-            usuarioAppService.Remover(id.Value);
+            UsuarioViewModel usuarioViewModel = _usuarioAppService.ObterPorId(id.Value);
+            _usuarioAppService.Remover(id.Value);
             return RedirectToAction("Index");
         }
 
@@ -128,7 +126,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         {
             if (disposing)
             {
-                usuarioAppService.Dispose();
+                _usuarioAppService.Dispose();
             }
             base.Dispose(disposing);
         }

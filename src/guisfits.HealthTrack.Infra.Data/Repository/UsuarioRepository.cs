@@ -1,13 +1,13 @@
 ﻿using guisfits.HealthTrack.Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using Dapper;
+using guisfits.HealthTrack.Domain.Interfaces.Repository;
 
 namespace guisfits.HealthTrack.Infra.Data.Repository
 {
-    public class UsuarioRepository : Repository<Usuario>
+    public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
     {
         public override Usuario ObterPorId(Guid id)
         {

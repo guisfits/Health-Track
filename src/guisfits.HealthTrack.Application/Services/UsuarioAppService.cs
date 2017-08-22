@@ -3,25 +3,28 @@ using System;
 using System.Collections.Generic;
 using guisfits.HealthTrack.Application.ViewModels;
 using AutoMapper;
+using guisfits.HealthTrack.Domain.Interfaces.Repository;
+using guisfits.HealthTrack.Domain.Interfaces.Services;
 using guisfits.HealthTrack.Domain.Models;
-using guisfits.HealthTrack.Infra.Data.Repository;
 
 namespace guisfits.HealthTrack.Application.Services
 {
     public class UsuarioAppService : IUsuarioAppService
     {
-        private readonly UsuarioRepository usuarioRepository;
+        private readonly IUsuarioRepository usuarioRepository;
+        private readonly IUsuarioService usuarioService;
 
-        public UsuarioAppService()
+        public UsuarioAppService(IUsuarioRepository usuarioRepository, IUsuarioService usuarioService)
         {
-            usuarioRepository = new UsuarioRepository();
+            this.usuarioRepository = usuarioRepository;
+            this.usuarioService = usuarioService;
         }
 
         public UsuarioViewModel Adicionar(UsuarioViewModel obj)
         {
             var usuario = Mapper.Map<Usuario>(obj);
             usuario.PesoAtual = obj.PesoAtual;
-            usuarioRepository.Adicionar(usuario);
+            usuarioService.Adicionar(usuario);
             return obj;
         }
 
@@ -30,7 +33,7 @@ namespace guisfits.HealthTrack.Application.Services
             //var usuario = Mapper.Map<Usuario>(obj);
             //usuario.PesoAtual = obj.PesoAtual;
             //usuarioRepository.Atualizar(usuario);
-            usuarioRepository.Atualizar(Mapper.Map<Usuario>(obj));
+            usuarioService.Atualizar(Mapper.Map<Usuario>(obj));
             return obj;
         }
 
@@ -53,12 +56,13 @@ namespace guisfits.HealthTrack.Application.Services
 
         public void Remover(Guid id)
         {
-            usuarioRepository.Remover(id);
+            usuarioService.Remover(id);
         }
 
         public void Dispose()
         {
             usuarioRepository.Dispose();
+            usuarioService.Dispose();
         }
     }
 }

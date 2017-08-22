@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace guisfits.HealthTrack.Domain.Services
+﻿namespace guisfits.HealthTrack.Domain.Services
 {
     public class IMC
     {
@@ -14,23 +12,22 @@ namespace guisfits.HealthTrack.Domain.Services
                 if (Valor < 17)
                     return "Muito abaixo do peso";
 
-                else if(Valor <= 18.49) 
+                if(Valor <= 18.49) 
                     return "Abaixo do peso";
 
-                else if(Valor <= 24.99) 
+                if(Valor <= 24.99) 
                     return "Peso normal";
 
-                else if(Valor <= 29.99) 
+                if(Valor <= 29.99) 
                     return "Acima do peso";
 
-                else if(Valor <= 34.99) 
+                if(Valor <= 34.99) 
                     return "Obeso";
 
-                else if(Valor <= 39.99) 
+                if(Valor <= 39.99) 
                     return "Obesidade severa";
 
-                else
-                    return "Obesidade mórbida";
+                return "Obesidade mórbida";
             }
         }
 

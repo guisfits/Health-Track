@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{28BB965C-3280-43A7-921F-63C906F8D748}</ProjectGuid>
+    <ProjectGuid>{D8BDAF51-0C3F-4C8B-88C6-3B38710742C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>guisfits.HealthTrack.Domain</RootNamespace>
-    <AssemblyName>guisfits.HealthTrack.Domain</AssemblyName>
+    <RootNamespace>guisfits.HealthTrack.CrossCutting.IoC</RootNamespace>
+    <AssemblyName>guisfits.HealthTrack.CrossCutting.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,28 +30,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SimpleInjector, Version=4.0.8.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.0.8\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\Repository\IAlimentoRepository.cs" />
-    <Compile Include="Interfaces\Repository\IExercicioFisicoRepository.cs" />
-    <Compile Include="Interfaces\Repository\IPesoRepository.cs" />
-    <Compile Include="Interfaces\Repository\IPressaoArterialRepository.cs" />
-    <Compile Include="Interfaces\Repository\IRepository.cs" />
-    <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
-    <Compile Include="Interfaces\Services\IUsuarioService.cs" />
-    <Compile Include="Models\Alimento.cs" />
-    <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\ExercicioFisico.cs" />
-    <Compile Include="Services\IMC.cs" />
-    <Compile Include="Models\Peso.cs" />
-    <Compile Include="Models\PressaoArterial.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\UsuarioService.cs" />
+    <Compile Include="SimpleInjectorContainer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\guisfits.HealthTrack.Application\guisfits.HealthTrack.Application.csproj">
+      <Project>{78c6a8fb-8ea2-4788-b600-0ac726758d23}</Project>
+      <Name>guisfits.HealthTrack.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\guisfits.HealthTrack.Domain\guisfits.HealthTrack.Domain.csproj">
+      <Project>{28bb965c-3280-43a7-921f-63c906f8d748}</Project>
+      <Name>guisfits.HealthTrack.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\guisfits.HealthTrack.Infra.Data\guisfits.HealthTrack.Infra.Data.csproj">
+      <Project>{4af456af-6987-47db-b0e9-f07bff049536}</Project>
+      <Name>guisfits.HealthTrack.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,9 +23,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="@Url.Action("Index", "Usuarios")">@Html.FontAwesome(FontAwesomeIconSet.User) Usuários</a></li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home") </li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li><a href="@Url.Action("Index", "Usuarios")">@Html.FontAwesome(FontAwesomeIconSet.Users) Usuários</a></li>
+                    <li><a href="@Url.Action("About", "Home")">@Html.FontAwesome(FontAwesomeIconSet.InfoCircle) Sobre</a></li>
+                    <li><a href="@Url.Action("Contact", "Home")">@Html.FontAwesome(FontAwesomeIconSet.Phone) Contato</a></li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

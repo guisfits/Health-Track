@@ -1,8 +1,9 @@
-﻿using guisfits.HealthTrack.Domain.Models;
+﻿using guisfits.HealthTrack.Domain.Interfaces.Repository;
+using guisfits.HealthTrack.Domain.Models;
 
 namespace guisfits.HealthTrack.Infra.Data.Repository
 {
-    public class PressaoArterialRepository : Repository<PressaoArterial>
+    public class PressaoArterialRepository : Repository<PressaoArterial>, IPressaoArterialRepository
     {
     }
 }
