@@ -23,11 +23,16 @@ namespace guisfits.HealthTrack.Presentation
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Site").Include(
+                "~/Scripts/effects.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      //"~/Content/bootstrap.css",
+                      //"~/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
                       "~/Content/bootswatch-paper.css",
+                      "~/wwwroot/lib/font-awesome/css/font-awesome.css",
                       "~/Content/font-awesome.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
+                       
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using guisfits.HealthTrack.Domain.Models;
 using guisfits.HealthTrack.Infra.Data.EntityConfig;
-using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
 
 namespace guisfits.HealthTrack.Infra.Data.Context
 {
@@ -42,23 +40,6 @@ namespace guisfits.HealthTrack.Infra.Data.Context
             modelBuilder.Configurations.Add(new PesoConfig());
 
             base.OnModelCreating(modelBuilder);
-        }
-
-        public override int SaveChanges()
-        {
-            foreach (var entry in this.ChangeTracker.Entries().Where(entry => entry.GetType().GetProperty("PesoAtual") != null))
-            {
-                //if (entry.State == EntityState.Added)
-                //{
-                //    if (entry.Property("DataHora").CurrentValue == null)
-                //        entry.Property("DataHora").CurrentValue = DateTime.UtcNow;
-                //}
-                if (entry.State == EntityState.Modified)
-                {
-                    entry.Property("PesoAtual").IsModified = false;
-                }
-            }
-            return base.SaveChanges();
         }
     }
 }

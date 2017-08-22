@@ -30,8 +30,7 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
             Property(p => p.Nascimento)
                 .IsRequired();
 
-            Property(p => p.PesoAtual)
-                .IsRequired();
+            Ignore(p => p.PesoAtual);
 
             ToTable("Usuarios");
         }
