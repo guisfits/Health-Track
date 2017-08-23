@@ -27,6 +27,8 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
                 .WithMany(p => p.Alimentos)
                 .HasForeignKey(p => p.UsuarioId);
 
+            Ignore(p => p.ValidationResult);
+
             ToTable("Alimentos");
         }
     }

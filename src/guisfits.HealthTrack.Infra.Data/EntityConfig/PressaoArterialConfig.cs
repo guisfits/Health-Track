@@ -26,6 +26,8 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
                 .WithMany(p => p.PressoesArteriais)
                 .HasForeignKey(p => p.UsuarioId);
 
+            Ignore(p => p.ValidationResult);
+
             ToTable("PressoesArteriais");
         }
     }

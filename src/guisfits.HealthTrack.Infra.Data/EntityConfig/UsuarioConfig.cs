@@ -32,6 +32,8 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
 
             Ignore(p => p.PesoAtual);
 
+            Ignore(p => p.ValidationResult);
+
             ToTable("Usuarios");
         }
     }

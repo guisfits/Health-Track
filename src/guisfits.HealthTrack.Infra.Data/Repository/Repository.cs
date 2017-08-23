@@ -29,10 +29,8 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public virtual TEntity Atualizar(TEntity obj)
         {
-            var entry = Db.Entry(obj);
             DbSet.Attach(obj);
-
-            entry.State = EntityState.Modified;
+            Db.Entry(obj).State = EntityState.Modified;
             SaveChanges();
 
             return obj;
@@ -56,7 +54,9 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
         public virtual void Remover(Guid id)
         {
             TEntity obj = ObterPorId(id);
+            Db.Entry(obj).State = EntityState.Deleted;
             DbSet.Remove(obj);
+
             SaveChanges();
         }
 

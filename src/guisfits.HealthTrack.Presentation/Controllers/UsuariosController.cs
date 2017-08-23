@@ -124,7 +124,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid? id)
         {
-            UsuarioViewModel usuarioViewModel = _usuarioAppService.ObterPorId(id.Value);
             _usuarioAppService.Remover(id.Value);
             return RedirectToAction("Index");
         }

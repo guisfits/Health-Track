@@ -15,6 +15,7 @@ namespace guisfits.HealthTrack.Domain.Models
         public TipoSexo Sexo { get; set; }
         public double AlturaMetros { get; set; }
         public DateTime Nascimento { get; set; }
+        public bool Excluido { get; private set; } = false;
 
         private double _pesoAtual;
         public double PesoAtual
@@ -59,7 +60,12 @@ namespace guisfits.HealthTrack.Domain.Models
         public override bool EhValido()
         {
             ValidationResult = new UsuarioEstaConsistenteValidation().Validate(this);
-            return ValidationResult.IsValid;
+            return ValidationResult.IsValid && Excluido == false;
+        }
+
+        public void Excluir()
+        {
+            Excluido = true;
         }
     }
 }

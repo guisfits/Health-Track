@@ -719,6 +719,7 @@
     <Content Include="wwwroot\lib\font-awesome\scss\_variables.scss" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\_Logo.cshtml" />
+    <Content Include="Views\Shared\_SummaryErrors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
