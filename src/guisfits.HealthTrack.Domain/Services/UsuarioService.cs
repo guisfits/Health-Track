@@ -16,6 +16,9 @@ namespace guisfits.HealthTrack.Domain.Services
 
         public Usuario Adicionar(Usuario usuario)
         {
+            if (!usuario.EhValido())
+                return usuario;
+
             return _usuarioRepository.Adicionar(usuario);
         }
 

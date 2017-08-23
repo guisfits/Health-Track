@@ -24,15 +24,15 @@ namespace guisfits.HealthTrack.Application.Services
         {
             var usuario = Mapper.Map<Usuario>(obj);
             usuario.PesoAtual = obj.PesoAtual;
-            usuarioService.Adicionar(usuario);
+
+            var result = usuarioService.Adicionar(usuario);
+            obj = Mapper.Map<UsuarioViewModel>(result);
+
             return obj;
         }
 
         public UsuarioViewModel Atualizar(UsuarioViewModel obj)
         {
-            //var usuario = Mapper.Map<Usuario>(obj);
-            //usuario.PesoAtual = obj.PesoAtual;
-            //usuarioRepository.Atualizar(usuario);
             usuarioService.Atualizar(Mapper.Map<Usuario>(obj));
             return obj;
         }

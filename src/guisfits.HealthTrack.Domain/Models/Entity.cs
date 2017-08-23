@@ -1,4 +1,5 @@
 ﻿using System;
+using DomainValidation.Validation;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
@@ -9,8 +10,11 @@ namespace guisfits.HealthTrack.Domain.Models
         protected Entity()
         {
             Id = Guid.NewGuid();
+            ValidationResult = new ValidationResult();
         }
 
-        protected abstract bool EhValido();
+        public ValidationResult ValidationResult { get; set; }
+
+        public abstract bool EhValido();
     }
 }

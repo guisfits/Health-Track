@@ -55,14 +55,21 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,AlturaMetros,Nascimento,PesoAtual")] UsuarioViewModel usuarioViewModel)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+                return View(usuarioViewModel);
+
+            usuarioViewModel = _usuarioAppService.Adicionar(usuarioViewModel);
+            var result = usuarioViewModel.ValidationResult;
+
+            if (!result.IsValid)
             {
-                usuarioViewModel.Id = Guid.NewGuid();
-                _usuarioAppService.Adicionar(usuarioViewModel);
-                return RedirectToAction("Index");
+                foreach (var erro in result.Erros)
+                    ModelState.AddModelError(string.Empty, erro.Message);
+
+                return View(usuarioViewModel);
             }
 
-            return View(usuarioViewModel);
+            return RedirectToAction("Index");
         }
 
         [Route("{id:guid}/alterar-cliente")]

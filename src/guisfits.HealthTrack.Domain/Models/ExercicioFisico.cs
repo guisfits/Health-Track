@@ -14,7 +14,7 @@ namespace guisfits.HealthTrack.Domain.Models
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
-        protected override bool EhValido()
+        public override bool EhValido()
         {
             //Esperando pelas classes de validação
             return true;

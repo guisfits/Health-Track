@@ -64,7 +64,7 @@ namespace guisfits.HealthTrack.Domain.Models
 
         }
 
-        protected override bool EhValido()
+        public override bool EhValido()
         {
             //Esperando pelas classes de validação
             return true;

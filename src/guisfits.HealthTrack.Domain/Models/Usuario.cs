@@ -1,6 +1,7 @@
 ﻿using guisfits.HealthTrack.Domain.Services;
 using System;
 using System.Collections.Generic;
+using guisfits.HealthTrack.Domain.Validation.Usuarios;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
@@ -55,10 +56,10 @@ namespace guisfits.HealthTrack.Domain.Models
             return new IMC(this._pesoAtual, this.AlturaMetros);
         }
 
-        protected override bool EhValido()
+        public override bool EhValido()
         {
-            //Esperando pelas classes de validação
-            return true;
+            ValidationResult = new UsuarioEstaConsistenteValidation().Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }
