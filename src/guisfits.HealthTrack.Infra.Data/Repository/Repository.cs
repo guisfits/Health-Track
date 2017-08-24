@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 
 namespace guisfits.HealthTrack.Infra.Data.Repository
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
         protected HealthTrackContext Db;
         protected DbSet<TEntity> DbSet;
@@ -56,7 +56,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public virtual void Remover(Guid id)
         {
-            var obj = new TEntity() { Id = id };
+            TEntity obj = ObterPorId(id);
             DbSet.Remove(obj);
         }
         

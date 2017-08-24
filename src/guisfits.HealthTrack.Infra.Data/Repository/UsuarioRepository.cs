@@ -17,7 +17,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             var sql = @"SELECT * FROM Usuarios u " +
                       "LEFT JOIN Pesos p " +
                       "ON u.Id = p.UsuarioId " +
-                      "WHERE u.Id = @uid AND u.Excluido = 0";
+                      "WHERE u.Id = @uid";
 
             return Db.Database.Connection.Query<Usuario, Peso, Usuario>(sql,
                 (u, p) =>
@@ -44,7 +44,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public override void Remover(Guid id)
         {
-            Usuario obj = new Usuario() { Id = id };
+            Usuario obj = ObterPorId(id);
             obj.Excluir();
 
             Atualizar(obj);
