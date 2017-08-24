@@ -62,6 +62,8 @@
     <Compile Include="Repository\PressaoArterialRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />
+    <Compile Include="UoW\IUnitOfWork.cs" />
+    <Compile Include="UoW\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

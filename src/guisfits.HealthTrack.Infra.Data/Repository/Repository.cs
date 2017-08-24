@@ -14,16 +14,15 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
         protected HealthTrackContext Db;
         protected DbSet<TEntity> DbSet;
 
-        public Repository()
+        public Repository(HealthTrackContext context)
         {
-            Db = new HealthTrackContext();
+            Db = context;
             DbSet = Db.Set<TEntity>();
         }
 
         public virtual TEntity Adicionar(TEntity obj)
         {
             var objAdded = DbSet.Add(obj);
-            SaveChanges();
             return objAdded;
         }
 
@@ -31,14 +30,8 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
         {
             DbSet.Attach(obj);
             Db.Entry(obj).State = EntityState.Modified;
-            SaveChanges();
 
             return obj;
-        }
-
-        public virtual IEnumerable<TEntity> ObterPaginado(int s, int t)
-        {
-            return DbSet.Skip(s).Take(t).ToList();
         }
 
         public virtual TEntity ObterPorId(Guid id)
@@ -51,23 +44,25 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             return DbSet.ToList();
         }
 
-        public virtual void Remover(Guid id)
+        public virtual IEnumerable<TEntity> ObterPaginado(int s, int t)
         {
-            TEntity obj = ObterPorId(id);
-            Db.Entry(obj).State = EntityState.Deleted;
-            DbSet.Remove(obj);
-
-            SaveChanges();
-        }
-
-        public int SaveChanges()
-        {
-            return Db.SaveChanges();
+            return DbSet.Skip(s).Take(t).ToList();
         }
 
         public IEnumerable<TEntity> Buscar(Expression<Func<TEntity, bool>> predicate)
         {
             return DbSet.Where(predicate);
+        }
+
+        public virtual void Remover(Guid id)
+        {
+            var obj = new TEntity() { Id = id };
+            DbSet.Remove(obj);
+        }
+        
+        public int SaveChanges()
+        {
+            return Db.SaveChanges();
         }
 
         public void Dispose()

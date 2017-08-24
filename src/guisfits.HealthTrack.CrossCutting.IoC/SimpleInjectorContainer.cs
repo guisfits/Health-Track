@@ -5,6 +5,7 @@ using guisfits.HealthTrack.Domain.Interfaces.Services;
 using guisfits.HealthTrack.Domain.Services;
 using guisfits.HealthTrack.Infra.Data.Context;
 using guisfits.HealthTrack.Infra.Data.Repository;
+using guisfits.HealthTrack.Infra.Data.UoW;
 using SimpleInjector;
 
 namespace guisfits.HealthTrack.CrossCutting.IoC
@@ -25,6 +26,7 @@ namespace guisfits.HealthTrack.CrossCutting.IoC
             container.Register<IPesoRepository, PesoRepository>(Lifestyle.Scoped);
             container.Register<IExercicioFisicoRepository, ExercicioFisicoRepository>(Lifestyle.Scoped);
             container.Register<IPressaoArterialRepository, PressaoArterialRepository>(Lifestyle.Scoped);
+            container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<HealthTrackContext>(Lifestyle.Scoped);
         }
     }

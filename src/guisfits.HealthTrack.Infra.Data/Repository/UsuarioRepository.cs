@@ -1,15 +1,17 @@
 ﻿using guisfits.HealthTrack.Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using Dapper;
 using guisfits.HealthTrack.Domain.Interfaces.Repository;
+using guisfits.HealthTrack.Infra.Data.Context;
 
 namespace guisfits.HealthTrack.Infra.Data.Repository
 {
     public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
     {
+        public UsuarioRepository(HealthTrackContext context) : base(context) { }
+
         public override Usuario ObterPorId(Guid id)
         {
             var sql = @"SELECT * FROM Usuarios u " +
@@ -42,11 +44,10 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public override void Remover(Guid id)
         {
-            Usuario obj = ObterPorId(id);
-            Db.Usuarios.Attach(obj);
-            Db.Entry(obj).State = EntityState.Deleted;
-            DbSet.Remove(obj);
-            SaveChanges();
+            Usuario obj = new Usuario() { Id = id };
+            obj.Excluir();
+
+            Atualizar(obj);
         }
     }
 }
