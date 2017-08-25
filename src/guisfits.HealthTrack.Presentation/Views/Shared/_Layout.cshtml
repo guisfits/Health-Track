@@ -21,10 +21,10 @@
                 @Html.ActionLink("Health Track", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav">
+                @*<ul class="nav navbar-nav">
                     <li><a href="@Url.Action("Dashboard", "Home")">Dashboard</a></li>
                     <li><a href="@Url.Action("Index", "Usuarios")">Usuários</a></li>
-                </ul>
+                </ul>*@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

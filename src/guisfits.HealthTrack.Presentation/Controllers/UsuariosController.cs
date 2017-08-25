@@ -19,7 +19,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         }
 
         [Route("listar-todos-clientes")]
-        [AllowAnonymous]
         [ClaimsAuthorize("Usuarios", "VI")]
         public ActionResult Index()
         {
