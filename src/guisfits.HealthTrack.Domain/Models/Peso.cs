@@ -60,11 +60,6 @@ namespace guisfits.HealthTrack.Domain.Models
             return (this._valorKg == other.ValorKg) && (this.DataHora == other.DataHora);
         }
 
-        public override bool Equals(object obj)
-        {
-            return this.Equals((Peso)obj);
-        }
-
         public override int GetHashCode()
         {
             return this._valorKg.GetHashCode() ^ this.DataHora.GetHashCode();

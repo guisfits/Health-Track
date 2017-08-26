@@ -13,6 +13,7 @@ namespace guisfits.HealthTrack.Application.AutoMapper
             CreateMap<Alimento, AlimentoViewModel>().ReverseMap();
             CreateMap<ExercicioFisico, ExercicioFisicoViewModel>().ReverseMap();
             CreateMap<PressaoArterial, PressaoArterialViewModel>().ReverseMap();
+            CreateMap<Entity, EntityViewModel>().ReverseMap();
         }
     }
 }
