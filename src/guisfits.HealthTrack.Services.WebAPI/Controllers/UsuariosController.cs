@@ -31,9 +31,10 @@ namespace guisfits.HealthTrack.Services.WebAPI.Controllers
             return result.IsValid ? (IHttpActionResult) Ok() : BadRequest();
         }
 
-        public void Put(Guid id, [FromBody]UsuarioViewModel value)
+        public IHttpActionResult Put(Guid id, [FromBody]UsuarioViewModel value)
         {
-            _usuarioAppService.Atualizar(value);
+            var result = _usuarioAppService.Atualizar(value).ValidationResult;
+            return result.IsValid ? (IHttpActionResult)Ok() : BadRequest();
         }
 
         public void Delete(Guid id)
