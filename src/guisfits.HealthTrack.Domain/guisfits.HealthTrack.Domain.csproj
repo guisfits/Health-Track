@@ -53,8 +53,8 @@
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UsuarioService.cs" />
-    <Compile Include="Specification\Usuarios\UsuarioDeveTerEmailValidoSpecification.cs" />
-    <Compile Include="Validation\Usuarios\UsuarioEstaConsistenteValidation.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDeveTerEmailValidoSpecification.cs" />
+    <Compile Include="Validation\Usuario\UsuarioEstaConsistenteValidation.cs" />
     <Compile Include="ValueObjects\Email.cs" />
   </ItemGroup>
   <ItemGroup>
