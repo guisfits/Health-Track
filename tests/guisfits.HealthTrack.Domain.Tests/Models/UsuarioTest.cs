@@ -2,7 +2,7 @@
 using guisfits.HealthTrack.Domain.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace guisfits.HealthTrack.Domain.Tests.Domain
+namespace guisfits.HealthTrack.Domain.Tests.Models
 {
     [TestClass]
     public class UsuarioTest
@@ -22,7 +22,6 @@ namespace guisfits.HealthTrack.Domain.Tests.Domain
 
             //Assert
             Assert.IsTrue(result);
-            Assert.IsFalse(usuario.ValidationResult.Erros.Any(e => e.Message == "O E-mail está em formato incorreto"));
         }
 
         [TestMethod]

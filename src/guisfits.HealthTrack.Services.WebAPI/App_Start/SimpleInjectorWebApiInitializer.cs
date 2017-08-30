@@ -14,7 +14,7 @@ namespace guisfits.HealthTrack.Services.WebAPI.App_Start
         public static void Initialize()
         {
             var container = new Container();
-            container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
+            container.Options.DefaultScopedLifestyle = new SimpleInjector.Lifestyles.AsyncScopedLifestyle();
             
             InitializeContainer(container);
 

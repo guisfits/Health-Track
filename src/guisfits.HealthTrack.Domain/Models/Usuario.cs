@@ -1,7 +1,7 @@
 ﻿using guisfits.HealthTrack.Domain.Services;
 using System;
 using System.Collections.Generic;
-using guisfits.HealthTrack.Domain.Validation.Usuarios;
+using guisfits.HealthTrack.Domain.Validation.Usuario;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
