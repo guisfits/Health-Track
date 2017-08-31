@@ -1,41 +1,87 @@
-﻿@model guisfits.HealthTrack.Presentation.Models.RegisterViewModel
+﻿@model guisfits.HealthTrack.Presentation.Models.CadastroViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Cadastre-se";
 }
 
-<h2>@ViewBag.Title.</h2>
+@Html.Partial("_Logo")
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal form-cadastro", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
+    <h4>@ViewBag.Title</h4>
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @Html.Partial("_SummaryErrors")
     <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        <label class="col-md-3 control-label" for="Email">E-mail</label>
+        <div class="col-md-9">
+            @Html.TextBoxFor(m => m.RegisterViewModel.Email, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <label class="col-md-3 control-label" for="ConfirmPassword">Senha</label>
+        <div class="col-md-9">
+            @Html.PasswordFor(m => m.RegisterViewModel.Password, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <label class="col-md-3 control-label" for="ConfirmPassword">Confirmação</label>
+        <div class="col-md-9">
+            @Html.PasswordFor(m => m.RegisterViewModel.ConfirmPassword, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Nome, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Nome, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Sobrenome, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Sexo, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EnumDropDownListFor(model => model.UsuarioViewModel.Sexo, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.AlturaMetros, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.AlturaMetros, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Nascimento, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Nascimento, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.PesoAtual, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.PesoAtual, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+        <div class="col-md-offset-3 col-md-9">
+            <div class="btn-group">
+                <input type="submit" class="btn btn-success" value="Cadastrar"/>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-default">Cancelar</a>
+            </div>
         </div>
     </div>
 }
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Site");
 }

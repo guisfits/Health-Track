@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using guisfits.HealthTrack.Application.Interfaces;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -14,6 +15,12 @@ namespace guisfits.HealthTrack.Presentation.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IUsuarioAppService _usuarioAppService;
+
+        public AccountController(IUsuarioAppService usuarioAppService)
+        {
+            _usuarioAppService = usuarioAppService;
+        }
        
         public ApplicationSignInManager SignInManager
         {
@@ -134,16 +141,29 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(CadastroViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
+                var user = new ApplicationUser { UserName = model.RegisterViewModel.Email, Email = model.RegisterViewModel.Email };
+                var result = await UserManager.CreateAsync(user, model.RegisterViewModel.Password);
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
+                    model.UsuarioViewModel.IdentityId = user.Id;
+                    model.UsuarioViewModel = _usuarioAppService.Adicionar(model.UsuarioViewModel);
+                    var resultUsuario = model.UsuarioViewModel.ValidationResult;
+
+                    if (!resultUsuario.IsValid)
+                    {
+                        foreach (var erro in resultUsuario.Erros)
+                            ModelState.AddModelError(string.Empty, erro.Message);
+
+                        return View(model);
+                    }
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -159,7 +179,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(model);
         }
 
-        //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
@@ -172,7 +191,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
-        //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
         public ActionResult ForgotPassword()
@@ -180,7 +198,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View();
         }
 
-        //
         // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
@@ -208,7 +225,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(model);
         }
 
-        //
         // GET: /Account/ForgotPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
@@ -216,7 +232,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
@@ -224,7 +239,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return code == null ? View("Error") : View();
         }
 
-        //
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
@@ -250,7 +264,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View();
         }
 
-        //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
@@ -258,7 +271,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View();
         }
 
-        //
         // POST: /Account/ExternalLogin
         [HttpPost]
         [AllowAnonymous]
@@ -269,7 +281,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return new ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", new { ReturnUrl = returnUrl }));
         }
 
-        //
         // GET: /Account/SendCode
         [AllowAnonymous]
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
@@ -284,7 +295,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
         }
 
-        //
         // POST: /Account/SendCode
         [HttpPost]
         [AllowAnonymous]
@@ -304,7 +314,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
         }
 
-        //
         // GET: /Account/ExternalLoginCallback
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
@@ -334,7 +343,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             }
         }
 
-        //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
@@ -372,7 +380,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return View(model);
         }
 
-        //
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -382,7 +389,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()

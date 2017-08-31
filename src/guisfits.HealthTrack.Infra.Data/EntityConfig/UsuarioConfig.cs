@@ -17,20 +17,19 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(300);
 
-            Property(p => p.Email)
-                .IsRequired()
-                .HasMaxLength(300);
-
             Property(p => p.Sexo)
                 .IsRequired();
 
-            Property(p => p.AlturaMetros)
+            Property(p => p.Altura)
                 .IsRequired();
 
             Property(p => p.Nascimento)
                 .IsRequired();
 
             Property(p => p.Excluido)
+                .IsRequired();
+
+            Property(p => p.IdentityId)
                 .IsRequired();
 
             Ignore(p => p.PesoAtual);

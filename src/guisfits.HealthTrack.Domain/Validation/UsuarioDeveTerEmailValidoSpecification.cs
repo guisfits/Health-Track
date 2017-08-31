@@ -8,7 +8,8 @@ namespace guisfits.HealthTrack.Domain.Specification.Usuario
     {
         public bool IsSatisfiedBy(Models.Usuario entity)
         {
-            return Email.Validar(entity.Email);
+            //return Email.Validar(entity.Email);
+            return true;
         }
     }
 }

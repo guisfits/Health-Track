@@ -33,14 +33,14 @@
                         </div>
                     </div>
 
-                    @*<div class="form-group">
-                        <div class="col-md-offset-4">
+                    <div class="form-group">
+                        <div class="col-md-offset-2">
                             <div class="checkbox">
                                 @Html.CheckBoxFor(m => m.RememberMe)
-                                <label class="control-label" for="RememberMe"> Mantenha-me conectado</label>
+                                <label class="control-label" for="RememberMe">Mantenha-me conectado</label>
                             </div>
                         </div>
-                    </div>*@
+                    </div>
                     
                     @Html.ValidationSummary(true, "", new {@class = "text-danger"})
 
@@ -51,12 +51,12 @@
                             </div>
                         </div>
                     </div>
-                </fieldset>
                 <div class="col-md-12 text-center">
                     @Html.ActionLink("Cadastre-se", "Register") | 
                     <!-- Enable this once you have account confirmation enabled for password reset functionality -->
                     @Html.ActionLink("Esqueceu a senha?", "ForgotPassword")
                 </div>
+                </fieldset>
              }
         </section>
     </div>

@@ -13,7 +13,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
             Alimentos = new List<Alimento>();
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();
-            PesosKg = new List<Peso>();
+            Pesos = new List<Peso>();
         }
 
         [Required(ErrorMessage = "O campo Nome é requerido")]
@@ -25,13 +25,6 @@ namespace guisfits.HealthTrack.Application.ViewModels
         [MaxLength(300, ErrorMessage = "O tamanho máximo de caracteres é de {0}")]
         [MinLength(2, ErrorMessage = "O tamanho mínimo de caracteres é de {0}")]
         public string Sobrenome { get; set; }
-
-        [Required(ErrorMessage = "O campo E-mail é requerido")]
-        [MaxLength(300, ErrorMessage = "O tamanho máximo de caracteres é de {0}")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo de caracteres é de {0}")]
-        [EmailAddress(ErrorMessage = "Preencha um E-mail válido")]
-        [DisplayName("E-mail")]
-        public string Email { get; set; }
 
         [Required(ErrorMessage = "O campo Sexo é requerido")]
         [DisplayName("Sexo")]
@@ -52,7 +45,10 @@ namespace guisfits.HealthTrack.Application.ViewModels
         public double PesoAtual { get; set; }
 
         [ScaffoldColumn(false)]
-        public virtual IList<Peso> PesosKg { get; set; }
+        public string IdentityId { get; set; }
+
+        [ScaffoldColumn(false)]
+        public virtual IList<Peso> Pesos { get; set; }
 
         [ScaffoldColumn(false)]
         public virtual ICollection<Alimento> Alimentos { get; set; }

@@ -4,10 +4,6 @@
     padding-right: 15px;
 }
 
-body{
-    background: green;
-}
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -61,5 +57,36 @@ textarea {
 }
 
 body {
+    background-color: #F1F1F1;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
     background-color: #fff;
+    border-radius: 0.3em;
+}
+
+.jumbotron {
+    background-color: #fff;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.form-cadastro {
+    padding-top: 2em;
+    margin-bottom: 5em;
 }

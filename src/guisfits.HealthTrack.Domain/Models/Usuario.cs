@@ -11,18 +11,18 @@ namespace guisfits.HealthTrack.Domain.Models
     {
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
-        public string Email { get; set; }
         public TipoSexo Sexo { get; set; }
-        public double AlturaMetros { get; set; }
+        public double Altura { get; set; }
         public DateTime Nascimento { get; set; }
         public bool Excluido { get; private set; } = false;
+        public string IdentityId { get; set; }
 
         private double _pesoAtual;
         public double PesoAtual
         {
             get
             {
-                _pesoAtual = PesosKg.Count > 0 ? PesosKg[PesosKg.Count - 1].ValorKg : 0;
+                _pesoAtual = Pesos.Count > 0 ? Pesos[Pesos.Count - 1].ValorKg : 0;
                 return _pesoAtual;
             }
             set
@@ -30,11 +30,11 @@ namespace guisfits.HealthTrack.Domain.Models
                 if (!(value > 0)) return;
 
                 _pesoAtual = value;
-                PesosKg.Add(new Peso(_pesoAtual));
+                Pesos.Add(new Peso(_pesoAtual));
             }
         }
 
-        public virtual IList<Peso> PesosKg { get; set; }
+        public virtual IList<Peso> Pesos { get; set; }
         public virtual ICollection<Alimento> Alimentos { get; set; }
         public virtual ICollection<ExercicioFisico> ExerciciosFisicos { get; set; }
         public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
@@ -44,7 +44,7 @@ namespace guisfits.HealthTrack.Domain.Models
             Alimentos = new List<Alimento>();
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();
-            PesosKg = new List<Peso>();
+            Pesos = new List<Peso>();
         }
 
         public string NomeCompleto()
@@ -54,7 +54,7 @@ namespace guisfits.HealthTrack.Domain.Models
 
         public IMC GetImc()
         {
-            return new IMC(this._pesoAtual, this.AlturaMetros);
+            return new IMC(this._pesoAtual, this.Altura);
         }
 
         public override bool EhValido()

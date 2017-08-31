@@ -16,7 +16,7 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
                 .IsRequired();
 
             HasRequired(p => p.Usuario)
-                .WithMany(p => p.PesosKg)
+                .WithMany(p => p.Pesos)
                 .HasForeignKey(p => p.UsuarioId);
 
             Ignore(p => p.ValidationResult);

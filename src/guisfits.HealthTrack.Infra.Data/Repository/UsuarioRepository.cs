@@ -22,7 +22,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             return Db.Database.Connection.Query<Usuario, Peso, Usuario>(sql,
                 (u, p) =>
                 {
-                    u.PesosKg.Add(p);
+                    u.Pesos.Add(p);
                     return u;
                 }, new { uid = id }).FirstOrDefault();
         }
@@ -37,7 +37,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             return Db.Database.Connection.Query<Usuario, Peso, Usuario>(sql, 
                 (u, p) => 
                 {
-                    u.PesosKg.Add(p);
+                    u.Pesos.Add(p);
                     return u;
                 });
         }
@@ -52,7 +52,8 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public Usuario ObterUsuarioUnico(Usuario usuario)
         {
-            return Buscar(c => c.Email == usuario.Email).FirstOrDefault();
+            //return Buscar(c => c.Email == usuario.Email).FirstOrDefault();
+            return usuario;
         }
     }
 }
