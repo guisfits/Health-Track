@@ -2,7 +2,7 @@
 
 namespace guisfits.HealthTrack.Domain.Models
 {
-    public class Peso : Entity, IEquatable<Peso>
+    public class Peso : Entity
     {
         public DateTime DataHora { get; set; }
         public Guid UsuarioId { get; set; }
@@ -51,30 +51,5 @@ namespace guisfits.HealthTrack.Domain.Models
             //Esperando pelas classes de validação
             return true;
         }
-
-        #region Implementação de operadores/metodos de Igualdade
-
-        //Implementação real que deverá ser usada nos outros metodos de igualdade
-        public bool Equals(Peso other)
-        {
-            return (this._valorKg == other.ValorKg) && (this.DataHora == other.DataHora);
-        }
-
-        public override int GetHashCode()
-        {
-            return this._valorKg.GetHashCode() ^ this.DataHora.GetHashCode();
-        }
-
-        public static bool operator ==(Peso p1, Peso p2)
-        {
-            return p1.Equals(p2);
-        }
-
-        public static bool operator !=(Peso p1, Peso p2)
-        {
-            return !(p1.Equals(p2));
-        }
-
-        #endregion
     }
 }

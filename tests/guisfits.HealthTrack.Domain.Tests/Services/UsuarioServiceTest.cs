@@ -14,7 +14,7 @@ namespace guisfits.HealthTrack.Domain.Tests.Services
             //Arrange
             var usuario = new Usuario()
             {
-                Email = "guisfits@hotmail.com"
+                //Email = "guisfits@hotmail.com"
             };
 
             //Act

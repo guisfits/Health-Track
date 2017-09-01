@@ -32,7 +32,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
 
         [Required(ErrorMessage = "O campo Altura (cm) é requerido")]
         [DisplayName("Altura (cm)")]
-        public double AlturaMetros { get; set; }
+        public double Altura { get; set; }
 
         [Required(ErrorMessage = "O campo Data de Nascimento é requerido")]
         [DisplayName("Data de Nascimento")]

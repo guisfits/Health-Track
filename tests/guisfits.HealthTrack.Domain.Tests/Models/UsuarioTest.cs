@@ -14,7 +14,7 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
             //Arrange
             var usuario = new Usuario()
             {
-                Email = "fulano@teste.com"
+                //Email = "fulano@teste.com"
             };
 
             //Act
@@ -30,7 +30,7 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
             //Arrange
             var usuario = new Usuario()
             {
-                Email = "blablabla"
+                //Email = "blablabla"
             };
 
             //Act

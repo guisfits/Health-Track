@@ -52,7 +52,7 @@
 //        [ClaimsAuthorize("Usuarios", "CE")]
 //        [HttpPost]
 //        [ValidateAntiForgeryToken]
-//        public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,AlturaMetros,Nascimento,PesoAtual")] UsuarioViewModel usuarioViewModel)
+//        public ActionResult Create([Bind(Include = "Id,Nome,Sobrenome,Email,Sexo,Altura,Nascimento,PesoAtual")] UsuarioViewModel usuarioViewModel)
 //        {
 //            if (!ModelState.IsValid)
 //                return View(usuarioViewModel);
