@@ -1,38 +1,39 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
 using guisfits.HealthTrack.Domain.Specification.Usuario;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace guisfits.HealthTrack.Domain.Tests.Specification.Usuario
 {
     [TestClass]
-    public class UsuarioDeveTerEmailValidoSpecificationTest
+    public class UsuarioDeveSerMaiorDeIdadeSpecificationTest
     {
         [TestMethod]
-        public void EmailSpecification_IsSatisfiedBy_True()
+        public void NascimentoSpecification_IsSatisfiedBy_True()
         {
             //Arrange
             var usuario = new Domain.Models.Usuario()
             {
-                //Email = "guisfits@hotmail.com"
+                Nascimento = new DateTime(1993, 12, 23)
             };
 
             //Act
-            var result = new UsuarioDeveTerEmailValidoSpecification().IsSatisfiedBy(usuario);
+            bool result = new UsuarioDeveSerMaiorDeIdadeSpecification().IsSatisfiedBy(usuario);
 
             //Assert
             Assert.IsTrue(result);
         }
 
         [TestMethod]
-        public void EmailSpecification_IsSatisfiedBy_False()
+        public void NascimentoSpecification_IsSatisfiedBy_False()
         {
             //Arrange
             var usuario = new Domain.Models.Usuario()
             {
-                //Email = "guisfitshotmailcom"
+                Nascimento = DateTime.Now
             };
 
             //Act
-            var result = new UsuarioDeveTerEmailValidoSpecification().IsSatisfiedBy(usuario);
+            var result = new UsuarioDeveSerMaiorDeIdadeSpecification().IsSatisfiedBy(usuario);
 
             //Assert
             Assert.IsFalse(result);

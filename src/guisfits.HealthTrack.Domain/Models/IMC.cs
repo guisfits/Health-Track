@@ -1,9 +1,9 @@
-﻿namespace guisfits.HealthTrack.Domain.Services
+﻿namespace guisfits.HealthTrack.Domain.Models
 {
-    public class IMC
+    public class Imc
     {
-        private double _peso;
-        private double _altura;
+        private readonly double _peso;
+        private readonly double _altura;
 
         public string Status
         {
@@ -31,24 +31,12 @@
             }
         }
 
-        public double Valor
-        {
-            get
-            {
-                return _peso / (_altura * _altura);
-            }
-        }
+        public double Valor => _peso / (_altura * _altura);
 
-        public void setValor(double Peso, double Altura)
+        public Imc(double peso, double altura)
         {
-            _peso = Peso;
-            _altura = Altura;
-        }
-
-        public IMC(double Peso, double Altura)
-        {
-            _peso = Peso;
-            _altura = Altura;
+            _peso = peso;
+            _altura = altura;
         }
     }
 }

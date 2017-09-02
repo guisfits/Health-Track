@@ -47,22 +47,24 @@
     <Compile Include="Models\Alimento.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\ExercicioFisico.cs" />
-    <Compile Include="Services\IMC.cs" />
+    <Compile Include="Models\Imc.cs" />
     <Compile Include="Models\Peso.cs" />
     <Compile Include="Models\PressaoArterial.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UsuarioService.cs" />
-    <Compile Include="Validation\UsuarioDeveTerEmailValidoSpecification.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDevePossuirAlturaPossivelSpecification.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDevePossuirPesoPossivelSpecification.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDeveSerMaiorDeIdadeSpecification.cs" />
     <Compile Include="Validation\Usuario\UsuarioEstaConsistenteValidation.cs" />
-    <Compile Include="ValueObjects\Email.cs" />
+    <Compile Include="ValueObjects\Altura.cs" />
+    <Compile Include="ValueObjects\Nascimento.cs" />
+    <Compile Include="ValueObjects\Peso.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Specification\Usuario\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

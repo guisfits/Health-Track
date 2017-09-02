@@ -49,11 +49,5 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
             Atualizar(obj);
         }
-
-        public Usuario ObterUsuarioUnico(Usuario usuario)
-        {
-            //return Buscar(c => c.Email == usuario.Email).FirstOrDefault();
-            return usuario;
-        }
     }
 }

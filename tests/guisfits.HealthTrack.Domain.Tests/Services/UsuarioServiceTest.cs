@@ -1,7 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using guisfits.HealthTrack.Domain.Models;
-using Rhino.Mocks;
 using guisfits.HealthTrack.Domain.Interfaces.Repository;
+using Rhino.Mocks;
 
 namespace guisfits.HealthTrack.Domain.Tests.Services
 {
@@ -14,14 +15,15 @@ namespace guisfits.HealthTrack.Domain.Tests.Services
             //Arrange
             var usuario = new Usuario()
             {
-                //Email = "guisfits@hotmail.com"
+                Nascimento = new DateTime(1993, 12, 23),
+                Altura = 183,
+                PesoAtual = 84
             };
 
             //Act
             usuario.EhValido();
             var repo = MockRepository.GenerateStub<IUsuarioRepository>();
             repo.Stub(s => s.Adicionar(usuario)).Return(usuario);
-            repo.Stub(s => s.ObterUsuarioUnico(usuario)).Return(null);
 
             var resultado = new Domain.Services.UsuarioService(repo).Adicionar(usuario);
 

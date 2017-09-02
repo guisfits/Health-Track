@@ -1,5 +1,4 @@
-﻿using guisfits.HealthTrack.Domain.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using guisfits.HealthTrack.Domain.Validation.Usuario;
 
@@ -52,9 +51,9 @@ namespace guisfits.HealthTrack.Domain.Models
             return $"{Nome} {Sobrenome}";
         }
 
-        public IMC GetImc()
+        public Imc GetImc()
         {
-            return new IMC(this._pesoAtual, this.Altura);
+            return new Imc(this._pesoAtual, this.Altura);
         }
 
         public override bool EhValido()

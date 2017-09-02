@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,14 +58,17 @@
     <Compile Include="Models\UsuarioTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UsuarioServiceTest.cs" />
-    <Compile Include="Specification\Usuario\UsuarioDeveTerEmailValidoSpecificationTest.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDevePossuirAlturaPossivelSpecificationTest.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDevePossuirPesoPossivelSpecificationTest.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDeveSerMaiorDeIdadeSpecificationTest.cs" />
+    <Compile Include="Validation\Usuario\UsuarioEstaConsistenteValidationTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Validation\Usuario\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\src\guisfits.HealthTrack.Domain\guisfits.HealthTrack.Domain.csproj">
       <Project>{28BB965C-3280-43A7-921F-63C906F8D748}</Project>
