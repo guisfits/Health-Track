@@ -2,7 +2,7 @@
 
 namespace guisfits.HealthTrack.Application.Interfaces
 {
-    public interface IUsuarioAppService : IEntityAppService<UsuarioViewModel>
+    public interface IExercicioFisicoAppService : IEntityAppService<ExercicioFisicoViewModel>
     {
     }
 }

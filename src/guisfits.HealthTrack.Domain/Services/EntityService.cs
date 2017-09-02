@@ -18,7 +18,7 @@ namespace guisfits.HealthTrack.Domain.Services
 
         public TEntity Adicionar(TEntity obj)
         {
-            return obj.ValidationResult.IsValid ? _repository.Adicionar(obj) : obj;
+            return obj.EhValido() ? _repository.Adicionar(obj) : obj;
         }
 
         public TEntity ObterPorId(Guid id)
@@ -43,12 +43,17 @@ namespace guisfits.HealthTrack.Domain.Services
 
         public TEntity Atualizar(TEntity obj)
         {
-            return obj.ValidationResult.IsValid ? _repository.Atualizar(obj) : obj;
+            return obj.EhValido() ? _repository.Atualizar(obj) : obj;
         }
 
         public void Remover(Guid id)
         {
             _repository.Remover(id);
+        }
+
+        public void Dispose()
+        {
+            _repository.Dispose();
         }
     }
 }

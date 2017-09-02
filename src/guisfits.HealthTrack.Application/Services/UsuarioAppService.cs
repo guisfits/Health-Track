@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using guisfits.HealthTrack.Application.ViewModels;
 using AutoMapper;
-using guisfits.HealthTrack.Domain.Interfaces.Repository;
 using guisfits.HealthTrack.Domain.Interfaces.Services;
 using guisfits.HealthTrack.Domain.Models;
 using guisfits.HealthTrack.Infra.Data.UoW;
@@ -12,68 +11,61 @@ namespace guisfits.HealthTrack.Application.Services
 {
     public class UsuarioAppService : AppService, IUsuarioAppService
     {
-        private readonly IUsuarioRepository usuarioRepository;
-        private readonly IUsuarioService usuarioService;
+        private readonly IUsuarioService _usuarioService;
 
-        public UsuarioAppService(IUsuarioRepository usuarioRepository, 
-                                 IUsuarioService usuarioService,
+        public UsuarioAppService(IUsuarioService usuarioService,
                                  IUnitOfWork uow)
             :base(uow)
         {
-            this.usuarioRepository = usuarioRepository;
-            this.usuarioService = usuarioService;
+            _usuarioService = usuarioService;
         }
 
         public UsuarioViewModel Adicionar(UsuarioViewModel obj)
         {
             var usuario = Mapper.Map<Usuario>(obj);
             usuario.PesoAtual = obj.PesoAtual;
-            var result = usuarioService.Adicionar(usuario);
+            var result = _usuarioService.Adicionar(usuario);
 
-            if (result.ValidationResult.IsValid)
-                this.Commit();
-            
+            if (result.EhValido())
+                Commit();
 
-            obj = Mapper.Map<UsuarioViewModel>(result);
-            return obj;
-        }
-
-        public UsuarioViewModel Atualizar(UsuarioViewModel obj)
-        {
-            var result = usuarioService.Atualizar(Mapper.Map<Usuario>(obj));
-
-            if (result.ValidationResult.IsValid)
-                this.Commit();
-
-            return obj;
+            return Mapper.Map<UsuarioViewModel>(result);
         }
 
         public UsuarioViewModel ObterPorId(Guid id)
         {
-            var usuario = Mapper.Map<UsuarioViewModel>(usuarioRepository.ObterPorId(id));
-            return usuario;
+            return Mapper.Map<UsuarioViewModel>(_usuarioService.ObterPorId(id));
         }
 
         public IEnumerable<UsuarioViewModel> ObterTodos()
         {
-            return Mapper.Map<IEnumerable<UsuarioViewModel>>(usuarioRepository.ObterTodos());
+            return Mapper.Map<IEnumerable<UsuarioViewModel>>(_usuarioService.ObterTodos());
         }
 
         public IEnumerable<UsuarioViewModel> ObterPaginado(int s, int t)
         {
-            return Mapper.Map<IEnumerable<UsuarioViewModel>>(usuarioRepository.ObterPaginado(s, t));
+            return Mapper.Map<IEnumerable<UsuarioViewModel>>(_usuarioService.ObterPaginado(s, t));
+        }
+
+        public UsuarioViewModel Atualizar(UsuarioViewModel obj)
+        {
+            var result = _usuarioService.Atualizar(Mapper.Map<Usuario>(obj));
+
+            if (result.EhValido())
+                Commit();
+
+            return Mapper.Map<UsuarioViewModel>(result);
         }
 
         public void Remover(Guid id)
         {
-            usuarioService.Remover(id);
-            this.Commit();
+            _usuarioService.Remover(id);
+            Commit();
         }
 
         public void Dispose()
         {
-            usuarioRepository.Dispose();
-            usuarioService.Dispose();
+            _usuarioService.Dispose();
         }
     }
 }

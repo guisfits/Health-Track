@@ -44,9 +44,18 @@
   <ItemGroup>
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\MappingProfile.cs" />
+    <Compile Include="Interfaces\IAlimentoAppService.cs" />
+    <Compile Include="Interfaces\IEntityAppService.cs" />
+    <Compile Include="Interfaces\IExercicioFisicoAppService.cs" />
+    <Compile Include="Interfaces\IPesoAppService.cs" />
+    <Compile Include="Interfaces\IPressaoArterialAppService.cs" />
     <Compile Include="Interfaces\IUsuarioAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AlimentoAppService.cs" />
     <Compile Include="Services\AppService.cs" />
+    <Compile Include="Services\ExercicioFisicoAppService.cs" />
+    <Compile Include="Services\PesoAppService.cs" />
+    <Compile Include="Services\PressaoArterialAppService.cs" />
     <Compile Include="Services\UsuarioAppService.cs" />
     <Compile Include="ViewModels\AlimentoViewModel.cs" />
     <Compile Include="ViewModels\EntityViewModel.cs" />
