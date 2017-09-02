@@ -8,7 +8,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
     {
         [Required(ErrorMessage = "O campo Pesagem (kg) é requerido")]
         [DisplayName("Pesagem {kg}")]
-        public double ValorKg { get; set; }
+        public double PesoValue { get; set; }
 
         [Required(ErrorMessage = "O campo Data e Hora é requerido")]
         [DisplayName("Data e Hora")]

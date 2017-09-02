@@ -15,6 +15,8 @@ namespace guisfits.HealthTrack.Domain.Tests.Services
             //Arrange
             var usuario = new Usuario()
             {
+                Nome = "Guilherme",
+                Sobrenome = "Camargo Silva",
                 Nascimento = new DateTime(1993, 12, 23),
                 Altura = 183,
                 PesoAtual = 84

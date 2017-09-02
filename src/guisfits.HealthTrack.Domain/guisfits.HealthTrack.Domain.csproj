@@ -65,6 +65,8 @@
     <Compile Include="Specification\Usuario\UsuarioDevePossuirAlturaPossivelSpecification.cs" />
     <Compile Include="Specification\Usuario\UsuarioDevePossuirPesoPossivelSpecification.cs" />
     <Compile Include="Specification\Usuario\UsuarioDeveSerMaiorDeIdadeSpecification.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDeveTerNomeValidoSpecification.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDeveTerUmPesoSpecification.cs" />
     <Compile Include="Validation\ExercicioFisico\ExercicioEstaConsistenteValidation.cs" />
     <Compile Include="Validation\Alimento\AlimentoEstaConsistenteValidation.cs" />
     <Compile Include="Validation\Peso\PesoEstaConsistenteValidation.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="ValueObjects\DataHora.cs" />
     <Compile Include="ValueObjects\Diastolica.cs" />
     <Compile Include="ValueObjects\Nascimento.cs" />
+    <Compile Include="ValueObjects\NomeSobrenome.cs" />
     <Compile Include="ValueObjects\PesoValue.cs" />
     <Compile Include="ValueObjects\Sistolica.cs" />
   </ItemGroup>

@@ -61,6 +61,7 @@
     <Compile Include="Specification\Usuario\UsuarioDevePossuirAlturaPossivelSpecificationTest.cs" />
     <Compile Include="Specification\Usuario\UsuarioDevePossuirPesoPossivelSpecificationTest.cs" />
     <Compile Include="Specification\Usuario\UsuarioDeveSerMaiorDeIdadeSpecificationTest.cs" />
+    <Compile Include="Specification\Usuario\UsuarioDeveTerNomeValidoSpecificationTest.cs" />
     <Compile Include="Validation\Usuario\UsuarioEstaConsistenteValidationTest.cs" />
   </ItemGroup>
   <ItemGroup>

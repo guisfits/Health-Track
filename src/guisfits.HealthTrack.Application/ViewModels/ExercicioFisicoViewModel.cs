@@ -16,7 +16,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
         [DisplayName("Descrição")]
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage = "O campo Calorias Queimadas")]
+        [Required(ErrorMessage = "O campo Calorias Queimadas é requerido")]
         [DisplayName("Calorias Queimadas")]
         public double Calorias { get; set; }
 
