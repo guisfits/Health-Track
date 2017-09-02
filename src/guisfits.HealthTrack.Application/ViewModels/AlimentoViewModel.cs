@@ -22,7 +22,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
 
         [Required(ErrorMessage = "O campo Data e Hora é requerido")]
         [DisplayName("Data e Hora")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd H:mm}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G}")]
         [DataType(DataType.DateTime, ErrorMessage = "Data e Hora em formato inválido")]
         public DateTime DataHora { get; set; }
 

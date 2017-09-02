@@ -49,5 +49,14 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
             Atualizar(obj);
         }
+
+        public Guid ObterIdPeloIdentity(string idIdentity)
+        {
+            var sql = "SELECT * FROM Usuarios u " +
+                      "WHERE u.IdentityId = @uid";
+
+            var user = Db.Database.Connection.Query<Usuario>(sql, new {uid = idIdentity}).FirstOrDefault();
+            return user.Id;
+        }
     }
 }

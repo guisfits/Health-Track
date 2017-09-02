@@ -16,9 +16,17 @@ namespace guisfits.HealthTrack.CrossCutting.IoC
         {
             //Domain
             container.Register<IUsuarioService, UsuarioService>(Lifestyle.Scoped);
+            container.Register<IAlimentoService, AlimentoService>(Lifestyle.Scoped);
+            container.Register<IExercicioFisicoService, ExercicioFisicoService>(Lifestyle.Scoped);
+            container.Register<IPesoService, PesoService>(Lifestyle.Scoped);
+            container.Register<IPressaoArterialService, PressaoArterialService>(Lifestyle.Scoped);
 
             //Application
             container.Register<IUsuarioAppService, UsuarioAppService>(Lifestyle.Scoped);
+            container.Register<IAlimentoAppService, AlimentoAppService>(Lifestyle.Scoped);
+            container.Register<IExercicioFisicoAppService, ExercicioFisicoAppService>(Lifestyle.Scoped);
+            container.Register<IPesoAppService, PesoAppService>(Lifestyle.Scoped);
+            container.Register<IPressaoArterialAppService, PressaoArterialAppService>(Lifestyle.Scoped);
 
             //Infra.Data
             container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Scoped);

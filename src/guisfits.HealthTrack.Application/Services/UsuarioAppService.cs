@@ -63,6 +63,11 @@ namespace guisfits.HealthTrack.Application.Services
             Commit();
         }
 
+        public Guid ObterIdPeloIdentity(string idIdentity)
+        {
+            return _usuarioService.ObterIdPeloIdentity(idIdentity);
+        }
+
         public void Dispose()
         {
             _usuarioService.Dispose();

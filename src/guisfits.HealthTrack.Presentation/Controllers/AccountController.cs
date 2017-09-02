@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using guisfits.HealthTrack.Application.Interfaces;
+using guisfits.HealthTrack.Application.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -15,7 +16,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private IUsuarioAppService _usuarioAppService;
+        private readonly IUsuarioAppService _usuarioAppService;
 
         public AccountController(IUsuarioAppService usuarioAppService)
         {

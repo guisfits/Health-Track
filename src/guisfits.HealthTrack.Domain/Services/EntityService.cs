@@ -18,7 +18,7 @@ namespace guisfits.HealthTrack.Domain.Services
 
         public TEntity Adicionar(TEntity obj)
         {
-            return obj.EhValido() ? _repository.Adicionar(obj) : obj;
+            return _repository.Adicionar(obj);
         }
 
         public TEntity ObterPorId(Guid id)
@@ -43,7 +43,7 @@ namespace guisfits.HealthTrack.Domain.Services
 
         public TEntity Atualizar(TEntity obj)
         {
-            return obj.EhValido() ? _repository.Atualizar(obj) : obj;
+            return _repository.Atualizar(obj);
         }
 
         public void Remover(Guid id)

@@ -9,7 +9,7 @@ namespace guisfits.HealthTrack.Domain.Validation.ExercicioFisico
         {
             var caloriasSpecification = new ExercucioDeveTerCaloriaCompativelSpecification();
             var dataSpecification = new ExercicioNaoDeveTerDataSuperiorAtualSpecification();
-            this.Add("caloriasSpecification", new Rule<Models.ExercicioFisico>(caloriasSpecification, "Caloria deve ter um valor possível"));
+            this.Add("caloriasSpecification", new Rule<Models.ExercicioFisico>(caloriasSpecification, "O valor de caloria deve ser possível"));
             this.Add("dataSpecification", new Rule<Models.ExercicioFisico>(dataSpecification, "Data e Hora deve ser menor ou igual a data atual"));
         }
     }
