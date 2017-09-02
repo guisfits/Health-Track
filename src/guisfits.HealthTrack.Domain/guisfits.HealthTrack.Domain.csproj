@@ -43,6 +43,11 @@
     <Compile Include="Interfaces\Repository\IPressaoArterialRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
     <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
+    <Compile Include="Interfaces\Services\IAlimentoService.cs" />
+    <Compile Include="Interfaces\Services\IEntityService.cs" />
+    <Compile Include="Interfaces\Services\IExercicioFisicoService.cs" />
+    <Compile Include="Interfaces\Services\IPesoService.cs" />
+    <Compile Include="Interfaces\Services\IPressaoArterialService.cs" />
     <Compile Include="Interfaces\Services\IUsuarioService.cs" />
     <Compile Include="Models\Alimento.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -52,6 +57,11 @@
     <Compile Include="Models\PressaoArterial.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AlimentoService.cs" />
+    <Compile Include="Services\EntityService.cs" />
+    <Compile Include="Services\ExercicioFisicoService.cs" />
+    <Compile Include="Services\PesoService.cs" />
+    <Compile Include="Services\PressaoArterialService.cs" />
     <Compile Include="Services\UsuarioService.cs" />
     <Compile Include="Specification\Alimento\AlimentoDeveTerCaloriaCompativelSpecification.cs" />
     <Compile Include="Specification\Alimento\AlimentoNaoDeveTerDataSuperiorAtualSpecification.cs" />

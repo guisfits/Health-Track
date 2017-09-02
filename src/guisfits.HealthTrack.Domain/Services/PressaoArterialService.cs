@@ -4,9 +4,9 @@ using guisfits.HealthTrack.Domain.Models;
 
 namespace guisfits.HealthTrack.Domain.Services
 {
-    public class UsuarioService : EntityService<Usuario>, IUsuarioService
+    public class PressaoArterialService : EntityService<PressaoArterial>, IPressaoArterialService
     {
-        public UsuarioService(IUsuarioRepository repository) 
+        public PressaoArterialService(IPressaoArterialRepository repository) 
             : base(repository)
         {
         }
