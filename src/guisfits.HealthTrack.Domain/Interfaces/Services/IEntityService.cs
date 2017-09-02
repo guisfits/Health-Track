@@ -5,7 +5,7 @@ using guisfits.HealthTrack.Domain.Models;
 
 namespace guisfits.HealthTrack.Domain.Interfaces.Services
 {
-    interface IEntityService<TEntity> where TEntity : Entity
+    public interface IEntityService<TEntity> where TEntity : Entity
     {
         TEntity Adicionar(TEntity obj);
         TEntity ObterPorId(Guid id);

@@ -2,7 +2,7 @@
 
 namespace guisfits.HealthTrack.Domain.Interfaces.Services
 {
-    interface IPressaoArterialService : IEntityService<PressaoArterial>
+    public interface IPressaoArterialService : IEntityService<PressaoArterial>
     {
     }
 }

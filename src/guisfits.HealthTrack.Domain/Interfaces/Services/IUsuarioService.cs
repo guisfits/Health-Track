@@ -2,7 +2,7 @@
 
 namespace guisfits.HealthTrack.Domain.Interfaces.Services
 {
-    interface IUsuarioService : IEntityService<Usuario>
+    public interface IUsuarioService : IEntityService<Usuario>
     {
     }
 }
