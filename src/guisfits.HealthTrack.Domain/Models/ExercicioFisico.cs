@@ -1,4 +1,5 @@
 ﻿using System;
+using guisfits.HealthTrack.Domain.Validation.ExercicioFisico;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
@@ -16,8 +17,8 @@ namespace guisfits.HealthTrack.Domain.Models
 
         public override bool EhValido()
         {
-            //Esperando pelas classes de validação
-            return true;
+            ValidationResult = new ExercicioEstaConsistenteValidation().Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }

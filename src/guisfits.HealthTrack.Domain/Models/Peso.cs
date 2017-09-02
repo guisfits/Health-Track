@@ -1,38 +1,24 @@
 ﻿using System;
+using guisfits.HealthTrack.Domain.Validation.Peso;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
     public class Peso : Entity
     {
+        public double PesoValue { get; set; }
         public DateTime DataHora { get; set; }
         public Guid UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
 
-        private double _valorKg;
-        public double ValorKg
+        public Peso(double pesoValue, DateTime dataHora)
+            : this(pesoValue)
         {
-            get => _valorKg;
-            set
-            {   if (value > 0)
-                    _valorKg = value;
-                else
-                    throw new Exception();
-            }
-        }
-
-        public Peso(double PesoKg, DateTime DataHora)
-            : this(PesoKg)
-        {
-            this.DataHora = DataHora;
+            this.DataHora = dataHora;
         }
 
         public Peso(double pesoKg)
         {
-            if (pesoKg > 0)
-                this._valorKg = pesoKg;
-            else
-                throw new Exception();
-
+            this.PesoValue = pesoKg;
             this.DataHora = DateTime.Now;
         }
 
@@ -43,13 +29,13 @@ namespace guisfits.HealthTrack.Domain.Models
 
         public override string ToString()
         {
-            return $"{this._valorKg} kg";
+            return $"{this.PesoValue} kg";
         }
 
         public override bool EhValido()
         {
-            //Esperando pelas classes de validação
-            return true;
+            ValidationResult = new PesoEstaConsistenteValidation().Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }

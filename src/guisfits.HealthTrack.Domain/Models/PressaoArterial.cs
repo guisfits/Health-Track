@@ -1,4 +1,5 @@
 ﻿using System;
+using guisfits.HealthTrack.Domain.Validation.PressaoArterial;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
@@ -8,7 +9,6 @@ namespace guisfits.HealthTrack.Domain.Models
         public double Sistolica { get; set; } // o maior valor
         public double Diastolica { get; set; } // o menor valor
         public Guid UsuarioId { get; set; }
-
         //Para o Lazy loading do EntityFramework
         public virtual Usuario Usuario { get; set; }
 
@@ -19,30 +19,30 @@ namespace guisfits.HealthTrack.Domain.Models
             {
                 if ((Sistolica <= 140 && Diastolica <= 90) && (Sistolica >= 120 && Diastolica >= 80))
                 {
-                    this._status = "Normal";
+                    _status = "Normal";
                     return _status;
                 }
                 else if (Sistolica < 120 && Diastolica < 80)
                 {
-                    this._status = "Abaixo do normal";
+                    _status = "Abaixo do normal";
                     return _status;
 
                 }
                 else if (Sistolica > 140 && Diastolica > 90)
                 {
-                    this._status = "Elevada";
+                    _status = "Elevada";
                     return _status;
                 }
                 else
                 {
-                    this._status = "ERRO";
+                    _status = "ERRO";
                     return _status;
                 }
             }
             protected set
             {
                 if (value != null)
-                    this._status = value;
+                    _status = value;
             }
         }
 
@@ -66,8 +66,8 @@ namespace guisfits.HealthTrack.Domain.Models
 
         public override bool EhValido()
         {
-            //Esperando pelas classes de validação
-            return true;
+            ValidationResult = new PressaoArterialEstaConsistenteValidation().Validate(this);
+            return ValidationResult.IsValid;
         }
     }
 }

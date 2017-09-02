@@ -7,7 +7,7 @@ namespace guisfits.HealthTrack.Domain.Specification.Usuario
     {
         public bool IsSatisfiedBy(Models.Usuario entity)
         {
-            return Peso.Validar(entity.PesoAtual);
+            return PesoValue.Validar(entity.PesoAtual);
         }
     }
 }

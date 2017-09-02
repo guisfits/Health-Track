@@ -36,7 +36,7 @@
         public Imc(double peso, double altura)
         {
             _peso = peso;
-            _altura = altura;
+            _altura = altura / 100;
         }
     }
 }

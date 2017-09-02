@@ -21,7 +21,7 @@ namespace guisfits.HealthTrack.Domain.Models
         {
             get
             {
-                _pesoAtual = Pesos.Count > 0 ? Pesos[Pesos.Count - 1].ValorKg : 0;
+                _pesoAtual = Pesos.Count > 0 ? Pesos[Pesos.Count - 1].PesoValue : 0;
                 return _pesoAtual;
             }
             set

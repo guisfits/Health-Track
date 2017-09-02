@@ -12,7 +12,7 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
             Property(p => p.DataHora)
                 .IsRequired();
 
-            Property(p => p.ValorKg)
+            Property(p => p.PesoValue)
                 .IsRequired();
 
             HasRequired(p => p.Usuario)

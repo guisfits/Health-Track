@@ -1,6 +1,6 @@
 ﻿namespace guisfits.HealthTrack.Domain.ValueObjects
 {
-    public class Peso
+    public class PesoValue
     {
         public static bool Validar(double peso)
         {
