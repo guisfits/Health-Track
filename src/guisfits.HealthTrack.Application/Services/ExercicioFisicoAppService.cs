@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
 using guisfits.HealthTrack.Application.Interfaces;
 using guisfits.HealthTrack.Application.ViewModels;
 using guisfits.HealthTrack.Domain.Interfaces.Services;
 using guisfits.HealthTrack.Domain.Models;
-using guisfits.HealthTrack.Domain.Services;
 using guisfits.HealthTrack.Infra.Data.UoW;
 
 namespace guisfits.HealthTrack.Application.Services
@@ -64,6 +60,11 @@ namespace guisfits.HealthTrack.Application.Services
         {
             _service.Remover(id);
             Commit();
+        }
+
+        public IEnumerable<ExercicioFisicoViewModel> ObterTodosPorUsuario(Guid id)
+        {
+            return Mapper.Map<IEnumerable<ExercicioFisicoViewModel>>(_service.ObterTodosPorUsuario(id));
         }
 
         public void Dispose()

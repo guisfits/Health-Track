@@ -21,7 +21,10 @@ namespace guisfits.HealthTrack.Presentation.Controllers
 
         public ActionResult Index()
         {
-            return View(_alimentoService.ObterTodos());
+            var identityId = HttpContext.User.Identity.GetUserId();
+            var id = _usuarioAppService.ObterIdPeloIdentity(identityId);
+            var alimentos = _alimentoService.ObterTodosPorUsuario(id);
+            return View(alimentos);
         }
 
         public ActionResult Details(Guid? id)

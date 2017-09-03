@@ -60,6 +60,11 @@ namespace guisfits.HealthTrack.Application.Services
             Commit();
         }
 
+        public IEnumerable<PressaoArterialViewModel> ObterTodosPorUsuario(Guid id)
+        {
+            return Mapper.Map<IEnumerable<PressaoArterialViewModel>>(_service.ObterTodosPorUsuario(id));
+        }
+
         public void Dispose()
         {
             _service.Dispose();
