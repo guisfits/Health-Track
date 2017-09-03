@@ -89,6 +89,8 @@ namespace guisfits.HealthTrack.Presentation.Controllers
         {
             if (ModelState.IsValid)
             {
+                var identityId = HttpContext.User.Identity.GetUserId();
+                alimentoViewModel.UsuarioId = _usuarioAppService.ObterIdPeloIdentity(identityId);
                 _alimentoService.Atualizar(alimentoViewModel);
                 return RedirectToAction("Index");
             }
@@ -122,6 +124,7 @@ namespace guisfits.HealthTrack.Presentation.Controllers
             if (disposing)
             {
                 _alimentoService.Dispose();
+                _usuarioAppService.Dispose();
             }
             base.Dispose(disposing);
         }

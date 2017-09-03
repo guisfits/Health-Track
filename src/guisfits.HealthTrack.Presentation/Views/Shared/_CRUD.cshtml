@@ -2,7 +2,7 @@
 @model guisfits.HealthTrack.Application.ViewModels.EntityViewModel
 
 <div class="btn-group" role="group" aria-label="Basic example">
-    <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Details", new {id = Model.Id})"  @Html.Raw(this.IfClaimShow("Usuarios", "DE"))><i class="fa fa-search" aria-hidden="true"></i></a>
-    <a type="button" class="btn btn-warning btn-sm" href="@Url.Action("Edit", new {id = Model.Id})"     @Html.Raw(this.IfClaimShow("Usuarios", "ED"))><i class="fa fa-pencil" aria-hidden="true"></i></a>
-    <a type="button" class="btn btn-danger btn-sm"  href="@Url.Action("Delete", new { id = Model.Id })" @Html.Raw(this.IfClaimShow("Usuarios", "EX"))><i class="fa fa-trash" aria-hidden="true"></i></a>
+    <a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Details", new {id = Model.Id})" ><i class="fa fa-search" aria-hidden="true"></i></a>
+    <a type="button" class="btn btn-warning btn-sm" href="@Url.Action("Edit", new {id = Model.Id})"    ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a type="button" class="btn btn-danger btn-sm"  href="@Url.Action("Delete", new { id = Model.Id })"><i class="fa fa-trash" aria-hidden="true"></i></a>
 </div>

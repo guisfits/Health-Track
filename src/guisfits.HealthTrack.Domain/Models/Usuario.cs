@@ -40,16 +40,6 @@ namespace guisfits.HealthTrack.Domain.Models
             Pesos = new List<Peso>();
         }
 
-        public string NomeCompleto()
-        {
-            return $"{Nome} {Sobrenome}";
-        }
-
-        public Imc GetImc()
-        {
-            return new Imc(this._pesoAtual, this.Altura);
-        }
-
         public override bool EhValido()
         {
             ValidationResult = new UsuarioEstaConsistenteValidation().Validate(this);

@@ -1,0 +1,54 @@
+﻿@model guisfits.HealthTrack.Application.ViewModels.ExercicioFisicoViewModel
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h3>Quer realmente deletar este item?</h3>
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calorias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calorias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHora)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color btn-group">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+            <a href="@Url.Action("Index")" class="btn btn-default">Cancelar</a>
+        </div>
+    }
+</div>

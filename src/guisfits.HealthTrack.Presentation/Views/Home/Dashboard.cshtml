@@ -1,4 +1,6 @@
-﻿@{
+﻿@model guisfits.HealthTrack.Application.ViewModels.UsuarioViewModel
+
+@{
     ViewBag.Title = "Dashboard";
 }
 
@@ -9,7 +11,7 @@
             <img alt="Foto do usuário" src="~/images/circle/user.png" class="img-circle img-responsive center-block" width="230" height="230">
         </div>
         <div class="col-md-8">
-            <h3><strong>Guilherme de Camargo Silva</strong></h3>
+            <h3><strong>@Model.Nome @Model.Sobrenome</strong></h3>
             <p>
                 <i class="fa fa-birthday-cake" aria-hidden="true"></i><strong> Idade: </strong> 24 anos
                 <br /><i class="fa fa-balance-scale" aria-hidden="true"></i><strong> Peso: </strong> 84 kg

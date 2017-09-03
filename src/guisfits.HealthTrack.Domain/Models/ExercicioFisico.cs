@@ -1,9 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using guisfits.HealthTrack.Domain.Validation.ExercicioFisico;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
-    public enum TipoExercicio { Caminhada, Corrida, Pedalada, Musculacao }
+    public enum TipoExercicio
+    {
+        Caminhada,
+        Corrida,
+        Pedalada,
+        [Display(Name = "Musculação")]
+        Musculacao
+    }
 
     public class ExercicioFisico : Entity
     {

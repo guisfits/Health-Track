@@ -214,11 +214,15 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlimentoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExercicioFisicoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PesoController.cs" />
+    <Compile Include="Controllers\PressaoArterialController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AsIsBundleOrderer.cs" />
     <Compile Include="Helpers\PermissionHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,7 +255,25 @@
     </Content>
     <Content Include="bower.json" />
     <Content Include=".bowerrc" />
+    <Content Include="Scripts\cldr.js" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
     <Content Include="Scripts\effects.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\globalize.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\globalize\unit.js" />
+    <Content Include="Scripts\jquery.validate.globalize.js" />
+    <Content Include="Scripts\jquery.validate.globalize.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\Main.js" />
     <Content Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
@@ -450,9 +472,6 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -723,6 +742,21 @@
     <Content Include="Views\Alimento\Details.cshtml" />
     <Content Include="Views\Alimento\Edit.cshtml" />
     <Content Include="Views\Alimento\Index.cshtml" />
+    <Content Include="Views\ExercicioFisico\Create.cshtml" />
+    <Content Include="Views\ExercicioFisico\Delete.cshtml" />
+    <Content Include="Views\ExercicioFisico\Details.cshtml" />
+    <Content Include="Views\ExercicioFisico\Edit.cshtml" />
+    <Content Include="Views\ExercicioFisico\Index.cshtml" />
+    <Content Include="Views\Peso\Create.cshtml" />
+    <Content Include="Views\Peso\Delete.cshtml" />
+    <Content Include="Views\Peso\Details.cshtml" />
+    <Content Include="Views\Peso\Edit.cshtml" />
+    <Content Include="Views\Peso\Index.cshtml" />
+    <Content Include="Views\PressaoArterial\Create.cshtml" />
+    <Content Include="Views\PressaoArterial\Delete.cshtml" />
+    <Content Include="Views\PressaoArterial\Details.cshtml" />
+    <Content Include="Views\PressaoArterial\Edit.cshtml" />
+    <Content Include="Views\PressaoArterial\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

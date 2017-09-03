@@ -1,9 +1,19 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using guisfits.HealthTrack.Domain.Validation.Alimento;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
-    public enum TipoAlimento { CafeDaManha, Almoco, Jantar, Lanche, Fruta }
+    public enum TipoAlimento
+    {
+        [Display(Name = "Café da Manhã")]
+        CafeDaManha,
+        [Display(Name = "Almoço")]
+        Almoco,
+        Jantar,
+        Lanche,
+        Fruta
+    }
 
     public class Alimento : Entity
     {

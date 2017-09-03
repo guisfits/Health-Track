@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Alimentos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a class="btn btn-success" href="@Url.Action("Create")"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar</a>
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,7 @@
             @Html.DisplayFor(modelItem => item.DataHora)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.Partial("_CRUD", item)
         </td>
     </tr>
 }

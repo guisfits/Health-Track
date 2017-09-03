@@ -1,13 +1,11 @@
 ﻿@model guisfits.HealthTrack.Application.ViewModels.AlimentoViewModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>AlimentoViewModel</h4>
+    <h4>@ViewBag.Title</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,6 +43,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar para listagem", "Index")
 </p>

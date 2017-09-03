@@ -1,0 +1,32 @@
+﻿@model guisfits.HealthTrack.Application.ViewModels.PesoViewModel
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PesoValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PesoValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar para listagem", "Index")
+</p>

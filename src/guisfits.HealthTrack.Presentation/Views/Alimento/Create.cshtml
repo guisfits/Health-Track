@@ -1,59 +1,59 @@
 ﻿@model guisfits.HealthTrack.Application.ViewModels.AlimentoViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Adicionar Alimento";
 }
 
-<h2>Create</h2>
+@Html.Partial("_Logo")
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Alimento", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal form-cadastro", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    
+    <h4>@ViewBag.Title</h4>
+    <hr />
     <div class="form-horizontal">
-        <h4>AlimentoViewModel</h4>
-        <hr />
+        @Html.Partial("_SummaryErrors")
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.EnumDropDownListFor(model => model.Tipo, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Calorias, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Calorias, htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.Calorias, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Calorias, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DataHora, htmlAttributes: new { @class = "control-label col-md-2", @type = "datetime-local"})
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.DataHora, htmlAttributes: new { @class = "control-label col-md-4", @type = "datetime-local"})
+            <div class="col-md-8">
                 @Html.EditorFor(model => model.DataHora, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DataHora, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="col-md-offset-4 col-md-8 btn-group">
+                <input type="submit" value="Adicionar" class="btn btn-success" />
+                <a href="@Url.Action("Index")" class="btn btn-default">Cancelar</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Site");
+    @Scripts.Render("~/bundles/Main")
+}
