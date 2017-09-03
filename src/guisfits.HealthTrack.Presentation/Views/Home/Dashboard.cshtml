@@ -13,10 +13,10 @@
         <div class="col-md-8">
             <h3><strong>@Model.Nome @Model.Sobrenome</strong></h3>
             <p>
-                <i class="fa fa-birthday-cake" aria-hidden="true"></i><strong> Idade: </strong> 24 anos
-                <br /><i class="fa fa-balance-scale" aria-hidden="true"></i><strong> Peso: </strong> 84 kg
+                <i class="fa fa-birthday-cake" aria-hidden="true"></i><strong> Idade: </strong> @Model.IdadeAtual anos
+                <br /><i class="fa fa-balance-scale" aria-hidden="true"></i><strong> Peso: </strong> @Model.PesoAtual kg
                 <br /><i class="fa fa-heartbeat" aria-hidden="true"></i><strong> Pressão Arterial: </strong> "Normal"
-                <br /><i class="fa fa-bar-chart" aria-hidden="true"></i><strong> IMC: </strong> 23.0 <strong>Status: </strong> "Normal"
+                <br /><i class="fa fa-bar-chart" aria-hidden="true"></i><strong> IMC: </strong> @Model.Imc.Valor <strong>Status: </strong> @Model.Imc.Status
             </p>
         </div>
     </div>

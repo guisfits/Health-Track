@@ -15,6 +15,18 @@ namespace guisfits.HealthTrack.Domain.Models
         public DateTime Nascimento { get; set; }
         public bool Excluido { get; private set; } = false;
         public string IdentityId { get; set; }
+        public Imc Imc { get; set; }
+
+        private int _idadeAtual;
+        public int IdadeAtual
+        {
+            get
+            {
+                var result = DateTime.Now.Year - Nascimento.Year;
+                if (Nascimento > DateTime.Now.AddYears(-result)) result--;
+                return result;
+            }
+        }
 
         private double _pesoAtual;
         public double PesoAtual
@@ -38,6 +50,7 @@ namespace guisfits.HealthTrack.Domain.Models
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();
             Pesos = new List<Peso>();
+            Imc = new Imc(_pesoAtual, Altura);
         }
 
         public override bool EhValido()

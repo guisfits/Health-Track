@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
@@ -22,7 +19,8 @@ namespace guisfits.HealthTrack.Application.ViewModels
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G}")]
         [DataType(DataType.DateTime, ErrorMessage = "Data e Hora em formato inválido")]
         public DateTime DataHora { get; set; }
-        
+
+        [DisplayName("Status")]
         public string Status { get; set; }
 
         [ScaffoldColumn(false)]

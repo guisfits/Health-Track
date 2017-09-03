@@ -32,6 +32,10 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
             Property(p => p.IdentityId)
                 .IsRequired();
 
+            Ignore(p => p.Imc);
+
+            Ignore(p => p.IdadeAtual);
+
             Ignore(p => p.PesoAtual);
 
             Ignore(p => p.ValidationResult);

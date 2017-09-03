@@ -60,6 +60,7 @@
     <Compile Include="ViewModels\AlimentoViewModel.cs" />
     <Compile Include="ViewModels\EntityViewModel.cs" />
     <Compile Include="ViewModels\ExercicioFisicoViewModel.cs" />
+    <Compile Include="ViewModels\ImcViewModel.cs" />
     <Compile Include="ViewModels\PesoViewModel.cs" />
     <Compile Include="ViewModels\PressaoArterialViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />

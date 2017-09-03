@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using guisfits.HealthTrack.Domain.Models;
 using System.ComponentModel;
+using AutoMapper;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
@@ -45,7 +46,13 @@ namespace guisfits.HealthTrack.Application.ViewModels
         public double PesoAtual { get; set; }
 
         [ScaffoldColumn(false)]
+        public int IdadeAtual { get; set; }
+
+        [ScaffoldColumn(false)]
         public string IdentityId { get; set; }
+
+        [ScaffoldColumn(false)]
+        public ImcViewModel Imc { get; set; }
 
         [ScaffoldColumn(false)]
         public virtual IList<Peso> Pesos { get; set; }
@@ -58,5 +65,10 @@ namespace guisfits.HealthTrack.Application.ViewModels
 
         [ScaffoldColumn(false)]
         public virtual ICollection<PressaoArterial> PressoesArteriais { get; set; }
+
+        public ImcViewModel GetImc(double peso, double altura)
+        {
+            return Mapper.Map<ImcViewModel>(new Imc(peso, altura));
+        }
     }
 }

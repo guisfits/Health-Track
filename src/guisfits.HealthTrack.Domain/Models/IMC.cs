@@ -1,4 +1,6 @@
-﻿namespace guisfits.HealthTrack.Domain.Models
+﻿using System;
+
+namespace guisfits.HealthTrack.Domain.Models
 {
     public class Imc
     {
@@ -12,31 +14,50 @@
                 if (Valor < 17)
                     return "Muito abaixo do peso";
 
-                if(Valor <= 18.49) 
+                else if(Valor <= 18.49) 
                     return "Abaixo do peso";
 
-                if(Valor <= 24.99) 
+                else if(Valor <= 24.99) 
                     return "Peso normal";
 
-                if(Valor <= 29.99) 
+                else if (Valor <= 29.99) 
                     return "Acima do peso";
 
-                if(Valor <= 34.99) 
+                else if (Valor <= 34.99) 
                     return "Obeso";
 
-                if(Valor <= 39.99) 
+                else if (Valor < 40) 
                     return "Obesidade severa";
-
-                return "Obesidade mórbida";
+                else if (Valor > 40)
+                    return "Obesidade mórbida";
+                else
+                    return "Não calculável";
             }
         }
 
-        public double Valor => _peso / (_altura * _altura);
+        private double _valor;
+        public double Valor
+        {
+            get
+            {
+                _valor = _peso / (_altura * _altura);
+                _valor = Math.Round(_valor, 2);
+                return _valor;
+            }
+            set => _valor = value;
+        }
 
         public Imc(double peso, double altura)
         {
+            if (peso <= 0 || altura <= 0) return;
+
             _peso = peso;
             _altura = altura / 100;
+        }
+
+        public Imc()
+        {
+            
         }
     }
 }

@@ -65,7 +65,6 @@ namespace guisfits.HealthTrack.Presentation.Controllers
 
                 return View(pesoViewModel);
             }
-
             return RedirectToAction("Index");
         }
 

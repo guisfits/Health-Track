@@ -15,7 +15,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public IEnumerable<Peso> ObterTodosPorUsuario(Guid id)
         {
-            var sql = "SELECT * FROM Pesos a WHERE a.UsuarioId = @uid";
+            var sql = "SELECT * FROM Pesos a WHERE a.UsuarioId = @uid ORDER BY DataHora DESC";
             return Db.Database.Connection.Query<Peso>(sql, new { uid = id });
         }
     }
