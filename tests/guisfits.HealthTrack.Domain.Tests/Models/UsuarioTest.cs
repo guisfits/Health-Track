@@ -41,7 +41,7 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
                 PesoAtual = 0,
                 Altura = 4000
             };
-
+             
             //Act
             bool result = usuario.EhValido();
 
@@ -51,7 +51,7 @@ namespace guisfits.HealthTrack.Domain.Tests.Models
             Assert.IsTrue(usuario.ValidationResult.Erros.Any(e => e.Message == "O usuário deve ser maior de idade"));
             Assert.IsTrue(usuario.ValidationResult.Erros.Any(e => e.Message == "Altura deve ter um valor possível"));
             Assert.IsTrue(usuario.ValidationResult.Erros.Any(e => e.Message == "Peso deve ter um valor possível"));
-            Assert.IsTrue(usuario.ValidationResult.Erros.Any(e => e.Message == "Usuário deve ter pelo menos um peso cadastrado"));
+            //Assert.IsTrue(usuario.ValidationResult.Erros.Any(e => e.Message == "Usuário deve ter pelo menos um peso cadastrado"));
         }
     }
 }
