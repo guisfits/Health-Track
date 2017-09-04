@@ -1,4 +1,5 @@
-﻿@model guisfits.HealthTrack.Application.ViewModels.UsuarioViewModel
+﻿@using Microsoft.Ajax.Utilities
+@model guisfits.HealthTrack.Application.ViewModels.UsuarioViewModel
 
 @{
     ViewBag.Title = "Dashboard";
@@ -15,7 +16,10 @@
             <p>
                 <i class="fa fa-birthday-cake" aria-hidden="true"></i><strong> Idade: </strong> @Model.IdadeAtual anos
                 <br /><i class="fa fa-balance-scale" aria-hidden="true"></i><strong> Peso: </strong> @Model.PesoAtual kg
-                <br /><i class="fa fa-heartbeat" aria-hidden="true"></i><strong> Pressão Arterial: </strong> "Normal"
+                @if(@Model.PressoesArteriais.ToArray()[0] != null)
+                { 
+                    <br /><i class="fa fa-heartbeat" aria-hidden="true"></i><strong> Pressão Arterial: </strong> @Model.PressoesArteriais.LastOrDefault().Status
+                }
                 <br /><i class="fa fa-bar-chart" aria-hidden="true"></i><strong> IMC: </strong> @Model.Imc.Valor <strong>Status: </strong> @Model.Imc.Status
             </p>
         </div>

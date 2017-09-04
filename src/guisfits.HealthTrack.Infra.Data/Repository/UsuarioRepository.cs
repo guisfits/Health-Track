@@ -15,10 +15,27 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
         public override Usuario ObterPorId(Guid id)
         {
             var sql = @"SELECT * FROM Usuarios u " +
-                    "JOIN Pesos p ON u.Id = p.UsuarioId " +
-                    "JOIN PressoesArteriais pr ON u.Id = pr.UsuarioId " +
+                    "LEFT JOIN Pesos p ON u.Id = p.UsuarioId " +
+                    "LEFT JOIN PressoesArteriais pr ON u.Id = pr.UsuarioId " +
                     "WHERE u.Id = @uid " +
                     "ORDER BY p.DataHora DESC";
+
+            return Db.Database.Connection.Query<Usuario, Peso, PressaoArterial, Usuario>(sql,
+                (u, p, pr) =>
+                {
+                    u.Pesos.Add(p);
+                    u.PressoesArteriais.Add(pr);
+                    return u;
+                }, new { uid = id }).FirstOrDefault();
+        }
+
+        public Usuario ObterTudoDoUsuario(Guid id)
+        {
+            var sql = @"SELECT * FROM Usuarios u " +
+                      "LEFT JOIN Pesos p ON u.Id = p.UsuarioId " +
+                      "LEFT JOIN PressoesArteriais pr ON u.Id = pr.UsuarioId " +
+                      "WHERE u.Id = @uid " +
+                      "ORDER BY p.DataHora DESC";
 
             return Db.Database.Connection.Query<Usuario, Peso, PressaoArterial, Usuario>(sql,
                 (u, p, pr) =>
