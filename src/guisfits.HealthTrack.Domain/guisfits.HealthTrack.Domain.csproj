@@ -38,6 +38,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="Interfaces\Repository\IAlimentoRepository.cs" />
     <Compile Include="Interfaces\Repository\IExercicioFisicoRepository.cs" />
     <Compile Include="Interfaces\Repository\IPesoRepository.cs" />

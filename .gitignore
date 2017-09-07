@@ -3,6 +3,7 @@
 
 # My Ignores
 lib/
+TestResults/
 
 # User-specific files
 *.suo

@@ -17,8 +17,9 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
                 .IsRequired()
                 .HasMaxLength(300);
 
-            Property(p => p.Sexo)
-                .IsRequired();
+            Property(p => p.SexoString)
+                .IsRequired()
+                .HasMaxLength(9);
 
             Property(p => p.Altura)
                 .IsRequired();
@@ -31,6 +32,8 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
 
             Property(p => p.IdentityId)
                 .IsRequired();
+
+            Ignore(p => p.Sexo);
 
             Ignore(p => p.Imc);
 

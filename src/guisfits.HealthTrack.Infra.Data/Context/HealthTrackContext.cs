@@ -8,7 +8,7 @@ namespace guisfits.HealthTrack.Infra.Data.Context
     public class HealthTrackContext : DbContext
     {
         public HealthTrackContext()
-            :base("HealthTrackConnection")
+            : base("HealthTrackConnection")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.AutoDetectChangesEnabled = false;

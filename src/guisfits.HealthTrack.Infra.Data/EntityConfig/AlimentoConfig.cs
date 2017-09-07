@@ -9,8 +9,9 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
         {
             HasKey(p => p.Id);
 
-            Property(p => p.Tipo)
-                .IsRequired();
+            Property(p => p.TipoAlimentoString)
+                .IsRequired()
+                .HasMaxLength(30);
 
             Property(p => p.Descricao)
                 .IsOptional()
@@ -26,6 +27,8 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
             HasRequired(p => p.Usuario)
                 .WithMany(p => p.Alimentos)
                 .HasForeignKey(p => p.UsuarioId);
+
+            Ignore(p => p.Tipo);
 
             Ignore(p => p.ValidationResult);
 

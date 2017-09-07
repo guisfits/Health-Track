@@ -1,23 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using guisfits.HealthTrack.Domain.Helpers;
 using guisfits.HealthTrack.Domain.Validation.Usuario;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace guisfits.HealthTrack.Domain.Models
 {
-    public enum TipoSexo { Masculino, Feminino }
+    public enum TipoSexo
+    {
+        Masculino,
+        Feminino
+    }
 
     public class Usuario : Entity
     {
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
-        public TipoSexo Sexo { get; set; }
         public double Altura { get; set; }
         public DateTime Nascimento { get; set; }
         public bool Excluido { get; private set; } = false;
         public string IdentityId { get; set; }
         public Imc Imc { get; set; }
 
-        private int _idadeAtual;
+        public TipoSexo Sexo { get; set; }
+        [Column("Sexo")]
+        public string SexoString
+        {
+            get => Sexo.ToString();
+            set => Sexo = Sexo = value.ParceToEnum<TipoSexo>();
+        }
+
         public int IdadeAtual
         {
             get
