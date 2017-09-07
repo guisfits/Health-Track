@@ -23,9 +23,7 @@ namespace guisfits.HealthTrack.Presentation
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/Site").Include(
-                "~/Scripts/effects.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/Main").Include(
+                "~/Scripts/effects.js",
                 "~/Scripts/Main.js"));
 
             //CSS
@@ -33,16 +31,6 @@ namespace guisfits.HealthTrack.Presentation
                 "~/wwwroot/lib/font-awesome/css/font-awesome.css",
                 "~/wwwroot/lib/bootswatch/paper/bootstrap.css",
                 "~/Content/Site.css"));
-
-            var bundle = new ScriptBundle("~/bundles/jqueryval") { Orderer = new AsIsBundleOrderer() };
-
-            bundle
-                .Include("~/Scripts/jquery.validate-vsdoc.js")
-                .Include("~/Scripts/jquery.validate.js")
-                .Include("~/Scripts/jquery.validate.unobtrusive.js")
-                .Include("~/Scripts/globalize/globalize.js")
-                .Include("~/Scripts/jquery.validate.globalize.js");
-            bundles.Add(bundle);
         }
     }
 }
