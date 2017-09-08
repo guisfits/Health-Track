@@ -2,15 +2,16 @@
     ViewBag.Title = "Sobre";
 }
 
+@Html.Partial("_Logo")
 <h2>@ViewBag.Title</h2>
 <hr/>
-<p>
+<p class="medium-font">
     O Health Track é um projeto acadêmico criado para o curso de TDS da FIAP. A FIAP segue a metodologia de ensino orientado a projeto, onde cada aluno desenvolve sozinho um projeto ao longo do ano, colocando em prática todo seu conhecimento adquirido durante a graduação em um projeto real e ganhando experiência. Este projeto é o desafio do primeiro ano e consiste em criar uma aplicação web voltada para área de saúde, onde passarei por todas as fases no desenvolvimento de um software, desde seu gerenciamento, análise de requisitos, modelagem do banco de dados, construção de protótipos, elaboração das documentações, desenvolvimento da aplicação, testes e seu deploy.
 </p>
 
 <h4>Fases do projeto</h4>
 <hr />
-<ul>
+<ul class="medium-font">
     <li>DEVELOPMENT ENVIRONMENT (Done)</li>
     <li>PROTOTYPING (Done)</li>
     <li>MODELLING (Done)</li>
@@ -22,7 +23,7 @@
 
 <h4>Tecnologias usadas</h4>
 <hr />
-<ul>
+<ul class="medium-font">
     <li>ASP.NET MVC </li>
     <li>ASP.NET WebApi </li>
     <li>ASP.NET Identity </li>
@@ -47,13 +48,13 @@
 <h4>Desenvolvedor</h4>
 <hr />
 <div>
-    <a href="https://www.linkedin.com/in/guisfits/"><i><span class="fa fa-linkedin-square"></span></i> Seguir</a>
+    <a class="medium-font" href="https://www.linkedin.com/in/guisfits/"><i><span class="fa fa-linkedin-square"></span></i> Seguir</a>
 </div>
 <div>
-    <a href="https://github.com/guisfits"><i><span class="fa fa-github"></span></i> guisfits</a>
+    <a class="medium-font" href="https://github.com/guisfits"><i><span class="fa fa-github"></span></i> guisfits</a>
 </div>
 <div>
-    <a href="https://github.com/guisfits/guisfits.HealthTrack"><i><span class="fa fa-github"></span></i> Repositório</a>
+    <a class="medium-font" href="https://github.com/guisfits/guisfits.HealthTrack"><i><span class="fa fa-github"></span></i> Repositório</a>
 </div>
 
 <footer class="footer">
@@ -65,4 +66,5 @@
 {
     <!--GitHub-->
     @*<script async defer src="https://buttons.github.io/buttons.js"></script>*@
+    @Scripts.Render("~/bundles/Site")
 }
