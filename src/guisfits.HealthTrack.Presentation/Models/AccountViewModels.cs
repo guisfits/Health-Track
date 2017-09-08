@@ -48,12 +48,12 @@ namespace guisfits.HealthTrack.Presentation.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "O campo E-mail é requerido")]
         [Display(Name = "Email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo Senha é requerido")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -64,19 +64,20 @@ namespace guisfits.HealthTrack.Presentation.Models
 
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "O campo E-mail é requerido")]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo senha é requerido")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Senha")]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "A confirmação da senha é requerida")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirmação")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
