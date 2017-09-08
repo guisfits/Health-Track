@@ -1,6 +1,6 @@
 ﻿using guisfits.HealthTrack.Application.ViewModels;
 
-namespace guisfits.HealthTrack.Presentation.Models
+namespace guisfits.HealthTrack.Presentation.ViewModels
 {
     public class CadastroViewModel
     {

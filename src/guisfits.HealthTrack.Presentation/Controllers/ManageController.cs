@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using guisfits.HealthTrack.Presentation.Models;
+using guisfits.HealthTrack.Presentation.ViewModels;
 
 namespace guisfits.HealthTrack.Presentation.Controllers
 {

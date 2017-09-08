@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace guisfits.HealthTrack.Presentation.Models
+namespace guisfits.HealthTrack.Presentation.ViewModels
 {
     public class IndexViewModel
     {
