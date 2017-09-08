@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using guisfits.HealthTrack.Presentation.ViewModels;
+using guisfits.HealthTrack.Presentation.Context;
 
 namespace guisfits.HealthTrack.Presentation
 {

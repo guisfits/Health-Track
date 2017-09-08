@@ -3,11 +3,11 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using guisfits.HealthTrack.Application.Interfaces;
-using guisfits.HealthTrack.Application.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using guisfits.HealthTrack.Presentation.ViewModels;
+using guisfits.HealthTrack.Presentation.Context;
 
 namespace guisfits.HealthTrack.Presentation.Controllers
 {

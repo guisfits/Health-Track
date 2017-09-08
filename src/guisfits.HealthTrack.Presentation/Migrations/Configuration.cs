@@ -5,7 +5,7 @@ namespace guisfits.HealthTrack.Presentation.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<guisfits.HealthTrack.Presentation.ViewModels.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<guisfits.HealthTrack.Presentation.Context.ApplicationDbContext>
     {
         public Configuration()
         {
