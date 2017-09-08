@@ -11,24 +11,67 @@
         <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
+        
         <div class="item active">
-            <img src="~/images/panel/healthy.jpeg" class="img-responsive" />
+            <img src="~/images/panel/healthy.jpeg" class="img-responsive"/>
+            <div class="carousel-caption" role="option">
+                <p>
+                    Cadastre-se gratuitamente
+                    <a href="@Url.Action("Register", "Account")" class="btn btn-default">
+                        Registrar-se
+                    </a>
+                </p>
+            </div>
         </div>
+
         <div class="item">
-            <img src="~/images/panel/food.jpg" class="img-responsive" />
-            
+            <img src="~/images/panel/food.jpg" class="img-responsive"/>
+            <div class="carousel-caption" role="option">
+                <p>
+                    Controle sua alimentação
+                    <a href="@Url.Action("Create", "Alimento")" class="btn btn-default">
+                        <i> <span class="fa fa-plus"></span></i> Adicionar
+                    </a>
+                </p>
+            </div>
         </div>
+
         <div class="item">
-            <img src="~/images/panel/exercise.jpeg" class="img-responsive" />
-            
+            <img src="~/images/panel/exercise.jpeg" class="img-responsive"/>
+            <div class="carousel-caption" role="option">
+                <p>
+                    Faça exercícios e mantenha-se saudável
+                    <a href="@Url.Action("Create", "ExercicioFisico")" class="btn btn-default">
+                        <i> <span class="fa fa-plus"></span></i> Adicionar
+                    </a>
+                </p>
+            </div>
         </div>
+
         <div class="item">
             <img src="~/images/panel/weight.jpeg" class="img-responsive"/>
-            
+            <div class="carousel-caption" role="option">
+                <p>
+                    Mantenha o controle de seus pesos
+                    <a href="@Url.Action("Create", "Peso")" class="btn btn-default">
+                        <i> <span class="fa fa-plus"></span></i> Adicionar
+                    </a>
+                </p>
+            </div>
         </div>
+
         <div class="item">
-            <img src="~/images/panel/pressure.jpg" class="img-responsive" />
+            <img src="~/images/panel/pressure.jpg" class="img-responsive"/>
+            <div class="carousel-caption" role="option">
+                <p>
+                    Meça sua pressão e controle sua saúde
+                    <a href="@Url.Action("Create", "PressaoArterial")" class="btn btn-default">
+                        <i> <span class="fa fa-plus"></span></i> Adicionar
+                    </a>
+                </p>
+            </div>
         </div>
+
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -38,30 +81,9 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+
 </div>
 
-<div class="row">
-    <div class="col-md-3">
-        <h3>Alimentos</h3>
-        <p>Controle sua alimentação.</p>
-        <p><a class="btn btn-default" href="@Url.Action("Create", "Alimento")"><i> <span class="fa fa-plus"></span></i> Adicionar</a></p>
-    </div>
-    <div class="col-md-3">
-        <h3>Exercícios Físicos</h3>
-        <p>Faça exercícios e mantenha-se saudável.</p>
-        <p><a class="btn btn-default" href="@Url.Action("Create", "ExercicioFisico")"><i> <span class="fa fa-plus"></span></i> Adicionar</a></p>
-    </div>
-    <div class="col-md-3">
-        <h3>Pesos</h3>
-        <p>Mantenha o histórico dos seus pesos</p>
-        <p><a class="btn btn-default" href="@Url.Action("Create", "Peso")"><i> <span class="fa fa-plus"></span></i> Adicionar</a></p>
-    </div>
-    <div class="col-md-3">
-        <h3>Pressões Arteriais</h3>
-        <p>Meça sua pressão e controle sua saúde</p>
-        <p><a class="btn btn-default" href="@Url.Action("Create", "PressaoArterial")"><i> <span class="fa fa-plus"></span></i> Adicionar</a></p>
-    </div>
-</div>
 
 <footer class="footer">
     <hr/>
