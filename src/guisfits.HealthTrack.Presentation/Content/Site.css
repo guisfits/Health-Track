@@ -45,8 +45,7 @@ textarea {
 }
 
 
-/* Implementadas por Guilherme Camargo */
-
+/* Minhas implementações */
 .footer {
     position: static;
     bottom: 0;
@@ -93,4 +92,13 @@ hr {
 
 .medium-font{
     font-size: medium;
+}
+
+body {
+    font-size: 14px;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
 }

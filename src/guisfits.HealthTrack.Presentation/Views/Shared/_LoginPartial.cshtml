@@ -5,18 +5,24 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
-    @Html.AntiForgeryToken()
-    <ul class="nav navbar-nav">
-        <li><a href="@Url.Action("Dashboard", "Home")">Dashboard</a></li>
-        <li><a href="@Url.Action("Index", "Alimento")">Alimentos</a></li>
-        <li><a href="@Url.Action("Index", "ExercicioFisico")">Exercícios Físicos</a></li>
-        <li><a href="@Url.Action("Index", "Peso")">Pesos</a></li>
-        <li><a href="@Url.Action("Index", "PressaoArterial")">Pressões Arteriais</a></li>
-    </ul>
+        @Html.AntiForgeryToken()
+        <ul class="nav navbar-nav">
+            <li><a href="@Url.Action("Dashboard", "Home")">Dashboard</a></li>
+            <li><a href="@Url.Action("Index", "Alimento")">Alimentos</a></li>
+            <li><a href="@Url.Action("Index", "ExercicioFisico")">Exercícios Físicos</a></li>
+            <li><a href="@Url.Action("Index", "Peso")">Pesos</a></li>
+            <li><a href="@Url.Action("Index", "PressaoArterial")">Pressões Arteriais</a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li>@Html.ActionLink("Ola " + User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})</li>
-            <li><a href="@Url.Action("About", "Home")">Sobre</a></li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@User.Identity.GetUserName() <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="@Url.Action("About", "Home")">Sobre</a></li>
+                    <li>@Html.ActionLink("Editar Perfil", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})</li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
+                </ul>
+            </li>
         </ul>
     }
 }
