@@ -1,7 +1,7 @@
-﻿using System;
-using guisfits.HealthTrack.Domain.Interfaces.Repository;
+﻿using guisfits.HealthTrack.Domain.Interfaces.Repository;
 using guisfits.HealthTrack.Domain.Interfaces.Services;
 using guisfits.HealthTrack.Domain.Models;
+using System;
 
 namespace guisfits.HealthTrack.Domain.Services
 {
@@ -9,7 +9,7 @@ namespace guisfits.HealthTrack.Domain.Services
     {
         private readonly IUsuarioRepository _repository;
 
-        public UsuarioService(IUsuarioRepository repository) 
+        public UsuarioService(IUsuarioRepository repository)
             : base(repository)
         {
             _repository = repository;
@@ -18,6 +18,11 @@ namespace guisfits.HealthTrack.Domain.Services
         public Guid ObterIdPeloIdentity(string idIdentity)
         {
             return _repository.ObterIdPeloIdentity(idIdentity);
+        }
+
+        public Usuario ObterTudoDoUsuario(Guid id)
+        {
+            return _repository.ObterTudoDoUsuario(id);
         }
     }
 }

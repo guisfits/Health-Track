@@ -1,10 +1,10 @@
-﻿using guisfits.HealthTrack.Domain.Models;
+﻿using Dapper;
+using guisfits.HealthTrack.Domain.Interfaces.Repository;
+using guisfits.HealthTrack.Domain.Models;
+using guisfits.HealthTrack.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Dapper;
-using guisfits.HealthTrack.Domain.Interfaces.Repository;
-using guisfits.HealthTrack.Infra.Data.Context;
 
 namespace guisfits.HealthTrack.Infra.Data.Repository
 {
@@ -31,16 +31,20 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
         public Usuario ObterTudoDoUsuario(Guid id)
         {
-            var sql = @"SELECT * FROM Usuarios u " +
-                      "LEFT JOIN Pesos p ON u.Id = p.UsuarioId " +
-                      "LEFT JOIN PressoesArteriais pr ON u.Id = pr.UsuarioId " +
-                      "WHERE u.Id = @uid " +
-                      "ORDER BY p.DataHora DESC";
+            var sql = @"SELECT TOP 5 * " +
+                      "FROM Usuarios u " +
+                      "LEFT JOIN Pesos p ON p.UsuarioId = u.Id " +
+                      "LEFT JOIN Alimentos a ON a.UsuarioId = u.id " +
+                      "LEFT JOIN ExerciciosFisicos e ON e.UsuarioId = u.id " +
+                      "LEFT JOIN PressoesArteriais pa ON pa.UsuarioId = u.id " +
+                      "WHERE u.Id = @uid";
 
-            return Db.Database.Connection.Query<Usuario, Peso, PressaoArterial, Usuario>(sql,
-                (u, p, pr) =>
+            return Db.Database.Connection.Query<Usuario, Peso, Alimento, ExercicioFisico, PressaoArterial, Usuario>(sql,
+                (u, p, a, e, pr) =>
                 {
                     u.Pesos.Add(p);
+                    u.Alimentos.Add(a);
+                    u.ExerciciosFisicos.Add(e);
                     u.PressoesArteriais.Add(pr);
                     return u;
                 }, new { uid = id }).FirstOrDefault();
@@ -53,8 +57,8 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
                         "ON p.UsuarioId = u.Id " +
                         "WHERE u.Excluido = 0";
 
-            return Db.Database.Connection.Query<Usuario, Peso, Usuario>(sql, 
-                (u, p) => 
+            return Db.Database.Connection.Query<Usuario, Peso, Usuario>(sql,
+                (u, p) =>
                 {
                     u.Pesos.Add(p);
                     return u;
@@ -74,7 +78,7 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
             var sql = "SELECT * FROM Usuarios u " +
                       "WHERE u.IdentityId = @uid";
 
-            var user = Db.Database.Connection.Query<Usuario>(sql, new {uid = idIdentity}).FirstOrDefault();
+            var user = Db.Database.Connection.Query<Usuario>(sql, new { uid = idIdentity }).FirstOrDefault();
             return user.Id;
         }
     }

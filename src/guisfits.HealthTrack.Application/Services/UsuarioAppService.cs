@@ -1,11 +1,11 @@
-﻿using guisfits.HealthTrack.Application.Interfaces;
-using System;
-using System.Collections.Generic;
+﻿using AutoMapper;
+using guisfits.HealthTrack.Application.Interfaces;
 using guisfits.HealthTrack.Application.ViewModels;
-using AutoMapper;
 using guisfits.HealthTrack.Domain.Interfaces.Services;
 using guisfits.HealthTrack.Domain.Models;
 using guisfits.HealthTrack.Infra.Data.UoW;
+using System;
+using System.Collections.Generic;
 
 namespace guisfits.HealthTrack.Application.Services
 {
@@ -15,7 +15,7 @@ namespace guisfits.HealthTrack.Application.Services
 
         public UsuarioAppService(IUsuarioService usuarioService,
                                  IUnitOfWork uow)
-            :base(uow)
+            : base(uow)
         {
             _usuarioService = usuarioService;
         }
@@ -45,6 +45,11 @@ namespace guisfits.HealthTrack.Application.Services
         public IEnumerable<UsuarioViewModel> ObterPaginado(int s, int t)
         {
             return Mapper.Map<IEnumerable<UsuarioViewModel>>(_usuarioService.ObterPaginado(s, t));
+        }
+
+        public UsuarioViewModel ObterTudoDoUsuario(Guid id)
+        {
+            return Mapper.Map<UsuarioViewModel>(_usuarioService.ObterTudoDoUsuario(id));
         }
 
         public UsuarioViewModel Atualizar(UsuarioViewModel obj)
