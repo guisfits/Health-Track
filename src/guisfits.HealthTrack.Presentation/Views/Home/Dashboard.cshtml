@@ -16,10 +16,10 @@
             <h3><strong>@Model.Nome @Model.Sobrenome</strong></h3>
             <p>
                 <i class="fa fa-birthday-cake" aria-hidden="true"></i><strong> Idade: </strong> @Model.IdadeAtual anos
-                <br /><i class="fa fa-balance-scale" aria-hidden="true"></i><strong> Peso: </strong> @Model.PesoAtual kg
+                <br /><i class="fa fa-balance-scale" aria-hidden="true"></i><strong> Peso: </strong> @Model.PesoAtual
                 @if(@Model.PressoesArteriais.ToArray()[0] != null)
                 { 
-                    <br /><i class="fa fa-heartbeat" aria-hidden="true"></i><strong> Pressão Arterial: </strong> @Model.PressoesArteriais.LastOrDefault().Status
+                    <br /><i class="fa fa-heartbeat" aria-hidden="true"></i><strong> Pressão Arterial: </strong> @Model.PressoesArteriais.FirstOrDefault().Status
                 }
                 <br /><i class="fa fa-bar-chart" aria-hidden="true"></i><strong> IMC: </strong> @Model.Imc.Valor <strong>Status: </strong> @Model.Imc.Status
             </p>
@@ -51,8 +51,8 @@
                         @foreach(var peso in Model.Pesos)
                         {
                             <tr>
-                                <td>peso.DataHora </td>
-                                <td>peso.PesoValue</td>
+                                <td>@peso.DataHora.ToShortDateString()</td>
+                                <td>@peso.PesoValue kg</td>
                             </tr>
                         }
                     </tbody>
@@ -72,56 +72,20 @@
                 <thread>
                     <tr>
                         <th>Data</th>
-                        <th>Horario</th>
                         <th>Tipo</th>
                         <th>Calorias</th>
-                        <th>Descrição</th>
                     </tr>
                 </thread>
-                <hbody>
+                <tbody>
+                @foreach(var exercicio in Model.ExerciciosFisicos)
+                {
                     <tr>
-                        <td>04/06/2017</td>
-                        <td>17h00</td>
-                        <td>Musculação</td>
-                        <td>200</td>
-                        <td>Inferior</td>
+                        <td>@exercicio.DataHora </td>
+                        <td>@exercicio.Tipo</td>
+                        <td>@exercicio.Calorias</td>
                     </tr>
-                    <tr>
-                        <td>03/06/2017</td>
-                        <td>14h00</td>
-                        <td>Musculação</td>
-                        <td>180</td>
-                        <td>Série A</td>
-                    </tr>
-                    <tr>
-                        <td>02/06/2017</td>
-                        <td>13h00</td>
-                        <td>Musculação</td>
-                        <td>220</td>
-                        <td>Série B</td>
-                    </tr>
-                    <tr>
-                        <td>02/06/2017</td>
-                        <td>13h00</td>
-                        <td>Musculação</td>
-                        <td>220</td>
-                        <td>Série B</td>
-                    </tr>
-                    <tr>
-                        <td>02/06/2017</td>
-                        <td>13h00</td>
-                        <td>Musculação</td>
-                        <td>220</td>
-                        <td>Série B</td>
-                    </tr>
-                    <tr>
-                        <td>02/06/2017</td>
-                        <td>13h00</td>
-                        <td>Musculação</td>
-                        <td>220</td>
-                        <td>Série B</td>
-                    </tr>
-                </hbody>
+                }
+                </tbody>
             </table>
         </div>
 
@@ -144,48 +108,19 @@
                 <thead>
                     <tr>
                         <th>Data</th>
-                        <th>Horário</th>
                         <th>Tipo</th>
                         <th>Calorias</th>
-                        <th>Descrição</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach (var alimento in Model.Alimentos)
+                {
                     <tr>
-                        <td>04/06/2017</td>
-                        <td>9:00</td>
-                        <td>Jantar</td>
-                        <td>300</td>
-                        <td>Filé de Frango</td>
+                        <td>@alimento.DataHora.ToShortDateString()</td>
+                        <td>@alimento.Tipo</td>
+                        <td>@alimento.Calorias</td>
                     </tr>
-                    <tr>
-                        <td>04/06/2017</td>
-                        <td>1:00</td>
-                        <td>Almoço</td>
-                        <td>300</td>
-                        <td>Filé de Frango</td>
-                    </tr>
-                    <tr>
-                        <td>04/06/2017</td>
-                        <td>1:00</td>
-                        <td>Almoço</td>
-                        <td>300</td>
-                        <td>Filé de Frango</td>
-                    </tr>
-                    <tr>
-                        <td>04/06/2017</td>
-                        <td>1:00</td>
-                        <td>Almoço</td>
-                        <td>300</td>
-                        <td>Filé de Frango</td>
-                    </tr>
-                    <tr>
-                        <td>04/06/2017</td>
-                        <td>1:00</td>
-                        <td>Almoço</td>
-                        <td>300</td>
-                        <td>Filé de Frango</td>
-                    </tr>
+                }
                 </tbody>
             </table>
         </div>
@@ -202,42 +137,17 @@
                 <thead>
                     <tr>
                         <th>Data</th>
-                        <th>Sistólica</th>
-                        <th>Diastólica</th>
-                        <th>Situação</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
+                @foreach (var pressao in Model.PressoesArteriais)
+                {
                     <tr>
-                        <td>04/06/2017</td>
-                        <td>80</td>
-                        <td>120</td>
-                        <td>Normal</td>
+                        <td>@pressao.DataHora.ToShortDateString()</td>
+                        <td>@pressao.Status</td>
                     </tr>
-                    <tr>
-                        <td>05/04/2017</td>
-                        <td>85</td>
-                        <td>115</td>
-                        <td>Normal</td>
-                    </tr>
-                    <tr>
-                        <td>02/03/2017</td>
-                        <td>90</td>
-                        <td>110</td>
-                        <td>Normal</td>
-                    </tr>
-                    <tr>
-                        <td>02/03/2017</td>
-                        <td>90</td>
-                        <td>110</td>
-                        <td>Normal</td>
-                    </tr>
-                    <tr>
-                        <td>02/03/2017</td>
-                        <td>90</td>
-                        <td>110</td>
-                        <td>Normal</td>
-                    </tr>
+                }
                 </tbody>
             </table>
         </div>

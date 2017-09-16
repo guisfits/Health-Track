@@ -29,33 +29,12 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
                 }, new { uid = id }).FirstOrDefault();
         }
 
-        public Usuario ObterTudoDoUsuario(Guid id)
-        {
-            var sql = @"SELECT TOP 5 * " +
-                      "FROM Usuarios u " +
-                      "LEFT JOIN Pesos p ON p.UsuarioId = u.Id " +
-                      "LEFT JOIN Alimentos a ON a.UsuarioId = u.id " +
-                      "LEFT JOIN ExerciciosFisicos e ON e.UsuarioId = u.id " +
-                      "LEFT JOIN PressoesArteriais pa ON pa.UsuarioId = u.id " +
-                      "WHERE u.Id = @uid";
-
-            return Db.Database.Connection.Query<Usuario, Peso, Alimento, ExercicioFisico, PressaoArterial, Usuario>(sql,
-                (u, p, a, e, pr) =>
-                {
-                    u.Pesos.Add(p);
-                    u.Alimentos.Add(a);
-                    u.ExerciciosFisicos.Add(e);
-                    u.PressoesArteriais.Add(pr);
-                    return u;
-                }, new { uid = id }).FirstOrDefault();
-        }
-
         public override IEnumerable<Usuario> ObterTodos()
         {
             var sql = @"SELECT * FROM Usuarios u " +
-                        "LEFT JOIN Pesos p " +
-                        "ON p.UsuarioId = u.Id " +
-                        "WHERE u.Excluido = 0";
+                      "LEFT JOIN Pesos p " +
+                      "ON p.UsuarioId = u.Id " +
+                      "WHERE u.Excluido = 0";
 
             return Db.Database.Connection.Query<Usuario, Peso, Usuario>(sql,
                 (u, p) =>
@@ -65,14 +44,6 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
                 });
         }
 
-        public override void Remover(Guid id)
-        {
-            Usuario obj = ObterPorId(id);
-            obj.Excluir();
-
-            Atualizar(obj);
-        }
-
         public Guid ObterIdPeloIdentity(string idIdentity)
         {
             var sql = "SELECT * FROM Usuarios u " +
@@ -80,6 +51,68 @@ namespace guisfits.HealthTrack.Infra.Data.Repository
 
             var user = Db.Database.Connection.Query<Usuario>(sql, new { uid = idIdentity }).FirstOrDefault();
             return user.Id;
+        }
+
+        public Usuario ObterTudoDoUsuario(Guid id)
+        {
+            var user = Db.Database.Connection.Query<Usuario>(
+                @"select top 1 u.Nome,
+			                   u.Sobrenome,
+			                   u.Nascimento,
+			                   u.Altura
+                    from Usuarios u
+                    where u.Id = @UserId",
+                new { UserId = id }).FirstOrDefault();
+
+            var pesos = Db.Database.Connection.Query<Peso>(
+                @"select top 5 peso.DataHora,
+			                   peso.PesoValue
+                    from Pesos peso
+                    where peso.UsuarioId = @UserId
+                    order by peso.DataHora desc",
+                new { UserId = id }).DefaultIfEmpty();
+            user.Pesos = pesos.ToList();
+
+            var alimentos = Db.Database.Connection.Query<Alimento>(
+                @"select top 5 alimento.DataHora,
+			                   alimento.Tipo,
+			                   alimento.Calorias
+                    from Alimentos alimento
+                    where alimento.UsuarioId = @UserId
+                    order by alimento.DataHora desc",
+                new { UserId = id }).DefaultIfEmpty();
+            user.Alimentos = alimentos.ToList();
+
+            var exercicios = Db.Database.Connection.Query<ExercicioFisico>(
+                @"select top 5 exercicio.DataHora,
+			                   exercicio.Tipo,
+			                   exercicio.Calorias
+                from ExerciciosFisicos exercicio
+                where exercicio.UsuarioId  = @UserId
+                order by exercicio.DataHora desc",
+                new { UserId = id }).DefaultIfEmpty();
+            user.ExerciciosFisicos = exercicios.ToList();
+
+            var pressao = Db.Database.Connection.Query<PressaoArterial>(
+                @"select top 5 pressao.DataHora,
+			                   pressao.[Status],
+			                   pressao.Sistolica,
+			                   pressao.Diastolica
+                from PressoesArteriais pressao
+                where pressao.UsuarioId = @UserId
+                order by pressao.DataHora desc",
+                new { UserId = id }).DefaultIfEmpty();
+            user.PressoesArteriais = pressao.ToList();
+
+            return user;
+        }
+
+        public override void Remover(Guid id)
+        {
+            Usuario obj = ObterPorId(id);
+            obj.Excluir();
+
+            Atualizar(obj);
         }
     }
 }

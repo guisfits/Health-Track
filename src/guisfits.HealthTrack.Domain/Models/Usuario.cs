@@ -43,7 +43,8 @@ namespace guisfits.HealthTrack.Domain.Models
         private double _pesoAtual;
         public double PesoAtual
         {
-            get => Pesos.Count > 0 ? Pesos[Pesos.Count - 1].PesoValue : 0;
+            //get => Pesos.Count > 0 ? Pesos[Pesos.Count - 1].PesoValue : 0;
+            get => Pesos.Count > 0 ? Pesos[0].PesoValue : 0;
             set
             {
                 _pesoAtual = value;
