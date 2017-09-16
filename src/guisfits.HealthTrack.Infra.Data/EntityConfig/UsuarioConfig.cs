@@ -25,7 +25,8 @@ namespace guisfits.HealthTrack.Infra.Data.EntityConfig
                 .IsRequired();
 
             Property(p => p.Nascimento)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("date");
 
             Property(p => p.Excluido)
                 .IsRequired();

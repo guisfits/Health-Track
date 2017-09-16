@@ -11,8 +11,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
         [DisplayName("Tipo de Alimento")]
         public TipoAlimento Tipo { get; set; }
 
-        [MaxLength(300, ErrorMessage = "O tamanho máximo de caracteres é {0}")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo de caracteres é {0}")]
+        [MaxLength(300, ErrorMessage = "Você excedeu o tamanho máximo de caracteres")]
         [DisplayName("Descrição")]
         public string Descricao { get; set; }
 

@@ -28,74 +28,82 @@
 </div>
 
 <div class="hidden-xs hidden-sm">
-
-    <!--Seção de pesos-->
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <img class="img-circle" src="~/images/circle/weight.png" alt="Uma mulher correndo" width="300" height="300">
-        </div>
-        <div class="panel panel-default col-md-8">
-            <div class="panel-heading">
-                <h3 class="panel-title">Seus últimos pesos cadastrados</h3>
+    
+    @if (Model.Pesos.ToArray()[0] != null)
+    {
+        <!--Seção de pesos-->
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-circle" src="~/images/circle/weight.png" alt="Uma mulher correndo" width="300" height="300">
             </div>
-            <div class="">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Data</th>
-                            <th>Peso</th>
-                        <tr>
-                    </thead>
-                    <tbody>
-                        @foreach(var peso in Model.Pesos)
+            <div class="panel panel-default col-md-8">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Seus últimos pesos cadastrados</h3>
+                </div>
+                <div class="">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Peso</th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var peso in Model.Pesos)
                         {
                             <tr>
                                 <td>@peso.DataHora.ToShortDateString()</td>
                                 <td>@peso.PesoValue kg</td>
                             </tr>
                         }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
+    }
 
     <!--Seção de exercícios-->
-    <hr />
-    <div class="row">
-        <div class="panel panel-default col-md-8">
-            <div class="panel-heading">
-                <h3 class="panel-title">Seus últimos exercícios cadastrados</h3>
-            </div>
-            <table class="table">
-                <thread>
-                    <tr>
-                        <th>Data</th>
-                        <th>Tipo</th>
-                        <th>Calorias</th>
-                    </tr>
-                </thread>
-                <tbody>
-                @foreach(var exercicio in Model.ExerciciosFisicos)
-                {
+    @if (Model.ExerciciosFisicos.ToArray()[0] != null)
+    {
+        <hr/>
+        <div class="row">
+            <div class="panel panel-default col-md-8">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Seus últimos exercícios cadastrados</h3>
+                </div>
+                <table class="table">
+                    <thread>
+                        <tr>
+                            <th>Data</th>
+                            <th>Tipo</th>
+                            <th>Calorias</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                    @foreach (var exercicio in Model.ExerciciosFisicos)
+                    {
                     <tr>
                         <td>@exercicio.DataHora </td>
                         <td>@exercicio.Tipo</td>
                         <td>@exercicio.Calorias</td>
                     </tr>
-                }
-                </tbody>
-            </table>
-        </div>
+                    }
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="col-md-4">
-            <img class="img-circle" src="~/images/circle/exercise.png" alt="Ilustração de exercício" width="300" height="300">
+            <div class="col-md-4">
+                <img class="img-circle" src="~/images/circle/exercise.png" alt="Ilustração de exercício" width="300" height="300">
+            </div>
         </div>
-    </div>
-
+    }
     <!--seção de alimentos-->
-    <hr />
+    
+    @if (Model.Alimentos.ToArray()[0] != null)
+    {   
+    <hr/>
     <div class="row">
         <div class="col-md-4">
             <img class="img-circle" src="~/images/circle/food.png" alt="Ilustração de alimentos saudaveis" width="300" height="300">
@@ -106,11 +114,11 @@
             </div>
             <table class="table">
                 <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Tipo</th>
-                        <th>Calorias</th>
-                    </tr>
+                <tr>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Calorias</th>
+                </tr>
                 </thead>
                 <tbody>
                 @foreach (var alimento in Model.Alimentos)
@@ -125,36 +133,40 @@
             </table>
         </div>
     </div>
-
-    <!--seção de pressão-->
-    <hr />
-    <div class="row">
-        <div class="panel panel-default col-md-8">
-            <div class="panel-heading">
-                <h3 class="panel-title">Suas últimas pressões cadastradas</h3>
-            </div>
-            <table class="table">
-                <thead>
+    }
+    
+    @if (Model.PressoesArteriais.ToArray()[0] != null)
+    {
+        <!--seção de pressão-->
+        <hr/>
+        <div class="row">
+            <div class="panel panel-default col-md-8">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Suas últimas pressões cadastradas</h3>
+                </div>
+                <table class="table">
+                    <thead>
                     <tr>
                         <th>Data</th>
                         <th>Status</th>
                     </tr>
-                </thead>
-                <tbody>
-                @foreach (var pressao in Model.PressoesArteriais)
-                {
-                    <tr>
-                        <td>@pressao.DataHora.ToShortDateString()</td>
-                        <td>@pressao.Status</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach (var pressao in Model.PressoesArteriais)
+                    {
+                        <tr>
+                            <td>@pressao.DataHora.ToShortDateString()</td>
+                            <td>@pressao.Status</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <img class="img-circle" src="~/images/circle/pressure.png" alt="Ilustração de pressão arterial" width="300" height="300">
+            </div>
         </div>
-        <div class="col-md-4">
-            <img class="img-circle" src="~/images/circle/pressure.png" alt="Ilustração de pressão arterial" width="300" height="300">
-        </div>
-    </div>
+    }
 
 </div> <!-- hidden -->
 <!--footer-->

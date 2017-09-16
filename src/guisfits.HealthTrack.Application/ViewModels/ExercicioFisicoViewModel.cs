@@ -11,8 +11,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
         [DisplayName("Tipo de Exercício")]
         public TipoExercicio Tipo { get; set; }
 
-        [MaxLength(300, ErrorMessage = "O tamanho máximo de caracteres é {0}")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo de caracteres é {0}")]
+        [MaxLength(300, ErrorMessage = "Você excedeu o tamanho máximo de caracteres")]
         [DisplayName("Descrição")]
         public string Descricao { get; set; }
 
@@ -22,7 +21,7 @@ namespace guisfits.HealthTrack.Application.ViewModels
 
         [Required(ErrorMessage = "O campo Data e Hora é requerido")]
         [DisplayName("Data e Hora")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:G}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:g}")]
         [DataType(DataType.DateTime, ErrorMessage = "Data e Hora em formato inválido")]
         public DateTime DataHora { get; set; }
 

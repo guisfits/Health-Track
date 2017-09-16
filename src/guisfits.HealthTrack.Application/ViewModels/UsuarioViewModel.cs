@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using AutoMapper;
 using guisfits.HealthTrack.Domain.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using AutoMapper;
+using System.ComponentModel.DataAnnotations;
 
 namespace guisfits.HealthTrack.Application.ViewModels
 {
@@ -18,13 +18,13 @@ namespace guisfits.HealthTrack.Application.ViewModels
         }
 
         [Required(ErrorMessage = "O campo Nome é requerido")]
-        [MaxLength(300, ErrorMessage = "O tamanho máximo de caracteres é de {0}")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo de caracteres é de {0}")]
+        [MaxLength(30, ErrorMessage = "Você excedeu o tamanho máximo de caracteres")]
+        [MinLength(2, ErrorMessage = "Você deve digitar mais alguns caracteres")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O campo Sobrenome é requerido")]
-        [MaxLength(300, ErrorMessage = "O tamanho máximo de caracteres é de {0}")]
-        [MinLength(2, ErrorMessage = "O tamanho mínimo de caracteres é de {0}")]
+        [MaxLength(300, ErrorMessage = "Você excedeu o tamanho máximo de caracteres")]
+        [MinLength(2, ErrorMessage = "Você deve digitar mais alguns caracteres")]
         public string Sobrenome { get; set; }
 
         [Required(ErrorMessage = "O campo Sexo é requerido")]
