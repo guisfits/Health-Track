@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{9707AED8-A991-4A46-8E3A-A26ABEDC4154}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{7C384078-8408-4609-A7DC-75E8E623F49B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{7C384078-8408-4609-A7DC-75E8E623F49B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{7DD1AB55-5A3A-489B-BE9E-BD3EA4BBA1EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Domain", "src\guisfits.HealthTrack.Domain\guisfits.HealthTrack.Domain.csproj", "{28BB965C-3280-43A7-921F-63C906F8D748}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{23116319-DB44-4210-991C-2E2826FE57BA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{23116319-DB44-4210-991C-2E2826FE57BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Infra.Data", "src\guisfits.HealthTrack.Infra.Data\guisfits.HealthTrack.Infra.Data.csproj", "{4AF456AF-6987-47DB-B0E9-F07BFF049536}"
 EndProject
@@ -21,15 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Applic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Presentation", "src\guisfits.HealthTrack.Presentation\guisfits.HealthTrack.Presentation.csproj", "{250E1A75-2121-4100-BB6D-1CD83EAE4F63}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{B1793061-8F7F-4806-B584-DB0D29A48487}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{CF3354AD-AF97-47C7-91FE-B6860B6E4487}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{CF3354AD-AF97-47C7-91FE-B6860B6E4487}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.CrossCutting.MvcFilters", "src\guisfits.HealthTrack.CrossCutting.MvcFilters\guisfits.HealthTrack.CrossCutting.MvcFilters.csproj", "{EE25C9E9-68DB-428A-9D53-A32A89620395}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.CrossCutting.IoC", "src\guisfits.HealthTrack.CrossCutting.IoC\guisfits.HealthTrack.CrossCutting.IoC.csproj", "{D8BDAF51-0C3F-4C8B-88C6-3B38710742C1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Services.WebAPI", "src\guisfits.HealthTrack.Services.WebAPI\guisfits.HealthTrack.Services.WebAPI.csproj", "{AEB876A3-AC8B-42FC-B8C6-D1BC23C18360}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guisfits.HealthTrack.Domain.Tests", "tests\guisfits.HealthTrack.Domain.Tests\guisfits.HealthTrack.Domain.Tests.csproj", "{D6ECEBDF-0BB4-413B-967E-480EB1A6F328}"
 EndProject
@@ -63,10 +59,6 @@ Global
 		{D8BDAF51-0C3F-4C8B-88C6-3B38710742C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8BDAF51-0C3F-4C8B-88C6-3B38710742C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8BDAF51-0C3F-4C8B-88C6-3B38710742C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AEB876A3-AC8B-42FC-B8C6-D1BC23C18360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AEB876A3-AC8B-42FC-B8C6-D1BC23C18360}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AEB876A3-AC8B-42FC-B8C6-D1BC23C18360}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AEB876A3-AC8B-42FC-B8C6-D1BC23C18360}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6ECEBDF-0BB4-413B-967E-480EB1A6F328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6ECEBDF-0BB4-413B-967E-480EB1A6F328}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6ECEBDF-0BB4-413B-967E-480EB1A6F328}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -84,7 +76,6 @@ Global
 		{CF3354AD-AF97-47C7-91FE-B6860B6E4487} = {7EBD8B98-F95A-4015-8ED8-7D3CBEABDF4A}
 		{EE25C9E9-68DB-428A-9D53-A32A89620395} = {CF3354AD-AF97-47C7-91FE-B6860B6E4487}
 		{D8BDAF51-0C3F-4C8B-88C6-3B38710742C1} = {CF3354AD-AF97-47C7-91FE-B6860B6E4487}
-		{AEB876A3-AC8B-42FC-B8C6-D1BC23C18360} = {B1793061-8F7F-4806-B584-DB0D29A48487}
 		{D6ECEBDF-0BB4-413B-967E-480EB1A6F328} = {7C384078-8408-4609-A7DC-75E8E623F49B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
