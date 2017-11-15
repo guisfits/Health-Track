@@ -15,13 +15,20 @@ namespace HealthTrack.Data.Repository
 
         public Usuario ObterDadosDashboard(string id)
         {
-            return context.Usuarios
+            var usuario = context.Usuarios
                 .Where(x => x.Id == id)
                 .Include(x => x.Alimentos)
                 .Include(x => x.ExerciciosFisicos)
                 .Include(x => x.Pesos)
                 .Include(x => x.PressoesArteriais)
                 .FirstOrDefault();
+
+            usuario.Alimentos = usuario.Alimentos.OrderByDescending(c => c.DataHora).Take(5).ToList();
+            usuario.ExerciciosFisicos = usuario.ExerciciosFisicos.OrderByDescending(c => c.DataHora).Take(5).ToList();
+            usuario.Pesos = usuario.Pesos.OrderByDescending(c => c.DataHora).Take(5).ToList();
+            usuario.PressoesArteriais = usuario.PressoesArteriais.OrderByDescending(c => c.DataHora).Take(5).ToList();
+
+            return usuario;
         }
     }
 }
