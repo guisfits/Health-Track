@@ -1,0 +1,55 @@
+﻿@model HealthTrack.MVC.ViewModels.ExercicioFisicoViewModel
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calorias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calorias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <div class="btn-group">
+
+        @using (Html.BeginForm("Delete", "ExercicioFisico", new { id = Model.Id }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        }
+        @Html.ActionLink("Voltar para listagem", "Index")
+    </div>
+</p>

@@ -1,0 +1,96 @@
+﻿@model HealthTrack.MVC.ViewModels.UsuarioViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+
+<div class="container">
+    <div class="row jumbotron">
+        <div class="col-md-4">
+            <div class="container">
+                <img alt="Foto do usuário" src="~/www/img/circle/user.png" class="img-circle img-responsive center-block profile-photo" width="230" height="230">
+            </div>
+            <div class="row center-block">
+                <input type="file" class="btn btn-primary" name="alterarFoto" style="margin-bottom: 10px;">
+                <button class="btn btn-primary" style="margin-bottom: 20px;">Alterar foto</button>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Altere seus dados cadastrais</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="col-md-10 col-md-offset-1">
+                        
+                        @using (Html.BeginForm("Index", "Manage", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Partial("_SummaryErrors")
+
+                            @Html.HiddenFor(model => model.Id)
+
+                            <div class="form-group">
+                                <label class="control-label">Nome</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(model => model.Nome, new {@class="form-control"})
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Sobrenome</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(model => model.Sobrenome, new { @class = "form-control" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Sobrenome, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label">Nascimento</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(model => model.Nascimento, "{0:dd/MM/yyyy}", new { @class = "form-control" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Nascimento, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="altura" class="control-label">Altura</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
+                                    @Html.TextBoxFor(model => model.Altura, new { @class = "form-control" })
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Altura, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sexo" class="control-label">Sexo</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon radio-inline"><i class="fa fa-venus-mars" aria-hidden="true"></i></span>
+                                    @Html.EnumDropDownListFor(model => model.Sexo, new {@class = "form-control"})
+                                </div>
+                                @Html.ValidationMessageFor(m => m.Sexo, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group" style="padding-top: 15px;">
+                                <div class="btn-group">
+                                    <a class="btn btn-default" href="@Url.Action("Index", "Home")">Cancelar</a>
+                                    <input type="submit" class="btn btn-primary" value="Salvar alterações">
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-warning btn-lg center-block" href="@Url.Action("ChangePassword")">Trocar de senha</a>
+
+        </div>
+    </div>
+</div>

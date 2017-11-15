@@ -1,0 +1,89 @@
+﻿@model HealthTrack.MVC.ViewModels.CadastroViewModel
+
+@{
+    ViewBag.Title = "Cadastre-se";
+}
+
+@Html.Partial("_Logo")
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal form-cadastro", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    @Html.Partial("_SummaryErrors")
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="Email">E-mail</label>
+        <div class="col-md-9">
+            @Html.TextBoxFor(m => m.RegisterViewModel.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.RegisterViewModel.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="ConfirmPassword">Senha</label>
+        <div class="col-md-9">
+            @Html.PasswordFor(m => m.RegisterViewModel.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.RegisterViewModel.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="ConfirmPassword">Confirmação</label>
+        <div class="col-md-9">
+            @Html.PasswordFor(m => m.RegisterViewModel.ConfirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.RegisterViewModel.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Nome, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Nome, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.UsuarioViewModel.Nome, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Sobrenome, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.UsuarioViewModel.Sobrenome, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Sexo, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EnumDropDownListFor(model => model.UsuarioViewModel.Sexo, htmlAttributes: new {@class = "form-control"})
+            @Html.ValidationMessageFor(m => m.UsuarioViewModel.Sexo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Altura, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Altura, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.UsuarioViewModel.Altura, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UsuarioViewModel.Nascimento, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.UsuarioViewModel.Nascimento, new { htmlAttributes = new { @class = "form-control", type="text", placeholder="dd/mm/aaaa" } })
+            @Html.ValidationMessageFor(m => m.UsuarioViewModel.Nascimento, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <div class="btn-group">
+                <input type="submit" class="btn btn-primary" value="Cadastrar"/>
+                <a href="@Url.Action("Index", "Home")" class="btn btn-default">Cancelar</a>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

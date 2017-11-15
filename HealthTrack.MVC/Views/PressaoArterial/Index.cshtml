@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HealthTrack.MVC.ViewModels.PressaoArterialViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pressões Arteriais</h2>
+
+<p>
+    <a class="btn btn-success" href="@Url.Action("Form")"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sistolica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diastolica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataHora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sistolica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diastolica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataHora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.Partial("_CRUD", item.Id)
+        </td>
+    </tr>
+}
+
+</table>

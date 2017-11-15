@@ -1,0 +1,7 @@
+﻿@model string
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    @*<a type="button" class="btn btn-primary btn-sm" href="@Url.Action("Details", new {id = Model})" ><i class="fa fa-search" aria-hidden="true"></i></a>*@
+    <a type="button" class="btn btn-warning btn-sm" href="@Url.Action("Editar", new {id = Model})"    ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    <a type="button" class="btn btn-danger btn-sm"  href="@Url.Action("Deletar", new { id = Model })"><i class="fa fa-trash" aria-hidden="true"></i></a>
+</div>
