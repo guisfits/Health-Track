@@ -40,7 +40,7 @@
                         <div class="col-md-offset-2">
                             <div class="checkbox">
                                 @Html.CheckBoxFor(m => m.RememberMe)
-                                <label class="control-label" for="RememberMe">Mantenha-me conectado</label>
+                                <label class="control-label" for="RememberMe">Lembre-me</label>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     </div>
                 <div class="col-md-12 text-center">
                     <!-- Enable this once you have account confirmation enabled for password reset functionality -->
-                    @Html.ActionLink("Esqueceu a senha?", "ForgotPassword")
+                    @Html.ActionLink("Recuperar senha", "ForgotPassword")
                 </div>
                 </fieldset>
              }
