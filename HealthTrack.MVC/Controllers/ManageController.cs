@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -73,6 +75,26 @@ namespace HealthTrack.MVC.Controllers
                 return View(viewModel);
             }
 
+            _unitOfWork.UsuarioRepository.Update(usuario);
+            _unitOfWork.Commit();
+
+            return RedirectToAction("Dashboard", "Home");
+        }
+
+        [HttpPost]
+        public ActionResult AlterarImagem(UsuarioViewModel viewModel)
+        {
+            if (viewModel.file.ContentLength == 0)
+                return new EmptyResult();
+
+            var extensao = viewModel.file.FileName.Split('.').Last();
+            var nomeImagem = $"{Guid.NewGuid().ToString()}.{extensao}"; 
+            var imagemPath = Path.Combine("/www/img/", nomeImagem);
+
+            viewModel.file.SaveAs(Server.MapPath(imagemPath));
+
+            var usuario = _unitOfWork.UsuarioRepository.Get(User.Identity.GetUserId());
+            usuario.ImagemPath = imagemPath;
             _unitOfWork.UsuarioRepository.Update(usuario);
             _unitOfWork.Commit();
 

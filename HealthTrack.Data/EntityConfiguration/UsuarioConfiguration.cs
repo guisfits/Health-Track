@@ -37,6 +37,9 @@ namespace HealthTrack.Data.EntityConfiguration
                 .HasMaxLength(120)
                 .IsRequired();
 
+            Property(c => c.ImagemPath)
+                .HasColumnName("IMAGEM");
+
             Ignore(c => c.Imc);
 
             Ignore(c => c.Validation);

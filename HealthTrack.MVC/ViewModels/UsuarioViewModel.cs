@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 using HealthTrack.Domain.Enums;
 using HealthTrack.Domain.Models;
 
@@ -21,6 +22,8 @@ namespace HealthTrack.MVC.ViewModels
         [MaxLength(300, ErrorMessage = "Você excedeu o tamanho máximo de caracteres")]
         [MinLength(2, ErrorMessage = "Você deve digitar mais alguns caracteres")]
         public string Sobrenome { get; set; }
+
+        public string ImagemPath { get; set; }
 
         [Required(ErrorMessage = "O campo Sexo é requerido")]
         [DisplayName("Sexo")]
@@ -44,6 +47,8 @@ namespace HealthTrack.MVC.ViewModels
 
         [ScaffoldColumn(false)]
         public ImcViewModel Imc { get; set; }
+
+        public HttpPostedFileBase file { get; set; }
 
         public IList<Alimento> Alimentos { get; set; }
         public IList<ExercicioFisico> ExerciciosFisicos { get; set; }

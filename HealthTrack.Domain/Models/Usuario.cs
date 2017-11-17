@@ -15,6 +15,7 @@ namespace HealthTrack.Domain.Models
         public float Altura { get; set; }
         public DateTime Nascimento { get; set; }
         public Sexo Sexo { get; set; }
+        public string ImagemPath { get; set; }
 
         public IList<Peso> Pesos { get; set; }
         public IList<Alimento> Alimentos { get; set; }

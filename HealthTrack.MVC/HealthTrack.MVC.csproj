@@ -248,6 +248,7 @@
     <Compile Include="ViewModels\Identity\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Identity\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Identity\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\ImagemViewModel.cs" />
     <Compile Include="ViewModels\ImcViewModel.cs" />
     <Compile Include="ViewModels\PesoViewModel.cs" />
     <Compile Include="ViewModels\PressaoArterialViewModel.cs" />
@@ -260,7 +261,7 @@
     <Content Include="www\img\circle\exercise.png" />
     <Content Include="www\img\circle\food.png" />
     <Content Include="www\img\circle\pressure.png" />
-    <Content Include="www\img\circle\user.png" />
+    <Content Include="www\img\user.png" />
     <Content Include="www\img\circle\weight.png" />
     <Content Include="www\img\logo.png" />
     <Content Include="www\img\panel\exercise.jpeg" />

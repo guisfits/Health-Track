@@ -146,6 +146,7 @@ namespace HealthTrack.MVC.Controllers
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     var usuario = Mapper.Map<Usuario>(model.UsuarioViewModel);
+                    usuario.ImagemPath = "/www/img/user.png";
                     usuario.Id = user.Id;
 
                     var validar = usuario.Validar();
