@@ -88,6 +88,15 @@ namespace HealthTrack.MVC.Controllers
                 return new EmptyResult();
 
             var extensao = viewModel.file.FileName.Split('.').Last();
+
+            if (extensao != "jpg")
+            {
+                var user = _unitOfWork.UsuarioRepository.Get(User.Identity.GetUserId());
+                viewModel = Mapper.Map<UsuarioViewModel>(user);
+                ModelState.AddModelError("file", "Envie uma imagem no formato JPG");
+                return View("Index", viewModel);
+            }
+
             var nomeImagem = $"{Guid.NewGuid().ToString()}.{extensao}"; 
             var imagemPath = Path.Combine("/www/img/avatar/", nomeImagem);
 

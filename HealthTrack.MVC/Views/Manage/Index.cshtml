@@ -15,6 +15,8 @@
                 </div>
                 <div class="row center-block">
                     <input type="file" name="file" id="file" class="btn btn-primary" style="margin-bottom: 10px;" /> 
+                    @Html.ValidationMessageFor(m => m.file, "", new {@class = "text-danger"})
+                    
                     <input type="submit" value="Alterar foto" class="btn btn-primary" style="margin-bottom: 20px;"/> 
                 </div>
             </div>

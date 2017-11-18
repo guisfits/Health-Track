@@ -138,7 +138,7 @@ namespace HealthTrack.MVC.Controllers
             {
                 var user = new ApplicationUser { UserName = model.RegisterViewModel.Email, Email = model.RegisterViewModel.Email};
                 var usuario = Mapper.Map<Usuario>(model.UsuarioViewModel);
-                usuario.ImagemPath = "/www/img/user.png";
+                usuario.ImagemPath = "/www/img/avatar/user.png";
                 usuario.Id = user.Id;
 
                 var validar = usuario.Validar();

@@ -3,8 +3,6 @@
 
 # Minhas alterações
 HealthTrack.MVC/www/img/avatar/*.jpg
-HealthTrack.MVC/www/img/avatar/*.png
-HealthTrack.MVC/www/img/avatar/*.jpeg
 
 # User-specific files
 *.suo
