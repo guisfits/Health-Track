@@ -758,6 +758,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="www\img\avatar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="www\fonts\glyphicons-halflings-regular.woff" />

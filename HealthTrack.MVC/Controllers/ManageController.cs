@@ -89,7 +89,7 @@ namespace HealthTrack.MVC.Controllers
 
             var extensao = viewModel.file.FileName.Split('.').Last();
             var nomeImagem = $"{Guid.NewGuid().ToString()}.{extensao}"; 
-            var imagemPath = Path.Combine("/www/img/", nomeImagem);
+            var imagemPath = Path.Combine("/www/img/avatar/", nomeImagem);
 
             viewModel.file.SaveAs(Server.MapPath(imagemPath));
 
