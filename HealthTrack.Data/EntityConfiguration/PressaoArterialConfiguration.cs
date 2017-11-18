@@ -34,8 +34,6 @@ namespace HealthTrack.Data.EntityConfiguration
             HasRequired(x => x.Usuario)
                 .WithMany(x => x.PressoesArteriais)
                 .HasForeignKey(x => x.UsuarioId);
-
-            Ignore(c => c.Validation);
         }
     }
 }

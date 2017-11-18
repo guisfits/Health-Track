@@ -4,34 +4,32 @@ using HealthTrack.Domain.Validation;
 
 namespace HealthTrack.Domain.Models
 {
-    public class Peso
+    public class Peso : BaseEntity
     {
-        public string Id { get; set; }
         public float ValorPeso { get; set; }
         public DateTime DataHora { get; set; }
 
         public string UsuarioId { get; set; }
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
-        public PesoValidation Validation { get; private set;  }
+        private readonly PesoValidation _validation;
 
         public Peso(float pesoKg)
         {
             ValorPeso= pesoKg;
             DataHora = DateTime.Now;
             Id = Guid.NewGuid().ToString();
-            Validation = new PesoValidation();
+            _validation = new PesoValidation();
         }
 
-        public Peso()
+        protected Peso()
         {
-            Id = Guid.NewGuid().ToString();
-            Validation = new PesoValidation();
+            _validation = new PesoValidation();
         }
 
-        public ValidationResult Validar()
+        public override ValidationResult Validar()
         {
-            return Validation.Validate(this);
+            return _validation.Validate(this);
         }
 
         public override string ToString()

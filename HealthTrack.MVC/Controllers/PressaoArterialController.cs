@@ -109,14 +109,9 @@ namespace HealthTrack.MVC.Controllers
             pressaoArterial.UsuarioId = User.Identity.GetUserId();
 
             if (string.IsNullOrEmpty(pressaoArterial.Id))
-            {
-                pressaoArterial.Id = Guid.NewGuid().ToString();
                 _unitOfWork.PressaoArterialRepository.Add(pressaoArterial);
-            }
             else
-            {
                 _unitOfWork.PressaoArterialRepository.Update(pressaoArterial);
-            }
 
             _unitOfWork.Commit();
 

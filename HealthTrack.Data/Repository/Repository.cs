@@ -5,10 +5,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using HealthTrack.Data.Context;
 using HealthTrack.Domain.Interfaces.Repository;
+using HealthTrack.Domain.Models;
 
 namespace HealthTrack.Data.Repository
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
         protected readonly HealthTrackContext context;
         protected readonly DbSet<TEntity> Db;
@@ -41,6 +42,7 @@ namespace HealthTrack.Data.Repository
 
         public virtual void Add(TEntity obj)
         {
+            obj.Id = Guid.NewGuid().ToString();
             Db.Add(obj);
         }
 

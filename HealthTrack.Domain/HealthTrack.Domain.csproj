@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\Repository\IRepository.cs" />
     <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
     <Compile Include="Models\Alimento.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\ExercicioFisico.cs" />
     <Compile Include="Models\Imc.cs" />
     <Compile Include="Models\Log.cs" />

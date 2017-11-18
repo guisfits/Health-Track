@@ -107,10 +107,7 @@ namespace HealthTrack.MVC.Controllers
             }
 
             if (string.IsNullOrEmpty(peso.Id))
-            {
-                peso.Id = Guid.NewGuid().ToString();
                 _unitOfWork.PesoRepository.Add(peso);
-            }
             else
                 _unitOfWork.PesoRepository.Update(peso);
 

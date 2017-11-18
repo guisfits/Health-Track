@@ -7,9 +7,8 @@ using HealthTrack.Domain.Validation;
 
 namespace HealthTrack.Domain.Models
 {
-    public class Usuario
+    public class Usuario : BaseEntity
     {
-        public string Id { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public float Altura { get; set; }
@@ -17,13 +16,13 @@ namespace HealthTrack.Domain.Models
         public Sexo Sexo { get; set; }
         public string ImagemPath { get; set; }
 
-        public IList<Peso> Pesos { get; set; }
-        public IList<Alimento> Alimentos { get; set; }
-        public IList<ExercicioFisico> ExerciciosFisicos { get; set; }
-        public IList<PressaoArterial> PressoesArteriais { get; set; }
+        public virtual IList<Peso> Pesos { get; set; }
+        public virtual IList<Alimento> Alimentos { get; set; }
+        public virtual IList<ExercicioFisico> ExerciciosFisicos { get; set; }
+        public virtual IList<PressaoArterial> PressoesArteriais { get; set; }
 
         public Imc Imc { get; set; }
-        public UsuarioValidation Validation { get; private set; }
+        private readonly UsuarioValidation _validation;
 
         public Usuario()
         {
@@ -31,7 +30,7 @@ namespace HealthTrack.Domain.Models
             ExerciciosFisicos = new List<ExercicioFisico>();
             PressoesArteriais = new List<PressaoArterial>();
             Pesos = new List<Peso>();
-            Validation = new UsuarioValidation();
+            _validation = new UsuarioValidation();
             Imc = new Imc(PesoAtual(), Altura);
         }
 
@@ -52,9 +51,9 @@ namespace HealthTrack.Domain.Models
             return new Imc(PesoAtual(), Altura);
         }
 
-        public ValidationResult Validar()
+        public override ValidationResult Validar()
         {
-            return Validation.Validate(this);
+            return _validation.Validate(this);
         }
     }
 }

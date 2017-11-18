@@ -108,7 +108,6 @@ namespace HealthTrack.MVC.Controllers
 
             if (string.IsNullOrEmpty(exercicioFisico.Id))
             {
-                exercicioFisico.Id = Guid.NewGuid().ToString();
                 _unitOfWork.ExercicioFisicoRepository.Add(exercicioFisico);
             }
             else

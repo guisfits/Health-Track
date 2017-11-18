@@ -1,7 +1,4 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -140,27 +137,28 @@ namespace HealthTrack.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.RegisterViewModel.Email, Email = model.RegisterViewModel.Email};
+                var usuario = Mapper.Map<Usuario>(model.UsuarioViewModel);
+                usuario.ImagemPath = "/www/img/user.png";
+                usuario.Id = user.Id;
+
+                var validar = usuario.Validar();
+                if (!validar.IsValid)
+                {
+                    foreach (var validation in validar.Errors)
+                    {
+                        ModelState.AddModelError("", validation.ErrorMessage);
+                    }
+                    return View(model);
+                }
+
                 var result = await UserManager.CreateAsync(user, model.RegisterViewModel.Password);
+
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-
-                    var usuario = Mapper.Map<Usuario>(model.UsuarioViewModel);
-                    usuario.ImagemPath = "/www/img/user.png";
-                    usuario.Id = user.Id;
-
-                    var validar = usuario.Validar();
-                    if (!validar.IsValid)
-                    {
-                        foreach (var validation in validar.Errors)
-                        {
-                            ModelState.AddModelError("", validation.ErrorMessage);
-                        }
-                        return View(model);
-                    }
-
                     _unitOfWork.UsuarioRepository.Add(usuario);
                     _unitOfWork.Commit();
+
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link

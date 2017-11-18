@@ -6,16 +6,16 @@ namespace HealthTrack.MVC.ViewModels
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
-        [StringLength(100, ErrorMessage = "A {0} deve ter pelo menos {2} caracteres", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "A senha deve ter pelo menos {2} caracteres", MinimumLength = 6)]
         [DataType(DataType.Password, ErrorMessage = "O campo não corresponde a uma senha")]
-        [Display(Name = "Password")]
+        [Display(Name = "Senha")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirmação")]
         [Compare("Password", ErrorMessage = "A senha e sua confirmação não correspondem")]
         public string ConfirmPassword { get; set; }
     }

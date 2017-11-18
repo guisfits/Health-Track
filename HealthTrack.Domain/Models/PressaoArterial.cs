@@ -4,18 +4,17 @@ using HealthTrack.Domain.Validation;
 
 namespace HealthTrack.Domain.Models
 {
-    public class PressaoArterial
+    public class PressaoArterial : BaseEntity
     {
-        public string Id { get; set; }
         public DateTime DataHora { get; set; }
         public float Sistolica { get; set; } 
         public float Diastolica { get; set; }
         public string Status { get; private set; }
         
         public string UsuarioId { get; set; }
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
-        public PressaoArterialValidation Validation { get; private set; }
+        private readonly PressaoArterialValidation _validation;
 
         public PressaoArterial(float sistolica, float diastolica, DateTime dataHora)
         {
@@ -24,13 +23,12 @@ namespace HealthTrack.Domain.Models
             Diastolica = diastolica;
             Id = Guid.NewGuid().ToString();
             Status = ObterStatus();
-            Validation = new PressaoArterialValidation();
+            _validation = new PressaoArterialValidation();
         }
 
-        public PressaoArterial()
+        protected PressaoArterial()
         {
-            Id = Guid.NewGuid().ToString();
-            Validation = new PressaoArterialValidation();
+            _validation = new PressaoArterialValidation();
         }
 
         public string ObterStatus()
@@ -72,9 +70,9 @@ namespace HealthTrack.Domain.Models
             }
         }
 
-        public ValidationResult Validar()
+        public override ValidationResult Validar()
         {
-            return Validation.Validate(this);
+            return _validation.Validate(this);
         }
     }
 }

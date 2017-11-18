@@ -5,28 +5,26 @@ using HealthTrack.Domain.Validation;
 
 namespace HealthTrack.Domain.Models
 {
-    public class ExercicioFisico
+    public class ExercicioFisico : BaseEntity
     {
-        public string Id { get; set; }
         public string Descricao { get; set; }
         public float Calorias { get; set; }
         public DateTime DataHora { get; set; }
         public ExercicioTipo Tipo { get; set; }
 
         public string UsuarioId { get; set; }
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
-        public ExercicioFisicoValidation Validation { get; private set; }
+        private readonly ExercicioFisicoValidation _validation;
 
         public ExercicioFisico()
         {
-            Id = Guid.NewGuid().ToString();
-            Validation = new ExercicioFisicoValidation();
+            _validation = new ExercicioFisicoValidation();
         }
 
-        public ValidationResult Validar()
+        public override ValidationResult Validar()
         {
-            return Validation.Validate(this);
+            return _validation.Validate(this);
         }
     }
 }

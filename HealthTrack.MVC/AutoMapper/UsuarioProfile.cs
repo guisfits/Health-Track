@@ -21,10 +21,6 @@ namespace HealthTrack.MVC.AutoMapper
                 {
                     from.MapFrom(x => x.IdadeAtual());
                 })
-                .ForSourceMember(c => c.Validation, from =>
-                {
-                    from.Ignore();
-                })
                 .ReverseMap();
         }
     }

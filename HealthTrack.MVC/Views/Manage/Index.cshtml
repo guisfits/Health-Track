@@ -34,8 +34,9 @@
                         {
                             @Html.AntiForgeryToken()
                             @Html.Partial("_SummaryErrors")
-
                             @Html.HiddenFor(model => model.Id)
+                            @Html.HiddenFor(model => model.ImagemPath)
+
 
                             <div class="form-group">
                                 <label class="control-label">Nome</label>

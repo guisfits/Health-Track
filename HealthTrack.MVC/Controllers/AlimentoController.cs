@@ -90,7 +90,8 @@ namespace HealthTrack.MVC.Controllers
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            var alimento = Mapper.Map<Alimento>(viewModel);
+            var alimento = new Alimento();
+            alimento = Mapper.Map<Alimento>(viewModel);
             alimento.UsuarioId = User.Identity.GetUserId();
             alimento.DataHora = viewModel.ObterDataCompleta();
 
@@ -108,10 +109,7 @@ namespace HealthTrack.MVC.Controllers
             }
 
             if (string.IsNullOrEmpty(alimento.Id))
-            {
-                alimento.Id = Guid.NewGuid().ToString();
                 _unitOfWork.AlimentoRepository.Add(alimento);
-            }
             else
                 _unitOfWork.AlimentoRepository.Update(alimento);
 

@@ -30,5 +30,10 @@ namespace HealthTrack.Data.Repository
 
             return usuario;
         }
+
+        public override void Add(Usuario obj)
+        {
+            context.Usuarios.Add(obj);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using AutoMapper;
 using HealthTrack.Domain.Interfaces;
 using HealthTrack.MVC.ViewModels;

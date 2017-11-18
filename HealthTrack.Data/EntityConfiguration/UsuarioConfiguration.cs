@@ -41,8 +41,6 @@ namespace HealthTrack.Data.EntityConfiguration
                 .HasColumnName("IMAGEM");
 
             Ignore(c => c.Imc);
-
-            Ignore(c => c.Validation);
         }
     }
 }
