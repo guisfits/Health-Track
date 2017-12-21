@@ -776,23 +776,23 @@
     <Content Include="www\scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711110004519_IdentityMigration.resx">
+      <DependentUpon>201711110004519_IdentityMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HealthTrack.CrossCutting\HealthTrack.CrossCutting.csproj">
       <Project>{e210efa8-9139-45b9-8838-8b31b1ac993a}</Project>
       <Name>HealthTrack.CrossCutting</Name>
     </ProjectReference>
     <ProjectReference Include="..\HealthTrack.Data\HealthTrack.Data.csproj">
-      <Project>{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91}</Project>
+      <Project>{7dec16ee-9e60-4ffb-b0d9-6f3dcfdc3c91}</Project>
       <Name>HealthTrack.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\HealthTrack.Domain\HealthTrack.Domain.csproj">
       <Project>{db650a42-149c-4982-9292-5b2d5d8de7e4}</Project>
       <Name>HealthTrack.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711110004519_IdentityMigration.resx">
-      <DependentUpon>201711110004519_IdentityMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,15 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Domain", "HealthTrack.Domain\HealthTrack.Domain.csproj", "{DB650A42-149C-4982-9292-5B2D5D8DE7E4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{097F96CC-CD66-4625-8EDA-E7490C24104A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.MVC", "HealthTrack.MVC\HealthTrack.MVC.csproj", "{9D5147F0-BEC2-4D36-AA71-55706E208A0D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{A722160F-1A81-40AF-9D45-9FB768BE06A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Data", "HealthTrack.Data\HealthTrack.Data.csproj", "{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{18E9128E-54B4-400E-844B-8DA084A3E52F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.CrossCutting", "HealthTrack.CrossCutting\HealthTrack.CrossCutting.csproj", "{E210EFA8-9139-45B9-8838-8B31B1AC993A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{01A7EC9B-670F-4B32-A379-249F9D16B702}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - CrossCutting", "3.2 - CrossCutting", "{21FA54CF-087D-4499-A8B7-A507D30A33DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.MVC", "src\HealthTrack.MVC\HealthTrack.MVC.csproj", "{9D5147F0-BEC2-4D36-AA71-55706E208A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Domain", "src\HealthTrack.Domain\HealthTrack.Domain.csproj", "{DB650A42-149C-4982-9292-5B2D5D8DE7E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Data", "src\HealthTrack.Data\HealthTrack.Data.csproj", "{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.CrossCutting", "src\HealthTrack.CrossCutting\HealthTrack.CrossCutting.csproj", "{E210EFA8-9139-45B9-8838-8B31B1AC993A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Domain.Tests", "HealthTrack.Domain.Tests\HealthTrack.Domain.Tests.csproj", "{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +29,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D5147F0-BEC2-4D36-AA71-55706E208A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9D5147F0-BEC2-4D36-AA71-55706E208A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D5147F0-BEC2-4D36-AA71-55706E208A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D5147F0-BEC2-4D36-AA71-55706E208A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB650A42-149C-4982-9292-5B2D5D8DE7E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,9 +45,22 @@ Global
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01A7EC9B-670F-4B32-A379-249F9D16B702} = {18E9128E-54B4-400E-844B-8DA084A3E52F}
+		{21FA54CF-087D-4499-A8B7-A507D30A33DC} = {18E9128E-54B4-400E-844B-8DA084A3E52F}
+		{9D5147F0-BEC2-4D36-AA71-55706E208A0D} = {097F96CC-CD66-4625-8EDA-E7490C24104A}
+		{DB650A42-149C-4982-9292-5B2D5D8DE7E4} = {A722160F-1A81-40AF-9D45-9FB768BE06A8}
+		{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91} = {01A7EC9B-670F-4B32-A379-249F9D16B702}
+		{E210EFA8-9139-45B9-8838-8B31B1AC993A} = {21FA54CF-087D-4499-A8B7-A507D30A33DC}
+		{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9} = {A722160F-1A81-40AF-9D45-9FB768BE06A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CFCD75B-0A4E-4BAF-A52C-D7C2BE4902E7}
