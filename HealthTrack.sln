@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Data", "src\Hea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.CrossCutting", "src\HealthTrack.CrossCutting\HealthTrack.CrossCutting.csproj", "{E210EFA8-9139-45B9-8838-8B31B1AC993A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Domain.Tests", "HealthTrack.Domain.Tests\HealthTrack.Domain.Tests.csproj", "{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Domain.Tests", "tests\HealthTrack.Domain.Tests\HealthTrack.Domain.Tests.csproj", "{E4C909B7-9EBB-41D5-AE3D-FF43FCE9B2E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
