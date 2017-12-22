@@ -24,10 +24,11 @@ namespace HealthTrack.Domain.Tests.Validations
         }
 
         [Test]
+        [Category("Validação")]
         public void Validacao_DataDeveSerMenorQueDataAtual_False()
         {
             alimento.DataHora = DateTime.Now.AddDays(1);
-            
+
             var validation = alimento.Validar();
             var result = validation.IsValid;
             var erro = validation.Errors.First(c => !c.ErrorMessage.Contains("Tipo de Alimento"));
@@ -37,6 +38,7 @@ namespace HealthTrack.Domain.Tests.Validations
         }
 
         [Test]
+        [Category("Validação")]
         public void Validacao_DataDeveSerMenorQueDataAtual_True()
         {
             alimento.DataHora = DateTime.Now.AddDays(-1);
@@ -49,6 +51,7 @@ namespace HealthTrack.Domain.Tests.Validations
         }
 
         [Test]
+        [Category("Validação")]
         public void Validacao_DataNaoDeveTerMaisDeUmAno_False()
         {
             alimento.DataHora = DateTime.Now.AddYears(-2);
@@ -62,6 +65,7 @@ namespace HealthTrack.Domain.Tests.Validations
         }
 
         [Test]
+        [Category("Validação")]
         public void Validacao_DataNaoDeveTerMaisDeUmAno_True()
         {
             alimento.DataHora = DateTime.Now.AddMonths(-11);
@@ -74,12 +78,14 @@ namespace HealthTrack.Domain.Tests.Validations
         }
 
         [Test]
+        [Category("Validação")]
         public void Validacao_TipoNaoPorSerNulo_IsNull()
         {
             Assert.That(alimento.Tipo, Is.Null);
         }
 
         [Test]
+        [Category("Validação")]
         public void Validacao_TipoNaoPorSerNulo_IsNotNull()
         {
             alimento.Tipo = AlimentoTipo.Fruta;
