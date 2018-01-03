@@ -55,7 +55,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\HealthTrack.Domain\HealthTrack.Domain.csproj">
+    <ProjectReference Include="..\HealthTrack.Domain\HealthTrack.Domain.csproj">
       <Project>{db650a42-149c-4982-9292-5b2d5d8de7e4}</Project>
       <Name>HealthTrack.Domain</Name>
     </ProjectReference>

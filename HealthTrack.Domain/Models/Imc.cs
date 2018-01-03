@@ -44,7 +44,10 @@ namespace HealthTrack.Domain.Models
                 _valor = (float)Math.Round(_valor, 2);
                 return _valor;
             }
-            set => _valor = value;
+            set
+            {
+                _valor = value;
+            } 
         }
 
         public Imc(float peso = 0, float altura = 0)
