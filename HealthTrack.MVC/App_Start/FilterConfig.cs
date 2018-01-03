@@ -8,7 +8,7 @@ namespace HealthTrack.MVC
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new ExceptionActionFilter());
+            filters.Add(new ExceptionHandlerAttribute());
         }
     }
 }

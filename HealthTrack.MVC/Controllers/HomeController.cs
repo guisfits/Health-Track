@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using AutoMapper;
 using HealthTrack.Domain.Interfaces;
 using HealthTrack.MVC.ViewModels;
@@ -35,6 +34,12 @@ namespace HealthTrack.MVC.Controllers
         public ViewResult About()
         {
             return View();
+        }
+
+        public ActionResult Erro()
+        {
+            throw new Exception();
+            return new EmptyResult();
         }
     }
 }

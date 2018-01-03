@@ -1,8 +1,10 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using HealthTrack.MVC.App_Start;
 using HealthTrack.MVC.AutoMapper;
+using System.Web.Http;
 
 namespace HealthTrack.MVC
 {
@@ -10,6 +12,7 @@ namespace HealthTrack.MVC
     {
         protected void Application_Start()
         {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -17,5 +20,7 @@ namespace HealthTrack.MVC
             SimpleInjectorInitializer.Initialize();
             AutoMapperConfig.Register();
         }
+
+        //protected void Application_Error(Object sender, EventArgs e) { }
     }
 }
