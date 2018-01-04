@@ -37,13 +37,13 @@ namespace HealthTrack.Data.Repository
 
         public virtual IEnumerable<TEntity> Pagination(int page, int pagesize)
         {
-            return Db.Skip(page * pagesize).Take(pagesize).ToList();
+            return Db.Skip((page - 1) * pagesize).Take(pagesize).ToList();
         }
 
-        public virtual void Add(TEntity obj)
+        public virtual TEntity Add(TEntity obj)
         {
             obj.Id = Guid.NewGuid().ToString();
-            Db.Add(obj);
+            return Db.Add(obj);
         }
 
         public virtual void AddRange(IEnumerable<TEntity> obj)

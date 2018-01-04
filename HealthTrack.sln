@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Data", "HealthT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.CrossCutting", "HealthTrack.CrossCutting\HealthTrack.CrossCutting.csproj", "{E210EFA8-9139-45B9-8838-8B31B1AC993A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthTrack.Data.Tests", "HealthTrack.Data.Tests\HealthTrack.Data.Tests.csproj", "{5A27FA50-F0BB-4D7E-A407-CF6CAD3253D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A27FA50-F0BB-4D7E-A407-CF6CAD3253D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A27FA50-F0BB-4D7E-A407-CF6CAD3253D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A27FA50-F0BB-4D7E-A407-CF6CAD3253D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A27FA50-F0BB-4D7E-A407-CF6CAD3253D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{DB650A42-149C-4982-9292-5B2D5D8DE7E4} = {A722160F-1A81-40AF-9D45-9FB768BE06A8}
 		{7DEC16EE-9E60-4FFB-B0D9-6F3DCFDC3C91} = {01A7EC9B-670F-4B32-A379-249F9D16B702}
 		{E210EFA8-9139-45B9-8838-8B31B1AC993A} = {21FA54CF-087D-4499-A8B7-A507D30A33DC}
+		{5A27FA50-F0BB-4D7E-A407-CF6CAD3253D5} = {01A7EC9B-670F-4B32-A379-249F9D16B702}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CFCD75B-0A4E-4BAF-A52C-D7C2BE4902E7}

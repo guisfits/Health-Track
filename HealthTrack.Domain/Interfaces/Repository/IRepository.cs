@@ -8,7 +8,7 @@ namespace HealthTrack.Domain.Interfaces.Repository
     {
         TEntity Get(string Id);
         IEnumerable<TEntity> GetAll();
-        void Add(TEntity obj);
+        TEntity Add(TEntity obj);
         void AddRange(IEnumerable<TEntity> obj);
         void Update(TEntity obj);
         void Remove(TEntity obj);

@@ -32,6 +32,8 @@ O Health Track é um projeto acadêmico criado para o curso de TDS da FIAP. A FI
 * AutoMapper
 * Fluent Api
 * Fluent Validation
+* NUnit
+* Moq
 
 ## Links 
 
