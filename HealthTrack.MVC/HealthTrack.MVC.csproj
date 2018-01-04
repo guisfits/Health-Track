@@ -766,7 +766,7 @@
     <Content Include="Views\PressaoArterial\Details.cshtml" />
     <Content Include="Views\PressaoArterial\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Shared\NotFound.html" />
+    <Content Include="Views\Erros\NotFound.htm" />
     <Content Include="Views\Shared\_CRUD.cshtml" />
     <Content Include="Views\Shared\_Logo.cshtml" />
     <Content Include="Views\Shared\_SummaryErrors.cshtml" />
